@@ -18,6 +18,7 @@ LazyData: true
 Language: en-US
 Depends: R (>= 3.2)
 Imports:
+    jeksterslabRutils,
     rprojroot,
     styler,
     rmarkdown,
