@@ -15,14 +15,29 @@ pkg_gitignore <- function(pkg_dir = getwd(),
     pkg_dir,
     pkg_name
   )
-  output <- readLines(
-    con = system.file(
-      "extdata",
-      "gitignore",
-      package = "jeksterslabRpkg",
-      mustWork = TRUE
+  if (file.exists(file.path(root, ".gitignore"))) {
+    output <- paste0(
+      readLines(
+        con = file.path(
+          root,
+          ".gitignore"
+        )
+      ),
+      collapse = "\n"
     )
-  )
+  } else {
+    output <- paste0(
+      readLines(
+        con = system.file(
+          "extdata",
+          "gitignore",
+          package = "jeksterslabRpkg",
+          mustWork = TRUE
+        )
+      ),
+      collapse = "\n"
+    )
+  }
   if (!is.null(add)) {
     output <- paste0(
       output,

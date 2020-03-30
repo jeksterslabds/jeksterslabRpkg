@@ -12,6 +12,7 @@ pkg_create(
   add_namespace = NULL,
   add_rbuildignore = NULL,
   add_gitignore = NULL,
+  add_travis = NULL,
   git = FALSE,
   github = FALSE
 )
@@ -38,6 +39,10 @@ in addition to the boilerplate example.}
 
 \item{add_gitignore}{Character string.
 Entries to the \code{.gitignore}
+in addition to the boilerplate example.}
+
+\item{add_travis}{Character string.
+Entries to the \code{.travis.yml}
 in addition to the boilerplate example.}
 
 \item{git}{Logical.

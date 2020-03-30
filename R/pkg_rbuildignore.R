@@ -15,18 +15,29 @@ pkg_rbuildignore <- function(pkg_dir = getwd(),
     pkg_dir,
     pkg_name
   )
-  # add when file already exists
-  output <- paste0(
-    readLines(
-      con = system.file(
-        "extdata",
-        "Rbuildignore",
-        package = "jeksterslabRpkg",
-        mustWork = TRUE
-      )
-    ),
-    collapse = "\n"
-  )
+  if (file.exists(file.path(root, ".Rbuildignore"))) {
+    output <- paste0(
+      readLines(
+        con = file.path(
+          root,
+          ".Rbuildignore"
+        )
+      ),
+      collapse = "\n"
+    )
+  } else {
+    output <- paste0(
+      readLines(
+        con = system.file(
+          "extdata",
+          "Rbuildignore",
+          package = "jeksterslabRpkg",
+          mustWork = TRUE
+        )
+      ),
+      collapse = "\n"
+    )
+  }
   if (!is.null(add)) {
     output <- paste0(
       output,

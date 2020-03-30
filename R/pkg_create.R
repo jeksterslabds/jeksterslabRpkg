@@ -14,6 +14,9 @@
 #' @param add_gitignore Character string.
 #'   Entries to the \code{.gitignore}
 #'   in addition to the boilerplate example.
+#' @param add_travis Character string.
+#'   Entries to the \code{.travis.yml}
+#'   in addition to the boilerplate example.
 #' @param git Logical.
 #'   Set up a git repository.
 #' @param github Logical.
@@ -28,6 +31,7 @@ pkg_create <- function(pkg_dir = getwd(),
                        add_namespace = NULL,
                        add_rbuildignore = NULL,
                        add_gitignore = NULL,
+                       add_travis = NULL,
                        git = FALSE,
                        github = FALSE) {
   root <- file.path(
@@ -49,6 +53,11 @@ pkg_create <- function(pkg_dir = getwd(),
     pkg_name = pkg_name,
     input_file = input_file,
     add = add_description
+  )
+  pkg_license(
+    pkg_dir = pkg_dir,
+    pkg_name = pkg_name,
+    input_file = input_file
   )
   pkg_namespace(
     pkg_dir = pkg_dir,
@@ -72,6 +81,24 @@ pkg_create <- function(pkg_dir = getwd(),
     pkg_name = pkg_name
   )
   pkg_data(
+    pkg_dir = pkg_dir,
+    pkg_name = pkg_name
+  )
+  pkg_travis(
+    pkg_dir = pkg_dir,
+    pkg_name = pkg_name,
+    add = add_travis
+  )
+  pkg_pkgdown(
+    pkg_dir = pkg_dir,
+    pkg_name = pkg_name
+  )
+  pkg_readme(
+    pkg_dir = pkg_dir,
+    pkg_name = pkg_name,
+    input_file = input_file
+  )
+  pkg_rproj(
     pkg_dir = pkg_dir,
     pkg_name = pkg_name
   )
@@ -115,15 +142,6 @@ pkg_create <- function(pkg_dir = getwd(),
     )
     if (github) {
       cat("Creating and pushing to a remote GiHub repository.\n")
-      #      try(
-      #        system(
-      #          paste(
-      #            "cd",
-      #            shQuote(root),
-      #            "&& hub create"
-      #          )
-      #        )
-      #      )
       try(
         system(
           paste(

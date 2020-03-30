@@ -31,7 +31,7 @@ pkg_test <- function(pkg_dir = getwd(),
   output <- readLines(
     con = system.file(
       "extdata",
-      "test_z.R",
+      "test_zR",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )

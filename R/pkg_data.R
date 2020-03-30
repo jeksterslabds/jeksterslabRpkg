@@ -39,9 +39,7 @@ pkg_data <- function(pkg_dir = getwd(),
     Rbuildignore <- paste0(
       Rbuildignore,
       "\n",
-      "^",
-      "data_raw",
-      "$"
+      "^data_raw$"
     )
     util_txt2file(
       text = Rbuildignore,
@@ -59,7 +57,7 @@ pkg_data <- function(pkg_dir = getwd(),
   output_data_raw_galton_r <- readLines(
     con = system.file(
       "extdata",
-      "data_raw_galton.R",
+      "data_raw_galtonR",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )
@@ -95,7 +93,7 @@ pkg_data <- function(pkg_dir = getwd(),
   output_data_galton_r <- readLines(
     con = system.file(
       "extdata",
-      "data_galton.R",
+      "data_galtonR",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )
@@ -113,7 +111,7 @@ pkg_data <- function(pkg_dir = getwd(),
   output_galton_rd <- readLines(
     con = system.file(
       "extdata",
-      "galton.Rd",
+      "galtonRd",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )

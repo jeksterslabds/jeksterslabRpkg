@@ -52,6 +52,7 @@ pkg_description <- function(pkg_dir = getwd(),
         "Given",
         "Family",
         "Email",
+        "Github",
         "License",
         "Encoding",
         "LazyData"
@@ -79,6 +80,26 @@ pkg_description <- function(pkg_dir = getwd(),
   Version <- paste(
     "Version:",
     input[["Version"]]
+  )
+  Github <- input[["Github"]]
+  URL <- paste(
+    "URL:",
+    paste0(
+      "https://github.com/",
+      Github,
+      "/",
+      pkg_name
+    )
+  )
+  BugReports <- paste(
+    "BugReports:",
+    paste0(
+      "https://github.com/",
+      Github,
+      "/",
+      pkg_name,
+      "/issues"
+    )
   )
   if (is.na(input[["ORCID"]])) {
     ORCID <- "\n"
@@ -128,21 +149,10 @@ pkg_description <- function(pkg_dir = getwd(),
     "    ",
     ")"
   )
-  #  Author <- paste(
-  #    "Author:",
-  #    input[["Given"]],
-  #    input[["Family"]],
-  #    "[aut, cre]"
-  #  )
-  #  Maintainer <- paste0(
-  #    "Maintainer: ",
-  #    input[["Given"]],
-  #    input[["Family"]],
-  #    " ",
-  #    "<",
-  #    input[["Email"]],
-  #    ">"
-  #  )
+  author <- paste(
+    input[["Given"]],
+    input[["Family"]]
+  )
   input_description <- strwrap(
     x = input["Description"],
     width = 65,
@@ -182,10 +192,10 @@ pkg_description <- function(pkg_dir = getwd(),
     Title,
     Version,
     AuthorR,
-    #    Author,
-    #    Maintainer,
     Description,
     License,
+    URL,
+    BugReports,
     Encoding,
     LazyData,
     sep = "\n"
@@ -256,66 +266,5 @@ pkg_description <- function(pkg_dir = getwd(),
     text = output,
     dir = root,
     fn = "DESCRIPTION"
-  )
-  license <- paste0(
-    "YEAR: ",
-    format(Sys.time(), "%Y"),
-    "\n",
-    "COPYRIGHT HOLDER: ",
-    input[["Given"]],
-    " ",
-    input[["Family"]]
-  )
-  util_txt2file(
-    text = license,
-    dir = root,
-    fn = "LICENSE"
-  )
-  license_md <- readLines(
-    con = system.file(
-      "extdata",
-      "LICENSE.md",
-      package = "jeksterslabRpkg",
-      mustWork = TRUE
-    )
-  )
-  license_md <- sub(
-    pattern = "YEAR",
-    replacement = format(Sys.time(), "%Y"),
-    x = license_md
-  )
-  license_md <- sub(
-    pattern = "AUTHOR",
-    replacement = paste(
-      input[["Given"]],
-      input[["Family"]]
-    ),
-    x = license_md
-  )
-  util_txt2file(
-    text = license_md,
-    dir = root,
-    fn = "LICENSE.md"
-  )
-  pkg_rbuildignore(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
-    add = "^LICENSE\\.md$"
-  )
-  rproj <- readLines(
-    con = system.file(
-      "extdata",
-      "Rproj",
-      package = "jeksterslabRpkg",
-      mustWork = TRUE
-    )
-  )
-  util_txt2file(
-    text = rproj,
-    dir = root,
-    fn = paste0(
-      pkg_name,
-      ".Rproj"
-    )
   )
 }

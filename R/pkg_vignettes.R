@@ -15,7 +15,7 @@ pkg_vignettes <- function(pkg_dir = getwd(),
   output <- readLines(
     con = system.file(
       "extdata",
-      "vignette_z.Rmd",
+      "vignette_z",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )
