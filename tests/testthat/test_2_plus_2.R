@@ -3,7 +3,7 @@
 #' author: "Ivan Jacob Agaloos Pesigan"
 #' date: "`r Sys.Date()`"
 #' output:
-#'   rmarkdown::html_vignette:
+#'   rmarkdown::github_document:
 #'     toc: true
 #' ---
 
@@ -11,7 +11,7 @@
 library(testthat)
 library(jeksterslabRpkg)
 
-#+ test that_01, echo=FALSE
+#+ test that_01, echo=TRUE
 test_that("2 + 2 = 4", {
   expect_equivalent(
     2 + 2,
