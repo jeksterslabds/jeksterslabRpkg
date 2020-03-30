@@ -19,8 +19,6 @@
 #'   not included in \code{input_file}
 #' @importFrom utils read.csv
 #' @importFrom jeksterslabRutils util_txt2file
-#' @examples
-#' pkg_description(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
 #' @export
 pkg_description <- function(pkg_dir = getwd(),
                             pkg_name,

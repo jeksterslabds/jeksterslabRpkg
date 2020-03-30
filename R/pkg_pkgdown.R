@@ -4,8 +4,6 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
-#' @examples
-#' pkg_pkgdown(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
 #' @importFrom pkgdown build_site
 #' @export
 pkg_pkgdown <- function(pkg_dir = getwd(),

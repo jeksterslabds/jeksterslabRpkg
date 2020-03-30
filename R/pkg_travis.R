@@ -7,8 +7,6 @@
 #' @param add Character string.
 #'   Entries to the \code{.gitignore}
 #'   in addition to the boilerplate example.
-#' @examples
-#' pkg_travis(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
 #' @export
 pkg_travis <- function(pkg_dir = getwd(),
                        pkg_name,

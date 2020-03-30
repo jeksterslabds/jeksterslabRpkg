@@ -2,8 +2,6 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
-#' @examples
-#' pkg_rd(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
 #' @export
 pkg_rd <- function(pkg_dir = getwd(),
                    pkg_name) {

@@ -5,8 +5,6 @@
 #' @param add Character string.
 #'   Entries to the \code{.Rbuildignore}
 #'   in addition to the boilerplate example.
-#' @examples
-#' pkg_rbuildignore(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
 #' @export
 pkg_rbuildignore <- function(pkg_dir = getwd(),
                              pkg_name,
