@@ -22,9 +22,11 @@ Imports:
     rmarkdown,
     parallel,
     readxl,
-    usethis
+    usethis,
+    pkgdown,
+    devtools
 Suggests:
     knitr,
     testthat
 VignetteBuilder: knitr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
