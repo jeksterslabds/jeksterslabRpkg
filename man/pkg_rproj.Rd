@@ -15,9 +15,6 @@ Package name.}
 \description{
 Create Package .Rproj.
 }
-\examples{
-pkg_rproj(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

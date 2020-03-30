@@ -15,9 +15,6 @@ Package name.}
 \description{
 Create Boilerplate Package RD Function Documentation.
 }
-\examples{
-pkg_rd(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

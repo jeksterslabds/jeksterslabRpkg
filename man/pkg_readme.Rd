@@ -24,9 +24,6 @@ THIS FUNCTION OVERWRITES AN EXISTING \code{README.Rmd} FILE
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
 USE WITH CAUTION.
 }
-\examples{
-pkg_readme(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

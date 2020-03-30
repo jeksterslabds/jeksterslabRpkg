@@ -19,9 +19,6 @@ in addition to the boilerplate example.}
 \description{
 Create Boilerplate Package .Rbuildignore.
 }
-\examples{
-pkg_rbuildignore(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

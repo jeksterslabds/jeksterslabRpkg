@@ -21,8 +21,6 @@
 #'   Set up a git repository.
 #' @param github Logical.
 #'   Set up and push to a github repository.
-#' @examples
-#' pkg_create(pkg_dir = ".", pkg_name = "boilerplatePackage")
 #' @export
 pkg_create <- function(pkg_dir = getwd(),
                        pkg_name = "boilerplatePackage",

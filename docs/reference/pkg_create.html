@@ -189,66 +189,6 @@ Set up and push to a github repository.</p></td>
     </table>
 
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>pkg_create</span>(<span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='kw'>pkg_name</span> <span class='kw'>=</span> <span class='st'>"boilerplatePackage"</span>)</div><div class='output co'>#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.Rbuildignore 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.gitignore 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/DESCRIPTION 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/LICENSE 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/LICENSE.md 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.Rbuildignore 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/NAMESPACE 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/R/z.R 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/man/z.Rd 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/vignettes/z.Rmd 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/tests/testthat.R 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/tests/testthat/test_z.R 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.Rbuildignore 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/data_raw/data_raw_galton.R 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/data_raw/data_galton.tsv 
-#&gt; <span style='color: #00BB00;'>✔</span><span> Setting active project to </span><span style='color: #0000BB;'>'/tmp/RtmprJovRd/boilerplatePackage'</span><span>
-#&gt; </span><span style='color: #00BB00;'>✔</span><span> Creating </span><span style='color: #0000BB;'>'data/'</span><span>
-#&gt; </span><span style='color: #00BB00;'>✔</span><span> Saving </span><span style='color: #0000BB;'>'galton'</span><span> to </span><span style='color: #0000BB;'>'data/galton.rda'</span><span>
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/R/data_galton.R 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/man/galton.Rd 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.travis.yml 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.Rbuildignore 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/_pkgdown.yml 
-#&gt; ── </span><span style='font-weight: bold;'>Installing package into temporary library</span><span> ───────────────────────────────────
-#&gt; ══ </span><span style='font-weight: bold;'>Building pkgdown site</span><span> ═══════════════════════════════════════════════════════
-#&gt; Reading from: </span><span style='color: #00BB00;'>'/tmp/RtmprJovRd/boilerplatePackage'</span><span>
-#&gt; Writing to:   </span><span style='color: #0000BB;'>'/tmp/RtmprJovRd/boilerplatePackage/docs'</span><span>
-#&gt; ── </span><span style='font-weight: bold;'>Initialising site</span><span> ───────────────────────────────────────────────────────────
-#&gt; Copying </span><span style='color: #00BB00;'>'../../../home/jek/R/x86_64-pc-linux-gnu-library/3.6/pkgdown/assets/bootstrap-toc.css'</span><span> to </span><span style='color: #0000BB;'>'bootstrap-toc.css'</span><span>
-#&gt; Copying </span><span style='color: #00BB00;'>'../../../home/jek/R/x86_64-pc-linux-gnu-library/3.6/pkgdown/assets/bootstrap-toc.js'</span><span> to </span><span style='color: #0000BB;'>'bootstrap-toc.js'</span><span>
-#&gt; Copying </span><span style='color: #00BB00;'>'../../../home/jek/R/x86_64-pc-linux-gnu-library/3.6/pkgdown/assets/docsearch.css'</span><span> to </span><span style='color: #0000BB;'>'docsearch.css'</span><span>
-#&gt; Copying </span><span style='color: #00BB00;'>'../../../home/jek/R/x86_64-pc-linux-gnu-library/3.6/pkgdown/assets/docsearch.js'</span><span> to </span><span style='color: #0000BB;'>'docsearch.js'</span><span>
-#&gt; Copying </span><span style='color: #00BB00;'>'../../../home/jek/R/x86_64-pc-linux-gnu-library/3.6/pkgdown/assets/link.svg'</span><span> to </span><span style='color: #0000BB;'>'link.svg'</span><span>
-#&gt; Copying </span><span style='color: #00BB00;'>'../../../home/jek/R/x86_64-pc-linux-gnu-library/3.6/pkgdown/assets/pkgdown.css'</span><span> to </span><span style='color: #0000BB;'>'pkgdown.css'</span><span>
-#&gt; Copying </span><span style='color: #00BB00;'>'../../../home/jek/R/x86_64-pc-linux-gnu-library/3.6/pkgdown/assets/pkgdown.js'</span><span> to </span><span style='color: #0000BB;'>'pkgdown.js'</span><span>
-#&gt; Writing </span><span style='color: #0000BB;'>'sitemap.xml'</span><span>
-#&gt; Writing </span><span style='color: #0000BB;'>'404.html'</span><span>
-#&gt; ── </span><span style='font-weight: bold;'>Building home</span><span> ───────────────────────────────────────────────────────────────
-#&gt; Writing </span><span style='color: #0000BB;'>'authors.html'</span><span>
-#&gt; Reading </span><span style='color: #00BB00;'>'LICENSE.md'</span><span>
-#&gt; Writing </span><span style='color: #0000BB;'>'LICENSE.html'</span><span>
-#&gt; Writing </span><span style='color: #0000BB;'>'LICENSE-text.html'</span><span>
-#&gt; ── </span><span style='font-weight: bold;'>Building function reference</span><span> ─────────────────────────────────────────────────
-#&gt; Writing </span><span style='color: #0000BB;'>'reference/index.html'</span><span>
-#&gt; Reading </span><span style='color: #00BB00;'>'man/galton.Rd'</span><span>
-#&gt; Writing </span><span style='color: #0000BB;'>'reference/galton.html'</span><span>
-#&gt; Reading </span><span style='color: #00BB00;'>'man/z.Rd'</span><span>
-#&gt; Writing </span><span style='color: #0000BB;'>'reference/z.html'</span><span>
-#&gt; ── </span><span style='font-weight: bold;'>Building articles</span><span> ───────────────────────────────────────────────────────────
-#&gt; Writing </span><span style='color: #0000BB;'>'articles/index.html'</span><span>
-#&gt; Reading </span><span style='color: #00BB00;'>'vignettes/z.Rmd'</span><span>
-#&gt; Writing </span><span style='color: #0000BB;'>'articles/z.html'</span><span>
-#&gt; ══ </span><span style='font-weight: bold;'>DONE</span><span> ════════════════════════════════════════════════════════════════════════
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.Rbuildignore 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/README.Rmd 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.Rbuildignore 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/boilerplatePackage.Rproj 
-#&gt; Output file: /tmp/RtmprJovRd/boilerplatePackage/.Rbuildignore 
-#&gt; boilerplatePackage has been saved in /tmp/RtmprJovRd/boilerplatePackage.</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

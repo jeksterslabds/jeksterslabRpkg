@@ -15,9 +15,6 @@ Package name.}
 \description{
 Create Boilerplate Package Test File.
 }
-\examples{
-pkg_test(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

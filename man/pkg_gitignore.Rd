@@ -19,9 +19,6 @@ in addition to the boilerplate example.}
 \description{
 Create Boilerplate Package .gitignore.
 }
-\examples{
-pkg_gitignore(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

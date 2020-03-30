@@ -15,9 +15,6 @@ Package name.}
 \description{
 Create Boilerplate Package Vignette.
 }
-\examples{
-pkg_vignettes(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

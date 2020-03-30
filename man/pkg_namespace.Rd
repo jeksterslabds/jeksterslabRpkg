@@ -19,9 +19,6 @@ in addition to the boilerplate example.}
 \description{
 Create Boilerplate Package NAMESPACE.
 }
-\examples{
-pkg_namespace(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

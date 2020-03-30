@@ -15,9 +15,6 @@ Package name.}
 \description{
 Create Boilerplate Package Data File.
 }
-\examples{
-pkg_data(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

@@ -15,9 +15,6 @@ Package name.}
 \description{
 Create Boilerplate Package R Script.
 }
-\examples{
-pkg_r(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

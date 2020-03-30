@@ -19,9 +19,6 @@ in addition to the boilerplate example.}
 \description{
 Creates .travis.yml with \code{codecov}.
 }
-\examples{
-pkg_travis(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

@@ -54,9 +54,6 @@ Set up and push to a github repository.}
 \description{
 Create Boilerplate Package R Package.
 }
-\examples{
-pkg_create(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

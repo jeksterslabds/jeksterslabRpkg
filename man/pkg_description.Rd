@@ -28,9 +28,6 @@ THIS FUNCTION OVERWRITES AN EXISTING \code{DESCRIPTION} FILE
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
 USE WITH CAUTION.
 }
-\examples{
-pkg_description(pkg_dir = tempdir(), pkg_name = "boilerplatePackage")
-}
 \author{
 Ivan Jacob Agaloos Pesigan
 }
