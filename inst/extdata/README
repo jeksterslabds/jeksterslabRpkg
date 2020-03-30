@@ -1,0 +1,38 @@
+---
+title: "BOILERPLATEPACKAGE"
+author: "AUTHOR"
+date: "`r Sys.Date()`"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/GITHUBACCOUNT/BOILERPLATEPACKAGE.svg?branch=master)](https://travis-ci.org/GITHUBACCOUNT/BOILERPLATEPACKAGE)
+[![codecov](https://codecov.io/github/GITHUBACCOUNT/BOILERPLATEPACKAGE/branch/master/graphs/badge.svg)](https://codecov.io/github/GITHUBACCOUNT/BOILERPLATEPACKAGE) 
+<!-- badges: end -->
+
+The goal of `BOILERPLATEPACKAGE` is...
+
+## Installation
+
+You can install the released version of `BOILERPLATEPACKAGE` from [GitHub](https://github.com/GITHUBACCOUNT/BOILERPLATEPACKAGE) with:
+
+```r
+library(devtools)
+install_github("GITHUBACCOUNT/BOILERPLATEPACKAGE")
+```
+
+## Example
+
+See [GitHub Pages](https://GITHUBACCOUNT.github.io/BOILERPLATEPACKAGE/)
+for package documentation.

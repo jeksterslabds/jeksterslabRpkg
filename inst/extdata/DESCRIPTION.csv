@@ -1,14 +1,13 @@
 field,description,entry
-Title,"What the Package Does (One Line, Title Case)",Package Utility Functions
+Title,"What the Package Does (One Line, Title Case)",This is a Boilerplate Package
 Version,0.0.0.9000,1.0.0
 Given,Given name (including middle name),Ivan Jacob Agaloos
 Family,Family name,Pesigan
 Email,Email address,i.j.a.pesigan@connect.um.edu.mo
 ORCID,ORCID,0000-0003-4818-8420
+Github,Github account.,jeksterslabds
 Description,What the package does (one paragraph).,Sets up a boilerplate R package.
 License,What license it uses,MIT + file LICENSE
-URL,"Package website (e.g., GitHub Repo)",https://github.com/jeksterslabds/repo
-BugReports,"Website where bugs can be reported (e.g., GitHub Issues).",https://github.com/jeksterslabds/repo/issues
 Encoding,Encoding,UTF-8
 Language,Language,en-US
 LazyData,LazyData,TRUE
