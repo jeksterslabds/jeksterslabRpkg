@@ -2,18 +2,31 @@
 % Please edit documentation in R/pkg_data.R
 \name{pkg_data}
 \alias{pkg_data}
-\title{Create Boilerplate Package Data File.}
+\title{Create a Boilerplate Package Data File.}
 \usage{
 pkg_data(pkg_dir = getwd(), pkg_name)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 }
 \description{
-Create Boilerplate Package Data File.
+Creates a boilerplate package data file.
+}
+\details{
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+}
+\examples{
+\dontrun{
+pkg_data(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

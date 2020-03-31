@@ -1,7 +1,19 @@
-#' Create Boilerplate Package Data File.
+#' Create a Boilerplate Package Data File.
+#'
+#' Creates a boilerplate package data file.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
+#' @examples
+#' \dontrun{
+#' pkg_data(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
 pkg_data <- function(pkg_dir = getwd(),
                      pkg_name) {
