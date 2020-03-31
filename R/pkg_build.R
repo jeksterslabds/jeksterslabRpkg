@@ -9,6 +9,12 @@
 #' Some features of this function requires
 #'
 #' @author Ivan Jacob Agaloos Pesigan
+#' @param minimal Logical.
+#'   If `TRUE`, minimal check, build, and install
+#'   using `R CMD`
+#'   ignoring all the other function arguments.
+#'   If `FALSE`, a more thorough check is performed
+#'   with additional options.
 #' @param pkg_root Character string.
 #'   Package root directory.
 #' @param style Logical.
@@ -38,83 +44,128 @@
 #' @examples
 #' \dontrun{
 #' pkg_build(
-#'   pkg_root = getwd(),
-#'   style = FALSE,
-#'   data = FALSE,
-#'   render = FALSE,
-#'   readme = FALSE,
-#'   vignettes = FALSE,
-#'   tests = FALSE,
-#'   pkgdown = FALSE,
-#'   par = FALSE
+#'   pkg_root = "~/boilerplatePackage",
+#'   minimal = TRUE
 #' )
 #' }
 #' @export
-pkg_build <- function(pkg_root = getwd(),
-                      style = FALSE,
-                      data = FALSE,
-                      render = FALSE,
-                      readme = FALSE,
-                      vignettes = FALSE,
-                      tests = FALSE,
-                      pkgdown = FALSE,
+pkg_build <- function(pkg_root = NULL,
+                      minimal = TRUE,
+                      style = TRUE,
+                      data = TRUE,
+                      render = TRUE,
+                      readme = TRUE,
+                      vignettes = TRUE,
+                      tests = TRUE,
+                      pkgdown = TRUE,
                       par = TRUE,
                       ncores = NULL) {
-  if (style) {
-    util_style(
-      dir = pkg_root,
-      par = par,
-      ncores = ncores
-    )
+  if (is.null(pkg_root)) {
+    pkg_root <- getwd()
   }
-  document(
-    pkg = pkg_root
-  )
-  # load_all(
-  #  path = pkg_root
-  # )
-  install(
-    pkg = pkg_root
-  )
-  if (data) {
-    data_raw <- file.path(
-      pkg_root,
-      "data_raw"
+  wd <- getwd()
+  if (minimal) {
+    tmp <- tempdir()
+    setwd(tmp)
+    gz <- paste0(
+      file.path(
+        basename(pkg_root)
+      ),
+      "*.tar.gz"
     )
-    if (dir.exists(data_raw)) {
-      files <- list.files(
-        path = data_raw,
-        pattern = "^*.R$|^*.r$"
+    try(
+      system(
+        paste(
+          "R CMD build",
+          "--no-build-vignettes ",
+          "--no-manual",
+          pkg_root
+        )
       )
-      util_lapply(
-        FUN = source,
-        args = list(
-          file = files
-        ),
+    )
+    try(
+      system(
+        paste(
+          "R CMD check",
+          "--no-clean",
+          "--no-codoc",
+          "--no-examples",
+          "--no-install",
+          "--no-tests",
+          "--no-manual",
+          "--no-vignettes",
+          "--no-build-vignettes",
+          "--no-multiarch",
+          gz
+        )
+      )
+    )
+    try(
+      system(
+        paste(
+          "R CMD INSTALL",
+          gz
+        )
+      )
+    )
+  } else {
+    if (style) {
+      util_style(
+        dir = pkg_root,
         par = par,
         ncores = ncores
       )
     }
-  }
-  if (render) {
-    pkg_render(
-      pkg_root = pkg_root,
-      readme = readme,
-      vignettes = vignettes,
-      tests = tests,
-      par = par,
-      ncores = ncores
+    document(
+      pkg = pkg_root
     )
-  }
-  if (pkgdown) {
-    build_site(
+    # load_all(
+    #  path = pkg_root
+    # )
+    install(
+      pkg = pkg_root
+    )
+    if (data) {
+      data_raw <- file.path(
+        pkg_root,
+        "data_raw"
+      )
+      if (dir.exists(data_raw)) {
+        files <- list.files(
+          path = data_raw,
+          pattern = "^*.R$|^*.r$"
+        )
+        util_lapply(
+          FUN = source,
+          args = list(
+            file = files
+          ),
+          par = par,
+          ncores = ncores
+        )
+      }
+    }
+    if (render) {
+      pkg_render(
+        pkg_root = pkg_root,
+        readme = readme,
+        vignettes = vignettes,
+        tests = tests,
+        par = par,
+        ncores = ncores
+      )
+    }
+    if (pkgdown) {
+      build_site(
+        pkg = pkg_root
+      )
+    }
+    check(
+      pkg = pkg_root
+    )
+    install(
       pkg = pkg_root
     )
   }
-  check(
-    pkg = pkg_root
-  )
-  install(
-    pkg = pkg_root
-  )
+  setwd(wd)
 }
