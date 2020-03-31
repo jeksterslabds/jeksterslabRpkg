@@ -16,6 +16,9 @@ BugReports: https://github.com/jeksterslabds/jeksterslabRpkg/issues
 Encoding: UTF-8
 LazyData: true
 Language: en-US
+SystemRequirements:
+    git,
+    hub
 Depends: R (>= 3.2)
 Imports:
     jeksterslabRutils,
@@ -33,4 +36,5 @@ Suggests:
     knitr,
     testthat
 VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
