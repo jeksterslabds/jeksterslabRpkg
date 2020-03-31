@@ -5,7 +5,7 @@
 \title{Render \code{R} Markdown Files in the Package Directory.}
 \usage{
 pkg_render(
-  pkg_dir = getwd(),
+  pkg_root = getwd(),
   readme = TRUE,
   vignettes = TRUE,
   tests = TRUE,
@@ -14,8 +14,8 @@ pkg_render(
 )
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
 \item{readme}{Logical.
 Render \code{README.Rmd}.}
@@ -39,7 +39,7 @@ Render \code{R} Markdown Files in the Package Directory.
 \examples{
 \dontrun{
 pkg_render(
-  pkg_dir = getwd(),
+  pkg_root = getwd(),
   readme = TRUE,
   vignettes = TRUE,
   tests = TRUE,

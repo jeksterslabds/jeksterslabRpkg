@@ -1,4 +1,4 @@
-#' Create Boilerplate Package `.travis.yml` File.
+#' Create a Boilerplate Package `.travis.yml` File.
 #'
 #' Creates a `.travis.yml` build file
 #' with additional entries for `codecov`.

@@ -14,7 +14,7 @@
 #'     [jeksterslabRpkg::pkg_vignette()]),
 #'   - optional `pkgdown` and `travis` `YAML` files
 #'     (see [jeksterslabRpkg::pkg_pkgdown()] and [jeksterslabRpkg::pkg_travis()]),
-#'   - oprional `README.Rmd` file
+#'   - optional `README.Rmd` file
 #'     (see [jeksterslabRpkg::pkg_readme()]), and
 #'   - other files like `.Rbuildignore`, `.gitignore`, and `Rproj`.
 #'

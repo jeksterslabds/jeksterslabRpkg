@@ -90,7 +90,7 @@ Creates a boilerplate \code{R} package by generating the following:
 \code{\link[jeksterslabRpkg:pkg_vignette]{jeksterslabRpkg::pkg_vignette()}}),
 \item optional \code{pkgdown} and \code{travis} \code{YAML} files
 (see \code{\link[jeksterslabRpkg:pkg_pkgdown]{jeksterslabRpkg::pkg_pkgdown()}} and \code{\link[jeksterslabRpkg:pkg_travis]{jeksterslabRpkg::pkg_travis()}}),
-\item oprional \code{README.Rmd} file
+\item optional \code{README.Rmd} file
 (see \code{\link[jeksterslabRpkg:pkg_readme]{jeksterslabRpkg::pkg_readme()}}), and
 \item other files like \code{.Rbuildignore}, \code{.gitignore}, and \code{Rproj}.
 }

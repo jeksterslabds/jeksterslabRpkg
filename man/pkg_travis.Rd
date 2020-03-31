@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_travis.R
 \name{pkg_travis}
 \alias{pkg_travis}
-\title{Create Boilerplate Package \code{.travis.yml} File.}
+\title{Create a Boilerplate Package \code{.travis.yml} File.}
 \usage{
 pkg_travis(pkg_dir = getwd(), pkg_name, add = NULL)
 }

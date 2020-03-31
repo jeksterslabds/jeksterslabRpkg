@@ -5,21 +5,21 @@
 \title{Build Package.}
 \usage{
 pkg_build(
-  pkg_dir = getwd(),
-  style = TRUE,
-  data = TRUE,
-  render = TRUE,
-  readme = TRUE,
-  vignettes = TRUE,
-  tests = TRUE,
-  pkgdown = TRUE,
+  pkg_root = getwd(),
+  style = FALSE,
+  data = FALSE,
+  render = FALSE,
+  readme = FALSE,
+  vignettes = FALSE,
+  tests = FALSE,
+  pkgdown = FALSE,
   par = TRUE,
   ncores = NULL
 )
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
 \item{style}{Logical.
 Style R scripts and R Markdown files.}
@@ -53,7 +53,7 @@ Number of cores to use if \code{par = TRUE}.
 If unspecified, defaults to \code{detectCores() - 1}.}
 }
 \description{
-Builds the \code{R} package on \code{pkg_dir} by:
+Builds the \code{R} package on \code{pkg_root} by:
 \itemize{
 \item styling the \code{R} scripts and \code{R} Markdown files,
 \item building package data by running \code{R} scripts stored in \code{data_raw},
@@ -61,17 +61,20 @@ Builds the \code{R} package on \code{pkg_dir} by:
 \item building \code{pkgdown} site.
 }
 }
+\details{
+Some features of this function requires
+}
 \examples{
 \dontrun{
 pkg_build(
-  pkg_dir = getwd(),
-  style = TRUE,
-  data = TRUE,
-  render = TRUE,
-  readme = TRUE,
-  vignettes = TRUE,
-  tests = TRUE,
-  pkgdown = TRUE,
+  pkg_root = getwd(),
+  style = FALSE,
+  data = FALSE,
+  render = FALSE,
+  readme = FALSE,
+  vignettes = FALSE,
+  tests = FALSE,
+  pkgdown = FALSE,
   par = FALSE
 )
 }

@@ -7,7 +7,7 @@
 #'   Render `vignettes/*.Rmd`.
 #' @param tests Logical.
 #'   Render `tests/testhat/*.R`.
-#' @inheritParams pkg_description
+#' @inheritParams pkg_build
 #' @inheritParams jeksterslabRutils::util_lapply
 #' @importFrom utils glob2rx
 #' @importFrom rmarkdown render
@@ -17,7 +17,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_render(
-#'   pkg_dir = getwd(),
+#'   pkg_root = getwd(),
 #'   readme = TRUE,
 #'   vignettes = TRUE,
 #'   tests = TRUE,
@@ -25,7 +25,7 @@
 #' )
 #' }
 #' @export
-pkg_render <- function(pkg_dir = getwd(),
+pkg_render <- function(pkg_root = getwd(),
                        readme = TRUE,
                        vignettes = TRUE,
                        tests = TRUE,
@@ -33,7 +33,7 @@ pkg_render <- function(pkg_dir = getwd(),
                        ncores = NULL) {
   root <- find_root(
     criterion = "DESCRIPTION",
-    path = pkg_dir
+    path = pkg_root
   )
   if (readme) {
     render_readme <- file.path(

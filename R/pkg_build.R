@@ -1,12 +1,16 @@
 #' Build Package.
 #'
-#' Builds the `R` package on `pkg_dir` by:
+#' Builds the `R` package on `pkg_root` by:
 #'   - styling the `R` scripts and `R` Markdown files,
 #'   - building package data by running `R` scripts stored in `data_raw`,
 #'   - rendering the `R` scripts and `R` Markdown files using [rmarkdown::render()], and
 #'   - building `pkgdown` site.
 #'
+#' Some features of this function requires
+#'
 #' @author Ivan Jacob Agaloos Pesigan
+#' @param pkg_root Character string.
+#'   Package root directory.
 #' @param style Logical.
 #'   Style R scripts and R Markdown files.
 #' @param data Logical.
@@ -34,44 +38,47 @@
 #' @examples
 #' \dontrun{
 #' pkg_build(
-#'   pkg_dir = getwd(),
-#'   style = TRUE,
-#'   data = TRUE,
-#'   render = TRUE,
-#'   readme = TRUE,
-#'   vignettes = TRUE,
-#'   tests = TRUE,
-#'   pkgdown = TRUE,
+#'   pkg_root = getwd(),
+#'   style = FALSE,
+#'   data = FALSE,
+#'   render = FALSE,
+#'   readme = FALSE,
+#'   vignettes = FALSE,
+#'   tests = FALSE,
+#'   pkgdown = FALSE,
 #'   par = FALSE
 #' )
 #' }
 #' @export
-pkg_build <- function(pkg_dir = getwd(),
-                      style = TRUE,
-                      data = TRUE,
-                      render = TRUE,
-                      readme = TRUE,
-                      vignettes = TRUE,
-                      tests = TRUE,
-                      pkgdown = TRUE,
+pkg_build <- function(pkg_root = getwd(),
+                      style = FALSE,
+                      data = FALSE,
+                      render = FALSE,
+                      readme = FALSE,
+                      vignettes = FALSE,
+                      tests = FALSE,
+                      pkgdown = FALSE,
                       par = TRUE,
                       ncores = NULL) {
   if (style) {
     util_style(
-      dir = pkg_dir,
+      dir = pkg_root,
       par = par,
       ncores = ncores
     )
   }
   document(
-    pkg = pkg_dir
+    pkg = pkg_root
   )
-  load_all(
-    path = pkg_dir
+  #load_all(
+  #  path = pkg_root
+  #)
+  install(
+    pkg = pkg_root
   )
   if (data) {
     data_raw <- file.path(
-      pkg_dir,
+      pkg_root,
       "data_raw"
     )
     if (dir.exists(data_raw)) {
@@ -91,7 +98,7 @@ pkg_build <- function(pkg_dir = getwd(),
   }
   if (render) {
     pkg_render(
-      pkg_dir = pkg_dir,
+      pkg_root = pkg_root,
       readme = readme,
       vignettes = vignettes,
       tests = tests,
@@ -101,13 +108,13 @@ pkg_build <- function(pkg_dir = getwd(),
   }
   if (pkgdown) {
     build_site(
-      pkg = pkg_dir
+      pkg = pkg_root
     )
   }
   check(
-    pkg = pkg_dir
+    pkg = pkg_root
   )
   install(
-    pkg = pkg_dir
+    pkg = pkg_root
   )
 }
