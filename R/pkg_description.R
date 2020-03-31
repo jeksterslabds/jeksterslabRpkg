@@ -1,24 +1,38 @@
-#' Create Package DESCRIPTION.
+#' Create a Package `DESCRIPTION` File.
 #'
-#' Creates package \code{DESCRIPTION}
+#' Creates a package `DESCRIPTION` file
 #' by extracting information
-#' from an external \code{csv} \code{input_file}.
-#' See \code{system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)}
-#' For the \code{input_file} template.
-#' THIS FUNCTION OVERWRITES AN EXISTING \code{DESCRIPTION} FILE
+#' from an external `csv` `input_file`.
+#' See `system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)`
+#' for the `input_file` template.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
+#'
+#' **THIS FUNCTION OVERWRITES AN EXISTING `DESCRIPTION` FILE
 #' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
-#' USE WITH CAUTION.
+#' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param pkg_dir Directory where the package is initialized.
+#' @param pkg_dir Character string.
+#'   Directory where the package is initialized.
 #' @param pkg_name Character string.
 #'   Package name.
-#' @param input_file csv file containing \code{DESCRIPTION} fields and entries.
+#' @param input_file Character string.
+#'   csv file containing `DESCRIPTION` fields and entries.
 #' @param add Character string.
-#'   Additional entries to the \code{DESCRIPTION} file
-#'   not included in \code{input_file}
+#'   Additional entries to the `DESCRIPTION` file
+#'   not included in `input_file`
 #' @importFrom utils read.csv
 #' @importFrom jeksterslabRutils util_txt2file
+#' @examples
+#' \dontrun{
+#' pkg_description(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage",
+#'   input_file = "DESCRIPTION.csv"
+#' )
+#' }
 #' @export
 pkg_description <- function(pkg_dir = getwd(),
                             pkg_name,
@@ -250,6 +264,17 @@ pkg_description <- function(pkg_dir = getwd(),
     output <- paste(
       output,
       VignetteBuilder,
+      sep = "\n"
+    )
+  }
+  if ("Roxygen" %in% names(input)) {
+    Roxygen <- paste(
+      "Roxygen:",
+      input[["Roxygen"]]
+    )
+    output <- paste(
+      output,
+      Roxygen,
       sep = "\n"
     )
   }
