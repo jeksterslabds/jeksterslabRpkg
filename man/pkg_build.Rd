@@ -5,14 +5,15 @@
 \title{Build Package.}
 \usage{
 pkg_build(
-  pkg_root = getwd(),
-  style = FALSE,
-  data = FALSE,
-  render = FALSE,
-  readme = FALSE,
-  vignettes = FALSE,
-  tests = FALSE,
-  pkgdown = FALSE,
+  pkg_root = NULL,
+  minimal = TRUE,
+  style = TRUE,
+  data = TRUE,
+  render = TRUE,
+  readme = TRUE,
+  vignettes = TRUE,
+  tests = TRUE,
+  pkgdown = TRUE,
   par = TRUE,
   ncores = NULL
 )
@@ -20,6 +21,13 @@ pkg_build(
 \arguments{
 \item{pkg_root}{Character string.
 Package root directory.}
+
+\item{minimal}{Logical.
+If \code{TRUE}, minimal check, build, and install
+using \verb{R CMD}
+ignoring all the other function arguments.
+If \code{FALSE}, a more thorough check is performed
+with additional options.}
 
 \item{style}{Logical.
 Style R scripts and R Markdown files.}
@@ -67,15 +75,8 @@ Some features of this function requires
 \examples{
 \dontrun{
 pkg_build(
-  pkg_root = getwd(),
-  style = FALSE,
-  data = FALSE,
-  render = FALSE,
-  readme = FALSE,
-  vignettes = FALSE,
-  tests = FALSE,
-  pkgdown = FALSE,
-  par = FALSE
+  pkg_root = "~/boilerplatePackage",
+  minimal = TRUE
 )
 }
 }

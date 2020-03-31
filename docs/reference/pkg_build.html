@@ -130,14 +130,15 @@ building pkgdown site.
     </div>
 
     <pre class="usage"><span class='fu'>pkg_build</span>(
-  <span class='kw'>pkg_root</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
-  <span class='kw'>style</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>data</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>render</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>readme</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>vignettes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>tests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>pkgdown</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>pkg_root</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>minimal</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>style</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>data</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>render</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>readme</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>vignettes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tests</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>pkgdown</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>par</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>ncores</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
 )</pre>
@@ -149,6 +150,15 @@ building pkgdown site.
       <th>pkg_root</th>
       <td><p>Character string.
 Package root directory.</p></td>
+    </tr>
+    <tr>
+      <th>minimal</th>
+      <td><p>Logical.
+If <code>TRUE</code>, minimal check, build, and install
+using <code>R CMD</code>
+ignoring all the other function arguments.
+If <code>FALSE</code>, a more thorough check is performed
+with additional options.</p></td>
     </tr>
     <tr>
       <th>style</th>
@@ -208,15 +218,8 @@ If unspecified, defaults to <code>detectCores() - 1</code>.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='fu'>pkg_build</span>(
-  <span class='kw'>pkg_root</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
-  <span class='kw'>style</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>data</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>render</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>readme</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>vignettes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>tests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>pkgdown</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>par</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+  <span class='kw'>pkg_root</span> <span class='kw'>=</span> <span class='st'>"~/boilerplatePackage"</span>,
+  <span class='kw'>minimal</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
 )
 }</div></pre>
   </div>
