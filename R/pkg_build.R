@@ -70,9 +70,9 @@ pkg_build <- function(pkg_root = getwd(),
   document(
     pkg = pkg_root
   )
-  #load_all(
+  # load_all(
   #  path = pkg_root
-  #)
+  # )
   install(
     pkg = pkg_root
   )
