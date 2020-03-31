@@ -1,7 +1,17 @@
-#' Create Boilerplate Package R Script.
+#' Create a Boilerplate Package `R` Script.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
+#' @examples
+#' \dontrun{
+#' pkg_r(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
 pkg_r <- function(pkg_dir = getwd(),
                   pkg_name) {

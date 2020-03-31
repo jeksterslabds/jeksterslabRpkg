@@ -1,10 +1,24 @@
-#' Create Boilerplate Package .Rbuildignore.
+#' Create a Boilerplate Package `.Rbuildignore` File.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
+#'
+#' If `.Rbuildignore` exists in the specified package root directory,
+#' it will **NOT** be overwritten.
+#' Additional entries in the `add` argument will be appended.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
 #' @param add Character string.
 #'   Entries to the \code{.Rbuildignore}
 #'   in addition to the boilerplate example.
+#' @examples
+#' \dontrun{
+#' pkg_rbuildignore(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
 pkg_rbuildignore <- function(pkg_dir = getwd(),
                              pkg_name,

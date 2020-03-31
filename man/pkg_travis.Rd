@@ -2,22 +2,40 @@
 % Please edit documentation in R/pkg_travis.R
 \name{pkg_travis}
 \alias{pkg_travis}
-\title{Create Boilerplate Package .travis.yml.}
+\title{Create Boilerplate Package \code{.travis.yml} File.}
 \usage{
 pkg_travis(pkg_dir = getwd(), pkg_name, add = NULL)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 
 \item{add}{Character string.
-Entries to the \code{.gitignore}
+Entries to the \code{.travis.yml}
 in addition to the boilerplate example.}
 }
 \description{
-Creates .travis.yml with \code{codecov}.
+Creates a \code{.travis.yml} build file
+with additional entries for \code{codecov}.
+}
+\details{
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+
+\strong{THIS FUNCTION OVERWRITES AN EXISTING \code{.travis.yml} FILE
+IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+USE WITH CAUTION.}
+}
+\examples{
+\dontrun{
+pkg_travis(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

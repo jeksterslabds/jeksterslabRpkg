@@ -2,12 +2,13 @@
 % Please edit documentation in R/pkg_gitignore.R
 \name{pkg_gitignore}
 \alias{pkg_gitignore}
-\title{Create Boilerplate Package .gitignore.}
+\title{Create a Boilerplate Package \code{.gitignore} File.}
 \usage{
 pkg_gitignore(pkg_dir = getwd(), pkg_name, add = NULL)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
@@ -17,7 +18,21 @@ Entries to the \code{.gitignore}
 in addition to the boilerplate example.}
 }
 \description{
-Create Boilerplate Package .gitignore.
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+}
+\details{
+If \code{.gitignore} exists in the specified package root directory,
+it will \strong{NOT} be overwritten.
+Additional entries in the \code{add} argument will be appended.
+}
+\examples{
+\dontrun{
+pkg_gitignore(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -1,12 +1,27 @@
-#' Create Boilerplate Package .travis.yml.
+#' Create Boilerplate Package `.travis.yml` File.
 #'
-#' Creates .travis.yml with \code{codecov}.
+#' Creates a `.travis.yml` build file
+#' with additional entries for `codecov`.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
+#'
+#' **THIS FUNCTION OVERWRITES AN EXISTING `.travis.yml` FILE
+#' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+#' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
 #' @param add Character string.
-#'   Entries to the \code{.gitignore}
+#'   Entries to the `.travis.yml`
 #'   in addition to the boilerplate example.
+#' @examples
+#' \dontrun{
+#' pkg_travis(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
 pkg_travis <- function(pkg_dir = getwd(),
                        pkg_name,

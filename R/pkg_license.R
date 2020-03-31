@@ -1,16 +1,28 @@
-#' Create Package LICENSE.
+#' Create a Package License.
 #'
-#' Creates package \code{LICENSE} and \code{LICENSE.md}
+#' Creates a package `LICENSE` and `LICENSE.md`
 #' by extracting information
-#' from an external \code{csv} \code{input_file}.
-#' See \code{system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)}
-#' For the \code{input_file} template.
-#' THIS FUNCTION OVERWRITES AN EXISTING \code{LICENSE} and \code{LICENSE.md} FILE
+#' from an external `csv` `input_file`.
+#' See `system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)`
+#' for the `input_file` template.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
+#'
+#' **THIS FUNCTION OVERWRITES EXISTING `LICENSE` and `LICENSE.md` FILES
 #' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
-#' USE WITH CAUTION.
+#' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
+#' @examples
+#' \dontrun{
+#' pkg_license(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage",
+#'   input_file = "DESCRIPTION.csv"
+#' )
+#' }
 #' @export
 pkg_license <- function(pkg_dir = getwd(),
                         pkg_name,

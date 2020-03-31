@@ -1,10 +1,27 @@
-#' Create Boilerplate Package NAMESPACE.
+#' Create a Boilerplate Package `NAMESPACE`.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
+#'
+#' If you are going to document, check, and build your package using `devtools`,
+#' you may delete the boillerplate `NAMESPACE` file.
+#'
+#' **THIS FUNCTION OVERWRITES AN EXISTING `NAMESPACE` FILE
+#' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+#' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
 #' @param add Character string.
 #'   Entries to the \code{NAMESPACE}
 #'   in addition to the boilerplate example.
+#' @examples
+#' \dontrun{
+#' pkg_namespace(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
 pkg_namespace <- function(pkg_dir = getwd(),
                           pkg_name,

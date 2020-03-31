@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_render.R
 \name{pkg_render}
 \alias{pkg_render}
-\title{Render R Markdown Files in the Package Directory.}
+\title{Render \code{R} Markdown Files in the Package Directory.}
 \usage{
 pkg_render(
   pkg_dir = getwd(),
@@ -14,16 +14,17 @@ pkg_render(
 )
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{readme}{Logical.
 Render \code{README.Rmd}.}
 
 \item{vignettes}{Logical.
-Render vignettes.}
+Render \verb{vignettes/*.Rmd}.}
 
 \item{tests}{Logical.
-Render tests.}
+Render \verb{tests/testhat/*.R}.}
 
 \item{par}{Logical.
 If \code{TRUE}, use multiple cores.}
@@ -33,11 +34,17 @@ Number of cores to use if \code{par = TRUE}.
 If unspecified, defaults to \code{detectCores() - 1}.}
 }
 \description{
-Render R Markdown Files in the Package Directory.
+Render \code{R} Markdown Files in the Package Directory.
 }
 \examples{
 \dontrun{
-pkg_render()
+pkg_render(
+  pkg_dir = getwd(),
+  readme = TRUE,
+  vignettes = TRUE,
+  tests = TRUE,
+  par = FALSE
+)
 }
 }
 \author{

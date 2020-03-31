@@ -1,10 +1,24 @@
-#' Create Boilerplate Package .travis.yml.
+#' Create a Boilerplate Package `_pkgdown.yml`.
 #'
-#' Creates .travis.yml with \code{codecov}.
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' and the argument `pkgdown = TRUE` is specified,
+#' this function will be called.
+#'
+#' **THIS FUNCTION OVERWRITES AN EXISTING `_pkgdown.yml` FILE
+#' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+#' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
 #' @importFrom pkgdown build_site
+#' @examples
+#' \dontrun{
+#' pkg_pkgdown(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage",
+#'   input_file = "DESCRIPTION.csv"
+#' )
+#' }
 #' @export
 pkg_pkgdown <- function(pkg_dir = getwd(),
                         pkg_name,

@@ -2,27 +2,43 @@
 % Please edit documentation in R/pkg_license.R
 \name{pkg_license}
 \alias{pkg_license}
-\title{Create Package LICENSE.}
+\title{Create a Package License.}
 \usage{
 pkg_license(pkg_dir = getwd(), pkg_name, input_file = NULL)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 
-\item{input_file}{csv file containing \code{DESCRIPTION} fields and entries.}
+\item{input_file}{Character string.
+csv file containing \code{DESCRIPTION} fields and entries.}
 }
 \description{
-Creates package \code{LICENSE} and \code{LICENSE.md}
+Creates a package \code{LICENSE} and \code{LICENSE.md}
 by extracting information
 from an external \code{csv} \code{input_file}.
 See \code{system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)}
-For the \code{input_file} template.
-THIS FUNCTION OVERWRITES AN EXISTING \code{LICENSE} and \code{LICENSE.md} FILE
+for the \code{input_file} template.
+}
+\details{
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+
+\strong{THIS FUNCTION OVERWRITES EXISTING \code{LICENSE} and \code{LICENSE.md} FILES
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
-USE WITH CAUTION.
+USE WITH CAUTION.}
+}
+\examples{
+\dontrun{
+pkg_license(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage",
+  input_file = "DESCRIPTION.csv"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

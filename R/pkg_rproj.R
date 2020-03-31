@@ -1,7 +1,21 @@
-#' Create Package .Rproj.
+#' Create a Package `.Rproj` File.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
+#'
+#' **THIS FUNCTION OVERWRITES AN EXISTING `.Rproj` FILE
+#' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+#' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
+#' @examples
+#' \dontrun{
+#' pkg_rproj(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
 pkg_rproj <- function(pkg_dir = getwd(),
                       pkg_name) {

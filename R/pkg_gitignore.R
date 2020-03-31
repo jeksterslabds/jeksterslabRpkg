@@ -1,10 +1,24 @@
-#' Create Boilerplate Package .gitignore.
+#' Create a Boilerplate Package `.gitignore` File.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
+#'
+#' If `.gitignore` exists in the specified package root directory,
+#' it will **NOT** be overwritten.
+#' Additional entries in the `add` argument will be appended.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
 #' @param add Character string.
 #'   Entries to the \code{.gitignore}
 #'   in addition to the boilerplate example.
+#' @examples
+#' \dontrun{
+#' pkg_gitignore(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
 pkg_gitignore <- function(pkg_dir = getwd(),
                           pkg_name,

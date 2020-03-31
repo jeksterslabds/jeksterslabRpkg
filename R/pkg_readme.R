@@ -1,16 +1,28 @@
-#' Create Package README.
+#' Create a Boilerplate Package README File.
 #'
-#' Creates package \code{README.Rmd}
+#' Creates a boilerplate package `README.Rmd` file
 #' by extracting information
-#' from an external \code{csv} \code{input_file}.
-#' See \code{system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)}
-#' For the \code{input_file} template.
-#' THIS FUNCTION OVERWRITES AN EXISTING \code{README.Rmd} FILE
+#' from an external `csv` `input_file`.
+#' See `system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)`
+#' for the `input_file` template.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
+#'
+#' **THIS FUNCTION OVERWRITES AN EXISTING `README.Rmd` FILE
 #' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
-#' USE WITH CAUTION.
+#' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
+#' @examples
+#' \dontrun{
+#' pkg_readme(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage",
+#'   input_file = "DESCRIPTION.csv"
+#' )
+#' }
 #' @export
 pkg_readme <- function(pkg_dir = getwd(),
                        pkg_name,

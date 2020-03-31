@@ -1,6 +1,6 @@
 #' Load Packages.
 #'
-#' Checks if a character vector of \code{R} packages are installed,
+#' Checks if a character vector of `R` packages are installed,
 #' installs them if they are not currently installed,
 #' and loads them in the namespace.
 #'
@@ -10,6 +10,9 @@
 #'   Update installed packages.
 #' @inheritParams utils::update.packages
 #' @inheritParams utils::install.packages
+#' @importFrom utils update.packages
+#' @importFrom utils install.packages
+#' @importFrom utils installed.packages
 #' @examples
 #' \dontrun{
 #' pkg <- list(
@@ -18,9 +21,6 @@
 #' )
 #' pkg_load(pkg = pkg)
 #' }
-#' @importFrom utils update.packages
-#' @importFrom utils install.packages
-#' @importFrom utils installed.packages
 #' @export
 pkg_load <- function(pkg,
                      lib.loc = .libPaths()[1],

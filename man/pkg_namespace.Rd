@@ -2,12 +2,13 @@
 % Please edit documentation in R/pkg_namespace.R
 \name{pkg_namespace}
 \alias{pkg_namespace}
-\title{Create Boilerplate Package NAMESPACE.}
+\title{Create a Boilerplate Package \code{NAMESPACE}.}
 \usage{
 pkg_namespace(pkg_dir = getwd(), pkg_name, add = NULL)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
@@ -17,7 +18,24 @@ Entries to the \code{NAMESPACE}
 in addition to the boilerplate example.}
 }
 \description{
-Create Boilerplate Package NAMESPACE.
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+}
+\details{
+If you are going to document, check, and build your package using \code{devtools},
+you may delete the boillerplate \code{NAMESPACE} file.
+
+\strong{THIS FUNCTION OVERWRITES AN EXISTING \code{NAMESPACE} FILE
+IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+USE WITH CAUTION.}
+}
+\examples{
+\dontrun{
+pkg_namespace(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

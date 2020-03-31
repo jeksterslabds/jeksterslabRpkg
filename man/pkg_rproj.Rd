@@ -2,18 +2,33 @@
 % Please edit documentation in R/pkg_rproj.R
 \name{pkg_rproj}
 \alias{pkg_rproj}
-\title{Create Package .Rproj.}
+\title{Create a Package \code{.Rproj} File.}
 \usage{
 pkg_rproj(pkg_dir = getwd(), pkg_name)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 }
 \description{
-Create Package .Rproj.
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+}
+\details{
+\strong{THIS FUNCTION OVERWRITES AN EXISTING \code{.Rproj} FILE
+IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+USE WITH CAUTION.}
+}
+\examples{
+\dontrun{
+pkg_rproj(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

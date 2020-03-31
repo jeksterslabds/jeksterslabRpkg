@@ -2,18 +2,28 @@
 % Please edit documentation in R/pkg_test.R
 \name{pkg_test}
 \alias{pkg_test}
-\title{Create Boilerplate Package Test File.}
+\title{Create a Boilerplate Package Test File.}
 \usage{
 pkg_test(pkg_dir = getwd(), pkg_name)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 }
 \description{
-Create Boilerplate Package Test File.
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+}
+\examples{
+\dontrun{
+pkg_test(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

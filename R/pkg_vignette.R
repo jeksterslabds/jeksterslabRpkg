@@ -1,10 +1,20 @@
-#' Create Boilerplate Package Vignette.
+#' Create a Boilerplate Package Vignette File.
+#'
+#' Note that if [jeksterslabRpkg::pkg_create()] is used,
+#' this function will be called.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
+#' @examples
+#' \dontrun{
+#' pkg_vignette(
+#'   pkg_dir = getwd(),
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
-pkg_vignettes <- function(pkg_dir = getwd(),
-                          pkg_name) {
+pkg_vignette <- function(pkg_dir = getwd(),
+                         pkg_name) {
   root <- file.path(
     pkg_dir,
     pkg_name,

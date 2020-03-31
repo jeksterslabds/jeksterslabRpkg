@@ -2,12 +2,13 @@
 % Please edit documentation in R/pkg_rbuildignore.R
 \name{pkg_rbuildignore}
 \alias{pkg_rbuildignore}
-\title{Create Boilerplate Package .Rbuildignore.}
+\title{Create a Boilerplate Package \code{.Rbuildignore} File.}
 \usage{
 pkg_rbuildignore(pkg_dir = getwd(), pkg_name, add = NULL)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
@@ -17,7 +18,21 @@ Entries to the \code{.Rbuildignore}
 in addition to the boilerplate example.}
 }
 \description{
-Create Boilerplate Package .Rbuildignore.
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+}
+\details{
+If \code{.Rbuildignore} exists in the specified package root directory,
+it will \strong{NOT} be overwritten.
+Additional entries in the \code{add} argument will be appended.
+}
+\examples{
+\dontrun{
+pkg_rbuildignore(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

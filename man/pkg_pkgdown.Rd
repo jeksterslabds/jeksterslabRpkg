@@ -2,20 +2,38 @@
 % Please edit documentation in R/pkg_pkgdown.R
 \name{pkg_pkgdown}
 \alias{pkg_pkgdown}
-\title{Create Boilerplate Package .travis.yml.}
+\title{Create a Boilerplate Package \verb{_pkgdown.yml}.}
 \usage{
 pkg_pkgdown(pkg_dir = getwd(), pkg_name, input_file = NULL)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 
-\item{input_file}{csv file containing \code{DESCRIPTION} fields and entries.}
+\item{input_file}{Character string.
+csv file containing \code{DESCRIPTION} fields and entries.}
 }
 \description{
-Creates .travis.yml with \code{codecov}.
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+and the argument \code{pkgdown = TRUE} is specified,
+this function will be called.
+}
+\details{
+\strong{THIS FUNCTION OVERWRITES AN EXISTING \verb{_pkgdown.yml} FILE
+IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+USE WITH CAUTION.}
+}
+\examples{
+\dontrun{
+pkg_pkgdown(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage",
+  input_file = "DESCRIPTION.csv"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

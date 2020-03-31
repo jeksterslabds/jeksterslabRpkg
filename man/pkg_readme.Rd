@@ -2,27 +2,43 @@
 % Please edit documentation in R/pkg_readme.R
 \name{pkg_readme}
 \alias{pkg_readme}
-\title{Create Package README.}
+\title{Create a Boilerplate Package README File.}
 \usage{
 pkg_readme(pkg_dir = getwd(), pkg_name, input_file = NULL)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 
-\item{input_file}{csv file containing \code{DESCRIPTION} fields and entries.}
+\item{input_file}{Character string.
+csv file containing \code{DESCRIPTION} fields and entries.}
 }
 \description{
-Creates package \code{README.Rmd}
+Creates a boilerplate package \code{README.Rmd} file
 by extracting information
 from an external \code{csv} \code{input_file}.
 See \code{system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)}
-For the \code{input_file} template.
-THIS FUNCTION OVERWRITES AN EXISTING \code{README.Rmd} FILE
+for the \code{input_file} template.
+}
+\details{
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+
+\strong{THIS FUNCTION OVERWRITES AN EXISTING \code{README.Rmd} FILE
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
-USE WITH CAUTION.
+USE WITH CAUTION.}
+}
+\examples{
+\dontrun{
+pkg_readme(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage",
+  input_file = "DESCRIPTION.csv"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

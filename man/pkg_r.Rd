@@ -2,18 +2,28 @@
 % Please edit documentation in R/pkg_r.R
 \name{pkg_r}
 \alias{pkg_r}
-\title{Create Boilerplate Package R Script.}
+\title{Create a Boilerplate Package \code{R} Script.}
 \usage{
 pkg_r(pkg_dir = getwd(), pkg_name)
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 }
 \description{
-Create Boilerplate Package R Script.
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+}
+\examples{
+\dontrun{
+pkg_r(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -1,23 +1,29 @@
-#' Render R Markdown Files in the Package Directory.
+#' Render `R` Markdown Files in the Package Directory.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param readme Logical.
-#'   Render \code{README.Rmd}.
+#'   Render `README.Rmd`.
 #' @param vignettes Logical.
-#'   Render vignettes.
+#'   Render `vignettes/*.Rmd`.
 #' @param tests Logical.
-#'   Render tests.
-#' @inheritParams pkg_create
+#'   Render `tests/testhat/*.R`.
+#' @inheritParams pkg_description
 #' @inheritParams jeksterslabRutils::util_lapply
-#' @examples
-#' \dontrun{
-#' pkg_render()
-#' }
 #' @importFrom utils glob2rx
 #' @importFrom rmarkdown render
 #' @importFrom rprojroot find_root
 #' @importFrom jeksterslabRutils util_lapply
 #' @importFrom jeksterslabRutils util_render
+#' @examples
+#' \dontrun{
+#' pkg_render(
+#'   pkg_dir = getwd(),
+#'   readme = TRUE,
+#'   vignettes = TRUE,
+#'   tests = TRUE,
+#'   par = FALSE
+#' )
+#' }
 #' @export
 pkg_render <- function(pkg_dir = getwd(),
                        readme = TRUE,
