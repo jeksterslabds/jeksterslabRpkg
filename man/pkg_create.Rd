@@ -2,32 +2,51 @@
 % Please edit documentation in R/pkg_create.R
 \name{pkg_create}
 \alias{pkg_create}
-\title{Create Boilerplate Package R Package.}
+\title{Create a Boilerplate \code{R} Package.}
 \usage{
 pkg_create(
   pkg_dir = getwd(),
   pkg_name = "boilerplatePackage",
   input_file = NULL,
+  pkgdown = FALSE,
+  travis = FALSE,
+  appveyor = FALSE,
+  readme = FALSE,
   add_description = NULL,
   add_namespace = NULL,
   add_rbuildignore = NULL,
   add_gitignore = NULL,
   add_travis = NULL,
+  add_appveyor = NULL,
   git = FALSE,
   github = FALSE
 )
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{pkg_name}{Character string.
 Package name.}
 
-\item{input_file}{csv file containing \code{DESCRIPTION} fields and entries.}
+\item{input_file}{Character string.
+csv file containing \code{DESCRIPTION} fields and entries.}
+
+\item{pkgdown}{Logical.
+Create \code{pkgdown} \code{YAML} file.}
+
+\item{travis}{Logical.
+Create \code{travis} \code{YAML} file.}
+
+\item{appveyor}{Logical.
+Create \code{appveyor} \code{YAML} file.}
+
+\item{readme}{Logical.
+Create \code{README.Rmd} file.}
 
 \item{add_description}{Character string.
 Additional entries to the \code{DESCRIPTION} file
-not included in \code{input_file}}
+not included in \code{input_file}.}
 
 \item{add_namespace}{Character string.
 Entries to the \code{NAMESPACE}
@@ -45,6 +64,10 @@ in addition to the boilerplate example.}
 Entries to the \code{.travis.yml}
 in addition to the boilerplate example.}
 
+\item{add_appveyor}{Character string.
+Entries to the \code{appveyor.yml}
+in addition to the boilerplate example.}
+
 \item{git}{Logical.
 Set up a git repository.}
 
@@ -52,7 +75,45 @@ Set up a git repository.}
 Set up and push to a github repository.}
 }
 \description{
-Create Boilerplate Package R Package.
+Creates a boilerplate \code{R} package by generating the following:
+\itemize{
+\item \code{DESCRIPTION} file
+(see \code{\link[jeksterslabRpkg:pkg_description]{jeksterslabRpkg::pkg_description()}}),
+\item \code{NAMESPACE} file
+(see \code{\link[jeksterslabRpkg:pkg_namespace]{jeksterslabRpkg::pkg_namespace()}}),
+\item \code{LICENSE} and \code{LICENSE.md}
+(see \code{\link[jeksterslabRpkg:pkg_license]{jeksterslabRpkg::pkg_license()}}),
+\item a simple \code{R} script and accompanying \code{Rd} documentation file
+(see \code{\link[jeksterslabRpkg:pkg_r]{jeksterslabRpkg::pkg_r()}} and \code{\link[jeksterslabRpkg:pkg_rd]{jeksterslabRpkg::pkg_rd()}}),
+\item sample data, test, and vignette
+(see \code{\link[jeksterslabRpkg:pkg_data]{jeksterslabRpkg::pkg_data()}}, (see \code{\link[jeksterslabRpkg:pkg_test]{jeksterslabRpkg::pkg_test()}}, and
+\code{\link[jeksterslabRpkg:pkg_vignette]{jeksterslabRpkg::pkg_vignette()}}),
+\item optional \code{pkgdown} and \code{travis} \code{YAML} files
+(see \code{\link[jeksterslabRpkg:pkg_pkgdown]{jeksterslabRpkg::pkg_pkgdown()}} and \code{\link[jeksterslabRpkg:pkg_travis]{jeksterslabRpkg::pkg_travis()}}),
+\item oprional \code{README.Rmd} file
+(see \code{\link[jeksterslabRpkg:pkg_readme]{jeksterslabRpkg::pkg_readme()}}), and
+\item other files like \code{.Rbuildignore}, \code{.gitignore}, and \code{Rproj}.
+}
+}
+\details{
+Optionally, the function can also set up a \code{Git} repository
+and push the created repo to \code{Github}.
+This requires that \code{git} and \code{hub} are installed
+and configured in the system.
+
+If you are going to document, check, and build your package using \code{devtools},
+you may delete the boillerplate \code{NAMESPACE} and \code{MAN} files.
+}
+\examples{
+\dontrun{
+pkg_create(
+  pkg_dir = getwd(),
+  pkg_name = "boilerplatePackage",
+  input_file = "DESCRIPTION.csv",
+  git = TRUE,
+  github = TRUE
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
