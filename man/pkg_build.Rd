@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_build.R
 \name{pkg_build}
 \alias{pkg_build}
-\title{Build Package}
+\title{Build Package.}
 \usage{
 pkg_build(
   pkg_dir = getwd(),
@@ -18,7 +18,8 @@ pkg_build(
 )
 }
 \arguments{
-\item{pkg_dir}{Directory where the package is initialized.}
+\item{pkg_dir}{Character string.
+Directory where the package is initialized.}
 
 \item{style}{Logical.
 Style R scripts and R Markdown files.}
@@ -27,18 +28,18 @@ Style R scripts and R Markdown files.}
 Generate data from \code{data_raw}.}
 
 \item{render}{Logical.
-Render R scripts and R Markdown files.}
+Render \code{R} scripts and \code{R} Markdown files.}
 
 \item{readme}{Logical.
 Render \code{README.Rmd}.
 Ignored if \code{render = FALSE}.}
 
 \item{vignettes}{Logical.
-Render \code{vignettes}.
+Render \verb{vignettes/*.Rmd}.
 Ignored if \code{render = FALSE}.}
 
 \item{tests}{Logical.
-Render \code{tests}.
+Render \verb{tests/testhat/*.R}.
 Ignored if \code{render = FALSE}.}
 
 \item{pkgdown}{Logical.
@@ -52,7 +53,28 @@ Number of cores to use if \code{par = TRUE}.
 If unspecified, defaults to \code{detectCores() - 1}.}
 }
 \description{
-Build Package
+Builds the \code{R} package on \code{pkg_dir} by:
+\itemize{
+\item styling the \code{R} scripts and \code{R} Markdown files,
+\item building package data by running \code{R} scripts stored in \code{data_raw},
+\item rendering the \code{R} scripts and \code{R} Markdown files using \code{\link[rmarkdown:render]{rmarkdown::render()}}, and
+\item building \code{pkgdown} site.
+}
+}
+\examples{
+\dontrun{
+pkg_build(
+  pkg_dir = getwd(),
+  style = TRUE,
+  data = TRUE,
+  render = TRUE,
+  readme = TRUE,
+  vignettes = TRUE,
+  tests = TRUE,
+  pkgdown = TRUE,
+  par = FALSE
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

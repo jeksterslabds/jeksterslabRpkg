@@ -1,23 +1,29 @@
-#' Build Package
+#' Build Package.
+#'
+#' Builds the `R` package on `pkg_dir` by:
+#'   - styling the `R` scripts and `R` Markdown files,
+#'   - building package data by running `R` scripts stored in `data_raw`,
+#'   - rendering the `R` scripts and `R` Markdown files using [rmarkdown::render()], and
+#'   - building `pkgdown` site.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param style Logical.
 #'   Style R scripts and R Markdown files.
 #' @param data Logical.
-#'   Generate data from \code{data_raw}.
+#'   Generate data from `data_raw`.
 #' @param render Logical.
-#'   Render R scripts and R Markdown files.
+#'   Render `R` scripts and `R` Markdown files.
 #' @param readme Logical.
-#'   Render \code{README.Rmd}.
-#'   Ignored if \code{render = FALSE}.
+#'   Render `README.Rmd`.
+#'   Ignored if `render = FALSE`.
 #' @param vignettes Logical.
-#'   Render \code{vignettes}.
-#'   Ignored if \code{render = FALSE}.
+#'   Render `vignettes/*.Rmd`.
+#'   Ignored if `render = FALSE`.
 #' @param tests Logical.
-#'   Render \code{tests}.
-#'   Ignored if \code{render = FALSE}.
+#'   Render `tests/testhat/*.R`.
+#'   Ignored if `render = FALSE`.
 #' @param pkgdown Logical.
-#'   Build \code{pkgdown} site.
+#'   Build `pkgdown` site.
 #' @inheritParams pkg_description
 #' @inheritParams jeksterslabRutils::util_lapply
 #' @importFrom devtools document
@@ -25,6 +31,20 @@
 #' @importFrom devtools check
 #' @importFrom devtools install
 #' @importFrom jeksterslabRutils util_style
+#' @examples
+#' \dontrun{
+#' pkg_build(
+#'   pkg_dir = getwd(),
+#'   style = TRUE,
+#'   data = TRUE,
+#'   render = TRUE,
+#'   readme = TRUE,
+#'   vignettes = TRUE,
+#'   tests = TRUE,
+#'   pkgdown = TRUE,
+#'   par = FALSE
+#' )
+#' }
 #' @export
 pkg_build <- function(pkg_dir = getwd(),
                       style = TRUE,
@@ -80,8 +100,14 @@ pkg_build <- function(pkg_dir = getwd(),
     )
   }
   if (pkgdown) {
-    build_site(pkg = pkg_dir)
+    build_site(
+      pkg = pkg_dir
+    )
   }
-  check(pkg = pkg_dir)
-  install(pkg = pkg_dir)
+  check(
+    pkg = pkg_dir
+  )
+  install(
+    pkg = pkg_dir
+  )
 }
