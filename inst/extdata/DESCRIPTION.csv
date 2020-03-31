@@ -15,3 +15,4 @@ Depends,"Dependency (separated by ,[[:space:]]).",R (>= 3.2)
 Imports,"Imported packages (separated by ,[[:space:]]). Versions can be specified inside a parenthesis. For example, ggplot2 (>= 3.2.1), dplyr (>= 0.8.4)",utils
 Suggests,Suggested packages. Same format as Imports.,"knitr, rmarkdown, testthat"
 VignetteBuilder,Vignette Builder,knitr
+Roxygen,"Roxygen options. For example, list(markdown = TRUE) enables markdown.",list(markdown = TRUE)
