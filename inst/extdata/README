@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/GITHUBACCOUNT/BOILERPLATEPACKAGE.svg?branch=master)](https://travis-ci.org/GITHUBACCOUNT/BOILERPLATEPACKAGE)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/GITHUBACCOUNT/BOILERPLATEPACKAGE?branch=master&svg=true)](https://ci.appveyor.com/project/GITHUBACCOUNT/BOILERPLATEPACKAGE)
 [![codecov](https://codecov.io/github/GITHUBACCOUNT/BOILERPLATEPACKAGE/branch/master/graphs/badge.svg)](https://codecov.io/github/GITHUBACCOUNT/BOILERPLATEPACKAGE) 
 <!-- badges: end -->
 
