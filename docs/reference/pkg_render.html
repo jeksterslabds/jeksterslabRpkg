@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Render R Markdown Files in the Package Directory. — pkg_render • jeksterslabRpkg</title>
+<title>Render <code>R</code> Markdown Files in the Package Directory. — pkg_render • jeksterslabRpkg</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Render R Markdown Files in the Package Directory. — pkg_render" />
+<meta property="og:title" content="Render <code>R</code> Markdown Files in the Package Directory. — pkg_render" />
 <meta property="og:description" content="Render R Markdown Files in the Package Directory." />
 
 
@@ -108,13 +108,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Render R Markdown Files in the Package Directory.</h1>
+    <h1>Render <code>R</code> Markdown Files in the Package Directory.</h1>
     <small class="dont-index">Source: <a href='https://github.com/jeksterslabds/jeksterslabRpkg/blob/master/R/pkg_render.R'><code>R/pkg_render.R</code></a></small>
     <div class="hidden name"><code>pkg_render.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Render R Markdown Files in the Package Directory.</p>
+    <p>Render <code>R</code> Markdown Files in the Package Directory.</p>
     </div>
 
     <pre class="usage"><span class='fu'>pkg_render</span>(
@@ -131,7 +131,8 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pkg_dir</th>
-      <td><p>Directory where the package is initialized.</p></td>
+      <td><p>Character string.
+Directory where the package is initialized.</p></td>
     </tr>
     <tr>
       <th>readme</th>
@@ -141,12 +142,12 @@ Render <code>README.Rmd</code>.</p></td>
     <tr>
       <th>vignettes</th>
       <td><p>Logical.
-Render vignettes.</p></td>
+Render <code>vignettes/*.Rmd</code>.</p></td>
     </tr>
     <tr>
       <th>tests</th>
       <td><p>Logical.
-Render tests.</p></td>
+Render <code>tests/testhat/*.R</code>.</p></td>
     </tr>
     <tr>
       <th>par</th>
@@ -164,7 +165,13 @@ If unspecified, defaults to <code>detectCores() - 1</code>.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>pkg_render</span>()
+<span class='fu'>pkg_render</span>(
+  <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
+  <span class='kw'>readme</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>vignettes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tests</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>par</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

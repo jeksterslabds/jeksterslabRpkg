@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create Boilerplate Package .travis.yml. — pkg_travis • jeksterslabRpkg</title>
+<title>Create Boilerplate Package <code>.travis.yml</code> File. — pkg_travis • jeksterslabRpkg</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Create Boilerplate Package .travis.yml. — pkg_travis" />
-<meta property="og:description" content="Creates .travis.yml with codecov." />
+<meta property="og:title" content="Create Boilerplate Package <code>.travis.yml</code> File. — pkg_travis" />
+<meta property="og:description" content="Creates a .travis.yml build file
+with additional entries for codecov." />
 
 
 
@@ -108,13 +109,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create Boilerplate Package .travis.yml.</h1>
+    <h1>Create Boilerplate Package <code>.travis.yml</code> File.</h1>
     <small class="dont-index">Source: <a href='https://github.com/jeksterslabds/jeksterslabRpkg/blob/master/R/pkg_travis.R'><code>R/pkg_travis.R</code></a></small>
     <div class="hidden name"><code>pkg_travis.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates .travis.yml with <code>codecov</code>.</p>
+    <p>Creates a <code>.travis.yml</code> build file
+with additional entries for <code>codecov</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>pkg_travis</span>(<span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(), <span class='no'>pkg_name</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -124,7 +126,8 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pkg_dir</th>
-      <td><p>Directory where the package is initialized.</p></td>
+      <td><p>Character string.
+Directory where the package is initialized.</p></td>
     </tr>
     <tr>
       <th>pkg_name</th>
@@ -134,12 +137,26 @@ Package name.</p></td>
     <tr>
       <th>add</th>
       <td><p>Character string.
-Entries to the <code>.gitignore</code>
+Entries to the <code>.travis.yml</code>
 in addition to the boilerplate example.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
+    <p>Note that if <code><a href='pkg_create.html'>jeksterslabRpkg::pkg_create()</a></code> is used,
+this function will be called.</p>
+<p><strong>THIS FUNCTION OVERWRITES AN EXISTING <code>.travis.yml</code> FILE
+IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+USE WITH CAUTION.</strong></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'>pkg_travis</span>(
+  <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
+  <span class='kw'>pkg_name</span> <span class='kw'>=</span> <span class='st'>"boilerplatePackage"</span>
+)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

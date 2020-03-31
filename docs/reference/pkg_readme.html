@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create Package README. — pkg_readme • jeksterslabRpkg</title>
+<title>Create a Boilerplate Package README File. — pkg_readme • jeksterslabRpkg</title>
 
 
 <!-- jquery -->
@@ -39,15 +39,12 @@
 
 
 
-<meta property="og:title" content="Create Package README. — pkg_readme" />
-<meta property="og:description" content="Creates package README.Rmd
+<meta property="og:title" content="Create a Boilerplate Package README File. — pkg_readme" />
+<meta property="og:description" content="Creates a boilerplate package README.Rmd file
 by extracting information
 from an external csv input_file.
 See system.file(&quot;extdata&quot;, &quot;DESCRIPTION.csv&quot;, package = &quot;jeksterslabRpkg&quot;, mustWork = TRUE)
-For the input_file template.
-THIS FUNCTION OVERWRITES AN EXISTING README.Rmd FILE
-IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
-USE WITH CAUTION." />
+for the input_file template." />
 
 
 
@@ -115,20 +112,17 @@ USE WITH CAUTION." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create Package README.</h1>
+    <h1>Create a Boilerplate Package README File.</h1>
     <small class="dont-index">Source: <a href='https://github.com/jeksterslabds/jeksterslabRpkg/blob/master/R/pkg_readme.R'><code>R/pkg_readme.R</code></a></small>
     <div class="hidden name"><code>pkg_readme.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates package <code>README.Rmd</code>
+    <p>Creates a boilerplate package <code>README.Rmd</code> file
 by extracting information
 from an external <code>csv</code> <code>input_file</code>.
 See <code><a href='https://rdrr.io/r/base/system.file.html'>system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)</a></code>
-For the <code>input_file</code> template.
-THIS FUNCTION OVERWRITES AN EXISTING <code>README.Rmd</code> FILE
-IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
-USE WITH CAUTION.</p>
+for the <code>input_file</code> template.</p>
     </div>
 
     <pre class="usage"><span class='fu'>pkg_readme</span>(<span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(), <span class='no'>pkg_name</span>, <span class='kw'>input_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -138,7 +132,8 @@ USE WITH CAUTION.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pkg_dir</th>
-      <td><p>Directory where the package is initialized.</p></td>
+      <td><p>Character string.
+Directory where the package is initialized.</p></td>
     </tr>
     <tr>
       <th>pkg_name</th>
@@ -147,11 +142,27 @@ Package name.</p></td>
     </tr>
     <tr>
       <th>input_file</th>
-      <td><p>csv file containing <code>DESCRIPTION</code> fields and entries.</p></td>
+      <td><p>Character string.
+csv file containing <code>DESCRIPTION</code> fields and entries.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
+    <p>Note that if <code><a href='pkg_create.html'>jeksterslabRpkg::pkg_create()</a></code> is used,
+this function will be called.</p>
+<p><strong>THIS FUNCTION OVERWRITES AN EXISTING <code>README.Rmd</code> FILE
+IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
+USE WITH CAUTION.</strong></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'>pkg_readme</span>(
+  <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
+  <span class='kw'>pkg_name</span> <span class='kw'>=</span> <span class='st'>"boilerplatePackage"</span>,
+  <span class='kw'>input_file</span> <span class='kw'>=</span> <span class='st'>"DESCRIPTION.csv"</span>
+)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

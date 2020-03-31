@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Build Package — pkg_build • jeksterslabRpkg</title>
+<title>Build Package. — pkg_build • jeksterslabRpkg</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,14 @@
 
 
 
-<meta property="og:title" content="Build Package — pkg_build" />
-<meta property="og:description" content="Build Package" />
+<meta property="og:title" content="Build Package. — pkg_build" />
+<meta property="og:description" content="Builds the R package on pkg_dir by:
+styling the R scripts and R Markdown files,
+building package data by running R scripts stored in data_raw,
+rendering the R scripts and R Markdown files using rmarkdown::render(), and
+building pkgdown site.
+
+" />
 
 
 
@@ -108,13 +114,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Build Package</h1>
+    <h1>Build Package.</h1>
     <small class="dont-index">Source: <a href='https://github.com/jeksterslabds/jeksterslabRpkg/blob/master/R/pkg_build.R'><code>R/pkg_build.R</code></a></small>
     <div class="hidden name"><code>pkg_build.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Build Package</p>
+    <p>Builds the <code>R</code> package on <code>pkg_dir</code> by:</p><ul>
+<li><p>styling the <code>R</code> scripts and <code>R</code> Markdown files,</p></li>
+<li><p>building package data by running <code>R</code> scripts stored in <code>data_raw</code>,</p></li>
+<li><p>rendering the <code>R</code> scripts and <code>R</code> Markdown files using <code><a href='https://rdrr.io/pkg/rmarkdown/man/render.html'>rmarkdown::render()</a></code>, and</p></li>
+<li><p>building <code>pkgdown</code> site.</p></li>
+</ul>
+
     </div>
 
     <pre class="usage"><span class='fu'>pkg_build</span>(
@@ -135,7 +147,8 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pkg_dir</th>
-      <td><p>Directory where the package is initialized.</p></td>
+      <td><p>Character string.
+Directory where the package is initialized.</p></td>
     </tr>
     <tr>
       <th>style</th>
@@ -150,7 +163,7 @@ Generate data from <code>data_raw</code>.</p></td>
     <tr>
       <th>render</th>
       <td><p>Logical.
-Render R scripts and R Markdown files.</p></td>
+Render <code>R</code> scripts and <code>R</code> Markdown files.</p></td>
     </tr>
     <tr>
       <th>readme</th>
@@ -161,13 +174,13 @@ Ignored if <code>render = FALSE</code>.</p></td>
     <tr>
       <th>vignettes</th>
       <td><p>Logical.
-Render <code>vignettes</code>.
+Render <code>vignettes/*.Rmd</code>.
 Ignored if <code>render = FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>tests</th>
       <td><p>Logical.
-Render <code>tests</code>.
+Render <code>tests/testhat/*.R</code>.
 Ignored if <code>render = FALSE</code>.</p></td>
     </tr>
     <tr>
@@ -189,6 +202,20 @@ If unspecified, defaults to <code>detectCores() - 1</code>.</p></td>
     </table>
 
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'>pkg_build</span>(
+  <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
+  <span class='kw'>style</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>data</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>render</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>readme</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>vignettes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>tests</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>pkgdown</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>par</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

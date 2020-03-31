@@ -4,6 +4,9 @@
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//index.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_appveyor.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_build.html</loc>
   </url>
   <url>
@@ -55,6 +58,6 @@
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_travis.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_vignettes.html</loc>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_vignette.html</loc>
   </url>
 </urlset>
