@@ -14,14 +14,16 @@ Directory where the package is initialized.}
 Package name.}
 
 \item{input_file}{Character string.
-csv file containing \code{DESCRIPTION} fields and entries.}
+\code{csv} file containing \code{DESCRIPTION} fields and entries.}
 }
 \description{
+Creates a \verb{_pkgdown.yml} build file.
+}
+\details{
 Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
 and the argument \code{pkgdown = TRUE} is specified,
 this function will be called.
-}
-\details{
+
 \strong{THIS FUNCTION OVERWRITES AN EXISTING \verb{_pkgdown.yml} FILE
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
 USE WITH CAUTION.}

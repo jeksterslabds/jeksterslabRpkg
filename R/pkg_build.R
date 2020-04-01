@@ -203,6 +203,7 @@ pkg_build <- function(pkg_root = NULL,
       }
     }
     if (render) {
+      cat("Rendering...\n")
       tryCatch(
         {
           pkg_render(

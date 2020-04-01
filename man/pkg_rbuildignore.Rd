@@ -18,10 +18,12 @@ Entries to the \code{.Rbuildignore}
 in addition to the boilerplate example.}
 }
 \description{
-Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
-this function will be called.
+Creates a boilerplate package \code{.Rbuildignore} file.
 }
 \details{
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+
 If \code{.Rbuildignore} exists in the specified package root directory,
 it will \strong{NOT} be overwritten.
 Additional entries in the \code{add} argument will be appended.

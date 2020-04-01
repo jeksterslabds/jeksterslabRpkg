@@ -40,9 +40,7 @@
 
 
 <meta property="og:title" content="Create a Boilerplate Package <code>_pkgdown.yml</code>. — pkg_pkgdown" />
-<meta property="og:description" content="Note that if jeksterslabRpkg::pkg_create() is used,
-and the argument pkgdown = TRUE is specified,
-this function will be called." />
+<meta property="og:description" content="Creates a _pkgdown.yml build file." />
 
 
 
@@ -116,9 +114,7 @@ this function will be called." />
     </div>
 
     <div class="ref-description">
-    <p>Note that if <code><a href='pkg_create.html'>jeksterslabRpkg::pkg_create()</a></code> is used,
-and the argument <code>pkgdown = TRUE</code> is specified,
-this function will be called.</p>
+    <p>Creates a <code>_pkgdown.yml</code> build file.</p>
     </div>
 
     <pre class="usage"><span class='fu'>pkg_pkgdown</span>(<span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(), <span class='no'>pkg_name</span>, <span class='kw'>input_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -139,13 +135,16 @@ Package name.</p></td>
     <tr>
       <th>input_file</th>
       <td><p>Character string.
-csv file containing <code>DESCRIPTION</code> fields and entries.</p></td>
+<code>csv</code> file containing <code>DESCRIPTION</code> fields and entries.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><strong>THIS FUNCTION OVERWRITES AN EXISTING <code>_pkgdown.yml</code> FILE
+    <p>Note that if <code><a href='pkg_create.html'>jeksterslabRpkg::pkg_create()</a></code> is used,
+and the argument <code>pkgdown = TRUE</code> is specified,
+this function will be called.</p>
+<p><strong>THIS FUNCTION OVERWRITES AN EXISTING <code>_pkgdown.yml</code> FILE
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
 USE WITH CAUTION.</strong></p>
 

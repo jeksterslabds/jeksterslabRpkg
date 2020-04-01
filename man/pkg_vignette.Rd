@@ -14,6 +14,9 @@ Directory where the package is initialized.}
 Package name.}
 }
 \description{
+Creates a boilerplate package vignette file.
+}
+\details{
 Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
 this function will be called.
 }

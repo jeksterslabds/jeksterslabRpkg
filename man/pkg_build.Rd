@@ -24,13 +24,13 @@ Package root directory.}
 
 \item{minimal}{Logical.
 If \code{TRUE}, minimal check, build, and install
-using \verb{R CMD}
+using \verb{R CMD} will be performed,
 ignoring all the other function arguments.
 If \code{FALSE}, a more thorough check is performed
 with additional options.}
 
 \item{style}{Logical.
-Style R scripts and R Markdown files.}
+Style \code{R} scripts and \code{R} Markdown files.}
 
 \item{data}{Logical.
 Generate data from \code{data_raw}.}
@@ -68,9 +68,6 @@ Builds the \code{R} package on \code{pkg_root} by:
 \item rendering the \code{R} scripts and \code{R} Markdown files using \code{\link[rmarkdown:render]{rmarkdown::render()}}, and
 \item building \code{pkgdown} site.
 }
-}
-\details{
-Some features of this function requires
 }
 \examples{
 \dontrun{

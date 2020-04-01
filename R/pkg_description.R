@@ -3,7 +3,7 @@
 #' Creates a package `DESCRIPTION` file
 #' by extracting information
 #' from an external `csv` `input_file`.
-#' See [system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)]
+#' See `system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)`
 #' for the `input_file` template.
 #'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,

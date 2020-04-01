@@ -18,12 +18,14 @@ Entries to the \code{NAMESPACE}
 in addition to the boilerplate example.}
 }
 \description{
-Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
-this function will be called.
+Creates a boilerplate package \code{NAMESPACE}.
 }
 \details{
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+
 If you are going to document, check, and build your package using \code{devtools},
-you may delete the boillerplate \code{NAMESPACE} file.
+you may delete the boilerplate \code{NAMESPACE} file.
 
 \strong{THIS FUNCTION OVERWRITES AN EXISTING \code{NAMESPACE} FILE
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.

@@ -40,8 +40,7 @@
 
 
 <meta property="og:title" content="Create a Boilerplate Package <code>NAMESPACE</code>. — pkg_namespace" />
-<meta property="og:description" content="Note that if jeksterslabRpkg::pkg_create() is used,
-this function will be called." />
+<meta property="og:description" content="Creates a boilerplate package NAMESPACE." />
 
 
 
@@ -115,8 +114,7 @@ this function will be called." />
     </div>
 
     <div class="ref-description">
-    <p>Note that if <code><a href='pkg_create.html'>jeksterslabRpkg::pkg_create()</a></code> is used,
-this function will be called.</p>
+    <p>Creates a boilerplate package <code>NAMESPACE</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>pkg_namespace</span>(<span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(), <span class='no'>pkg_name</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -144,8 +142,10 @@ in addition to the boilerplate example.</p></td>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>If you are going to document, check, and build your package using <code>devtools</code>,
-you may delete the boillerplate <code>NAMESPACE</code> file.</p>
+    <p>Note that if <code><a href='pkg_create.html'>jeksterslabRpkg::pkg_create()</a></code> is used,
+this function will be called.</p>
+<p>If you are going to document, check, and build your package using <code>devtools</code>,
+you may delete the boilerplate <code>NAMESPACE</code> file.</p>
 <p><strong>THIS FUNCTION OVERWRITES AN EXISTING <code>NAMESPACE</code> FILE
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
 USE WITH CAUTION.</strong></p>

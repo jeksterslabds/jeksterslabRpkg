@@ -30,7 +30,7 @@ Directory where the package is initialized.}
 Package name.}
 
 \item{input_file}{Character string.
-csv file containing \code{DESCRIPTION} fields and entries.}
+\code{csv} file containing \code{DESCRIPTION} fields and entries.}
 
 \item{pkgdown}{Logical.
 Create \code{pkgdown} \code{YAML} file.}
@@ -102,7 +102,7 @@ This requires that \code{git} and \code{hub} are installed
 and configured in the system.
 
 If you are going to document, check, and build your package using \code{devtools},
-you may delete the boillerplate \code{NAMESPACE} and \code{MAN} files.
+you may delete the boilerplate \code{NAMESPACE} and \code{MAN} files.
 }
 \examples{
 \dontrun{

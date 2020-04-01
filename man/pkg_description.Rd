@@ -14,7 +14,7 @@ Directory where the package is initialized.}
 Package name.}
 
 \item{input_file}{Character string.
-csv file containing \code{DESCRIPTION} fields and entries.}
+\code{csv} file containing \code{DESCRIPTION} fields and entries.}
 
 \item{add}{Character string.
 Additional entries to the \code{DESCRIPTION} file

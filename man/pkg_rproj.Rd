@@ -14,10 +14,12 @@ Directory where the package is initialized.}
 Package name.}
 }
 \description{
-Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
-this function will be called.
+Creates a package \code{.Rproj} file.
 }
 \details{
+Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+this function will be called.
+
 \strong{THIS FUNCTION OVERWRITES AN EXISTING \code{.Rproj} FILE
 IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
 USE WITH CAUTION.}

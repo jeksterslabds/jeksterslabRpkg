@@ -34,7 +34,7 @@ Number of cores to use if \code{par = TRUE}.
 If unspecified, defaults to \code{detectCores() - 1}.}
 }
 \description{
-Render \code{R} Markdown Files in the Package Directory.
+Renders \code{R} Markdown files in the package directory.
 }
 \examples{
 \dontrun{

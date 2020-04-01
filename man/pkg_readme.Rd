@@ -14,7 +14,7 @@ Directory where the package is initialized.}
 Package name.}
 
 \item{input_file}{Character string.
-csv file containing \code{DESCRIPTION} fields and entries.}
+\code{csv} file containing \code{DESCRIPTION} fields and entries.}
 }
 \description{
 Creates a boilerplate package \code{README.Rmd} file
