@@ -6,19 +6,17 @@
 #'   - rendering the `R` scripts and `R` Markdown files using [rmarkdown::render()], and
 #'   - building `pkgdown` site.
 #'
-#' Some features of this function requires
-#'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param minimal Logical.
 #'   If `TRUE`, minimal check, build, and install
-#'   using `R CMD`
+#'   using `R CMD` will be performed,
 #'   ignoring all the other function arguments.
 #'   If `FALSE`, a more thorough check is performed
 #'   with additional options.
 #' @param pkg_root Character string.
 #'   Package root directory.
 #' @param style Logical.
-#'   Style R scripts and R Markdown files.
+#'   Style `R` scripts and `R` Markdown files.
 #' @param data Logical.
 #'   Generate data from `data_raw`.
 #' @param render Logical.
@@ -50,19 +48,39 @@
 #' }
 #' @export
 pkg_build <- function(pkg_root = NULL,
-                      minimal = TRUE,
+                      minimal = FALSE,
                       style = TRUE,
                       data = TRUE,
                       render = TRUE,
                       readme = TRUE,
                       vignettes = TRUE,
-                      tests = TRUE,
+                      tests = FALSE,
                       pkgdown = TRUE,
                       par = TRUE,
                       ncores = NULL) {
   if (is.null(pkg_root)) {
     pkg_root <- getwd()
   }
+  if (!file.exists(
+    file.path(
+      pkg_root,
+      "DESCRIPTION"
+    )
+  )
+  ) {
+    stop("Not a valid package root directory.\n")
+  }
+  pkg_name <- basename(pkg_root)
+  cat(
+    paste0(
+      "Building ",
+      pkg_name,
+      "\n",
+      "Path: ",
+      pkg_root,
+      "\n"
+    )
+  )
   wd <- getwd()
   if (minimal) {
     tmp <- tempdir()
@@ -73,40 +91,55 @@ pkg_build <- function(pkg_root = NULL,
       ),
       "*.tar.gz"
     )
-    try(
-      system(
-        paste(
-          "R CMD build",
-          "--no-build-vignettes ",
-          "--no-manual",
-          pkg_root
+    tryCatch(
+      {
+        system(
+          paste(
+            "R CMD build",
+            "--no-build-vignettes ",
+            "--no-manual",
+            pkg_root
+          )
         )
-      )
+      },
+      error = function(err) {
+        cat("Error in `R CMD build`.\n")
+      }
     )
-    try(
-      system(
-        paste(
-          "R CMD check",
-          "--no-clean",
-          "--no-codoc",
-          "--no-examples",
-          "--no-install",
-          "--no-tests",
-          "--no-manual",
-          "--no-vignettes",
-          "--no-build-vignettes",
-          "--no-multiarch",
-          gz
+    tryCatch(
+      {
+        system(
+          paste(
+            "R CMD check",
+            "--no-clean",
+            "--no-codoc",
+            "--no-examples",
+            "--no-install",
+            "--no-tests",
+            "--no-manual",
+            "--no-vignettes",
+            "--no-build-vignettes",
+            "--no-multiarch",
+            gz
+          )
         )
-      )
+      },
+      error = function(err) {
+        cat("Error in `R CMD check`.\n")
+      }
     )
-    try(
-      system(
-        paste(
-          "R CMD INSTALL",
-          gz
+    tryCatch(
+      {
+        system(
+          paste(
+            "R CMD INSTALL",
+            gz
+          )
         )
-      )
+      },
+      error = function(err) {
+        cat("Error in `R CMD INSTALL`.\n")
+      }
     )
   } else {
     if (style) {
@@ -119,11 +152,19 @@ pkg_build <- function(pkg_root = NULL,
     document(
       pkg = pkg_root
     )
-    # load_all(
-    #  path = pkg_root
-    # )
     install(
       pkg = pkg_root
+    )
+    tryCatch(
+{
+      unloadNamespace(
+        pkg_name
+      )
+      requireNamespace(
+        pkg_name
+      )
+},
+      error = function(err) err
     )
     if (data) {
       data_raw <- file.path(
@@ -155,16 +196,23 @@ pkg_build <- function(pkg_root = NULL,
         ncores = ncores
       )
     }
-    if (pkgdown) {
-      build_site(
-        pkg = pkg_root
-      )
-    }
     check(
       pkg = pkg_root
     )
     install(
       pkg = pkg_root
+    )
+    if (pkgdown) {
+      build_site(
+        pkg = pkg_root
+      )
+    }
+    cat(
+      paste(
+        "Build process for",
+        pkg_name,
+        "complete.\n"
+      )
     )
   }
   setwd(wd)
