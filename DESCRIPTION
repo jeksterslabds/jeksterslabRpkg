@@ -22,7 +22,6 @@ SystemRequirements:
 Depends: R (>= 3.2)
 Imports:
     jeksterslabRutils,
-    rprojroot,
     styler,
     rmarkdown,
     parallel,
