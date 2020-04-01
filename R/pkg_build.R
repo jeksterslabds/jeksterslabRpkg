@@ -143,10 +143,18 @@ pkg_build <- function(pkg_root = NULL,
     )
   } else {
     if (style) {
-      util_style(
-        dir = pkg_root,
-        par = par,
-        ncores = ncores
+      cat("Styling...\n")
+      tryCatch(
+        {
+          util_style(
+            dir = pkg_root,
+            par = par,
+            ncores = ncores
+          )
+        },
+        error = function(err) {
+          cat("Error in styling.\n")
+        }
       )
     }
     document(
@@ -156,17 +164,18 @@ pkg_build <- function(pkg_root = NULL,
       pkg = pkg_root
     )
     tryCatch(
-{
-      unloadNamespace(
-        pkg_name
-      )
-      requireNamespace(
-        pkg_name
-      )
-},
+      {
+        unloadNamespace(
+          pkg_name
+        )
+        requireNamespace(
+          pkg_name
+        )
+      },
       error = function(err) err
     )
     if (data) {
+      cat("Generating data...\n")
       data_raw <- file.path(
         pkg_root,
         "data_raw"
@@ -176,24 +185,38 @@ pkg_build <- function(pkg_root = NULL,
           path = data_raw,
           pattern = "^*.R$|^*.r$"
         )
-        util_lapply(
-          FUN = source,
-          args = list(
-            file = files
-          ),
-          par = par,
-          ncores = ncores
+        tryCatch(
+          {
+            util_lapply(
+              FUN = source,
+              args = list(
+                file = files
+              ),
+              par = par,
+              ncores = ncores
+            )
+          },
+          error = function(err) {
+            cat("Error in data generation.\n")
+          }
         )
       }
     }
     if (render) {
-      pkg_render(
-        pkg_root = pkg_root,
-        readme = readme,
-        vignettes = vignettes,
-        tests = tests,
-        par = par,
-        ncores = ncores
+      tryCatch(
+        {
+          pkg_render(
+            pkg_root = pkg_root,
+            readme = readme,
+            vignettes = vignettes,
+            tests = tests,
+            par = par,
+            ncores = ncores
+          )
+        },
+        error = function(err) {
+          cat("Error in rendering.\n")
+        }
       )
     }
     check(
