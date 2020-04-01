@@ -1,0 +1,93 @@
+---
+title: "Cat System Output in knitr"
+author: "Ivan Jacob Agaloos Pesigan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Cat System Output in knitr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+library(jeksterslabRutils)
+library(jeksterslabRpkg)
+```
+
+## pkg_create
+
+Create `boilerplatePackage` using `pkg_create`.
+
+```{r}
+tmp <- file.path(
+  Sys.getenv("HOME"),
+  util_rand_str()
+)
+dir.create(tmp)
+pkg_create(
+  pkg_dir = tmp,
+  pkg_name = "boilerplatePackage",
+  input_file = NULL,
+  pkgdown = TRUE,
+  travis = TRUE,
+  appveyor = TRUE,
+  readme = TRUE,
+)
+```
+
+## pkg_build
+
+Build `boilerplatePackage` using `pkg_build`.
+
+### minimal = TRUE
+
+```{r}
+pkg_build(
+  pkg_root = file.path(
+    tmp,
+    "boilerplatePackage"
+  ),
+  minimal = TRUE,
+  par = FALSE
+)
+```
+
+## pkg_build
+
+### minimal = FALSE
+
+```{r}
+pkg_build(
+  pkg_root = file.path(
+    tmp,
+    "boilerplatePackage"
+  ),
+  minimal = FALSE,
+  style = TRUE,
+  data = TRUE,
+  render = TRUE,
+  readme = TRUE,
+  vignettes = TRUE,
+  tests = TRUE,
+  pkgdown = TRUE,
+  par = FALSE
+)
+```
+
+## unlink
+
+Delete this section if you want to retain the package created.
+
+```{r}
+unlink(
+  tmp,
+  recursive = TRUE
+)
+```
