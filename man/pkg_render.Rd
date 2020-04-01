@@ -5,7 +5,7 @@
 \title{Render \code{R} Markdown Files in the Package Directory.}
 \usage{
 pkg_render(
-  pkg_root = getwd(),
+  pkg_root = NULL,
   readme = TRUE,
   vignettes = TRUE,
   tests = TRUE,

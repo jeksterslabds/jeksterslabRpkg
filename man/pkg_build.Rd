@@ -6,13 +6,13 @@
 \usage{
 pkg_build(
   pkg_root = NULL,
-  minimal = TRUE,
+  minimal = FALSE,
   style = TRUE,
   data = TRUE,
   render = TRUE,
   readme = TRUE,
   vignettes = TRUE,
-  tests = TRUE,
+  tests = FALSE,
   pkgdown = TRUE,
   par = TRUE,
   ncores = NULL

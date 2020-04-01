@@ -86,7 +86,7 @@ Creates a boilerplate \code{R} package by generating the following:
 \item a simple \code{R} script and accompanying \code{Rd} documentation file
 (see \code{\link[jeksterslabRpkg:pkg_r]{jeksterslabRpkg::pkg_r()}} and \code{\link[jeksterslabRpkg:pkg_rd]{jeksterslabRpkg::pkg_rd()}}),
 \item sample data, test, and vignette
-(see \code{\link[jeksterslabRpkg:pkg_data]{jeksterslabRpkg::pkg_data()}}, (see \code{\link[jeksterslabRpkg:pkg_test]{jeksterslabRpkg::pkg_test()}}, and
+(see \code{\link[jeksterslabRpkg:pkg_data]{jeksterslabRpkg::pkg_data()}}, \code{\link[jeksterslabRpkg:pkg_test]{jeksterslabRpkg::pkg_test()}}, and
 \code{\link[jeksterslabRpkg:pkg_vignette]{jeksterslabRpkg::pkg_vignette()}}),
 \item optional \code{pkgdown} and \code{travis} \code{YAML} files
 (see \code{\link[jeksterslabRpkg:pkg_pkgdown]{jeksterslabRpkg::pkg_pkgdown()}} and \code{\link[jeksterslabRpkg:pkg_travis]{jeksterslabRpkg::pkg_travis()}}),
