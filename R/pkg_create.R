@@ -10,7 +10,7 @@
 #'   - a simple `R` script and accompanying `Rd` documentation file
 #'     (see [jeksterslabRpkg::pkg_r()] and [jeksterslabRpkg::pkg_rd()]),
 #'   - sample data, test, and vignette
-#'     (see [jeksterslabRpkg::pkg_data()], (see [jeksterslabRpkg::pkg_test()], and
+#'     (see [jeksterslabRpkg::pkg_data()], [jeksterslabRpkg::pkg_test()], and
 #'     [jeksterslabRpkg::pkg_vignette()]),
 #'   - optional `pkgdown` and `travis` `YAML` files
 #'     (see [jeksterslabRpkg::pkg_pkgdown()] and [jeksterslabRpkg::pkg_travis()]),
@@ -24,7 +24,7 @@
 #' and configured in the system.
 #'
 #' If you are going to document, check, and build your package using `devtools`,
-#' you may delete the boillerplate `NAMESPACE` and `MAN` files.
+#' you may delete the boilerplate `NAMESPACE` and `MAN` files.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description

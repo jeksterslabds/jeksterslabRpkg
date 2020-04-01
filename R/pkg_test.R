@@ -1,5 +1,7 @@
 #' Create a Boilerplate Package Test File.
 #'
+#' Creates a boilerplate package test file.
+#'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' this function will be called.
 #'

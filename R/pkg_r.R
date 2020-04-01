@@ -1,5 +1,7 @@
 #' Create a Boilerplate Package `R` Script.
 #'
+#' Creates a boilerplate package `R` script.
+#'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' this function will be called.
 #'

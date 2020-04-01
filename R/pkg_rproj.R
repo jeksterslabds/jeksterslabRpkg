@@ -1,5 +1,7 @@
 #' Create a Package `.Rproj` File.
 #'
+#' Creates a package `.Rproj` file.
+#'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' this function will be called.
 #'

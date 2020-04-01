@@ -1,5 +1,7 @@
 #' Create a Boilerplate Package Vignette File.
 #'
+#' Creates a boilerplate package vignette file.
+#'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' this function will be called.
 #'

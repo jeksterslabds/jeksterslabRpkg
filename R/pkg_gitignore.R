@@ -1,4 +1,6 @@
 #' Create a Boilerplate Package `.gitignore` File.
+#' 
+#' Creates a boilerplate package `.gitignore` file.
 #'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' this function will be called.

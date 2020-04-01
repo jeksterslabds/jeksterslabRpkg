@@ -1,5 +1,7 @@
 #' Create a Boilerplate Package `_pkgdown.yml`.
 #'
+#' Creates a `_pkgdown.yml` build file.
+#'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' and the argument `pkgdown = TRUE` is specified,
 #' this function will be called.

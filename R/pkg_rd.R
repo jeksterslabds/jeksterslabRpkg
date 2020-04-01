@@ -1,5 +1,7 @@
 #' Create a Boilerplate Package `Rd` Function Documentation.
 #'
+#' Creates a boilerplate package `Rd` function documentation.
+#'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' this function will be called.
 #'

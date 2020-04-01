@@ -1,10 +1,12 @@
 #' Create a Boilerplate Package `NAMESPACE`.
 #'
+#' Creates a boilerplate package `NAMESPACE`.
+#'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' this function will be called.
 #'
 #' If you are going to document, check, and build your package using `devtools`,
-#' you may delete the boillerplate `NAMESPACE` file.
+#' you may delete the boilerplate `NAMESPACE` file.
 #'
 #' **THIS FUNCTION OVERWRITES AN EXISTING `NAMESPACE` FILE
 #' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.

@@ -3,7 +3,7 @@
 #' Creates a package `DESCRIPTION` file
 #' by extracting information
 #' from an external `csv` `input_file`.
-#' See `system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)`
+#' See [system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)]
 #' for the `input_file` template.
 #'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
@@ -19,7 +19,7 @@
 #' @param pkg_name Character string.
 #'   Package name.
 #' @param input_file Character string.
-#'   csv file containing `DESCRIPTION` fields and entries.
+#'   `csv` file containing `DESCRIPTION` fields and entries.
 #' @param add Character string.
 #'   Additional entries to the `DESCRIPTION` file
 #'   not included in `input_file`
