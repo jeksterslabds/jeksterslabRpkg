@@ -71,7 +71,7 @@ pkg_build <- function(pkg_root = NULL,
     stop("Not a valid package root directory.\n")
   }
   pkg_name <- basename(pkg_root)
-  cat(
+  message(
     paste0(
       "Building ",
       pkg_name,
@@ -103,7 +103,9 @@ pkg_build <- function(pkg_root = NULL,
         )
       },
       error = function(err) {
-        cat("Error in `R CMD build`.\n")
+        warning(
+          "Error in `R CMD build`.\n"
+        )
       }
     )
     tryCatch(
@@ -125,7 +127,9 @@ pkg_build <- function(pkg_root = NULL,
         )
       },
       error = function(err) {
-        cat("Error in `R CMD check`.\n")
+        warning(
+          "Error in `R CMD check`.\n"
+        )
       }
     )
     tryCatch(
@@ -138,12 +142,16 @@ pkg_build <- function(pkg_root = NULL,
         )
       },
       error = function(err) {
-        cat("Error in `R CMD INSTALL`.\n")
+        warning(
+          "Error in `R CMD INSTALL`.\n"
+        )
       }
     )
   } else {
     if (style) {
-      cat("Styling...\n")
+      message(
+        "Styling...\n"
+      )
       tryCatch(
         {
           util_style(
@@ -153,7 +161,9 @@ pkg_build <- function(pkg_root = NULL,
           )
         },
         error = function(err) {
-          cat("Error in styling.\n")
+          warning(
+            "Error in styling.\n"
+          )
         }
       )
     }
@@ -175,7 +185,9 @@ pkg_build <- function(pkg_root = NULL,
       error = function(err) err
     )
     if (data) {
-      cat("Generating data...\n")
+      message(
+        "Generating data...\n"
+      )
       data_raw <- file.path(
         pkg_root,
         "data_raw"
@@ -197,13 +209,17 @@ pkg_build <- function(pkg_root = NULL,
             )
           },
           error = function(err) {
-            cat("Error in data generation.\n")
+            warning(
+              "Error in data generation.\n"
+            )
           }
         )
       }
     }
     if (render) {
-      cat("Rendering...\n")
+      message(
+        "Rendering...\n"
+      )
       tryCatch(
         {
           pkg_render(
@@ -216,7 +232,9 @@ pkg_build <- function(pkg_root = NULL,
           )
         },
         error = function(err) {
-          cat("Error in rendering.\n")
+          warning(
+            "Error in rendering.\n"
+          )
         }
       )
     }
@@ -231,7 +249,7 @@ pkg_build <- function(pkg_root = NULL,
         pkg = pkg_root
       )
     }
-    cat(
+    message(
       paste(
         "Build process for",
         pkg_name,
