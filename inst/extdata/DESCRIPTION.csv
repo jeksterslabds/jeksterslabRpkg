@@ -11,7 +11,7 @@ License,What license it uses,MIT + file LICENSE
 Encoding,Encoding,UTF-8
 Language,Language,en-US
 LazyData,LazyData,TRUE
-Depends,"Dependency (separated by ,[[:space:]]).",R (>= 3.2)
+Depends,"Dependency (separated by ,[[:space:]]).",R (>= 3.5.0)
 Imports,"Imported packages (separated by ,[[:space:]]). Versions can be specified inside a parenthesis. For example, ggplot2 (>= 3.2.1), dplyr (>= 0.8.4)",utils
 Suggests,Suggested packages. Same format as Imports.,"knitr, rmarkdown, testthat"
 VignetteBuilder,Vignette Builder,knitr
