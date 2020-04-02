@@ -104,12 +104,12 @@ pkg_create(
 #'
 #+ build_01
 pkg_build(
- pkg_root = file.path(
-   tmp,
-   "boilerplatePackage"
- ),
- minimal = TRUE,
- par = FALSE
+  pkg_root = file.path(
+    tmp,
+    "boilerplatePackage"
+  ),
+  minimal = TRUE,
+  par = FALSE
 )
 #'
 #' ### minimal = FALSE

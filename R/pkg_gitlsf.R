@@ -1,11 +1,12 @@
 pkg_gitlsf <- function(ext = c(
-    "gz",
-    "zip",
-    "Rds",
-    "rds",
-    "Rda",
-    "rda")) {
-          if (is.null(pkg_root)) {
+                         "gz",
+                         "zip",
+                         "Rds",
+                         "rds",
+                         "Rda",
+                         "rda"
+                       )) {
+  if (is.null(pkg_root)) {
     pkg_root <- getwd()
   }
   if (!file.exists(
