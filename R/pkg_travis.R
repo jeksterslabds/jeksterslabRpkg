@@ -53,6 +53,6 @@ pkg_travis <- function(pkg_dir = getwd(),
   pkg_rbuildignore(
     pkg_dir = pkg_dir,
     pkg_name = pkg_name,
-    add = "^.travis.yml$"
+    add = "^.travis.yml$\n^.covrignore$"
   )
 }
