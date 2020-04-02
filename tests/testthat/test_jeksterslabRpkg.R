@@ -130,12 +130,3 @@ pkg_build(
 #  pkgdown = TRUE,
 #  par = FALSE
 # )
-#'
-#' ## Load Packages.
-#'
-#+ load
-pkg <- list(
-  "rmarkdown",
-  "devtools"
-)
-pkg_load(pkg = pkg)
