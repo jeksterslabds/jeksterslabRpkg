@@ -60,7 +60,7 @@ you may delete the boilerplate `NAMESPACE` and `MAN` files.
 
 ### input_file = NULL
 
-```{r, eval=FALSE}
+```{r}
 pkg_create(
   pkg_dir = tmp,
   pkg_name = "boilerplatePackage",
@@ -82,7 +82,7 @@ pkg_create(
 
 ### input_file = "DESCRIPTION.csv"
 
-```{r, eval=FALSE}
+```{r}
 input_file <- system.file(
   "extdata",
   "DESCRIPTION.csv",
@@ -119,7 +119,7 @@ Builds the `R` package on `pkg_root` by:
 
 ### minimal = TRUE
 
-```{r, eval=FALSE}
+```{r}
 pkg_build(
   pkg_root = file.path(
     tmp,
@@ -132,7 +132,7 @@ pkg_build(
 
 ### minimal = FALSE
 
-```{r, eval=FALSE}
+```{r}
 pkg_build(
   pkg_root = file.path(
     tmp,
