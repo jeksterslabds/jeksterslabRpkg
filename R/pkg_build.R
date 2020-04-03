@@ -13,8 +13,6 @@
 #'   ignoring all the other function arguments.
 #'   If `FALSE`, a more thorough check is performed
 #'   with additional options.
-#' @param pkg_root Character string.
-#'   Package root directory.
 #' @param style Logical.
 #'   Style `R` scripts and `R` Markdown files.
 #' @param data Logical.
@@ -33,8 +31,9 @@
 #' @param pkgdown Logical.
 #'   Build `pkgdown` site.
 #' @inheritParams pkg_description
-#' @inheritParams pkg_create
 #' @inheritParams util_lapply
+#' @inheritParams pkg_git
+#' @inheritParams pkg_create
 #' @importFrom devtools document
 #' @importFrom devtools load_all
 #' @importFrom devtools check
@@ -59,7 +58,8 @@ pkg_build <- function(pkg_root = NULL,
                       par = TRUE,
                       ncores = NULL,
                       git = FALSE,
-                      github = FALSE) {
+                      github = FALSE,
+                      msg = "BUILD") {
   if (is.null(pkg_root)) {
     pkg_root <- getwd()
   }
@@ -273,7 +273,7 @@ pkg_build <- function(pkg_root = NULL,
     pkg_git(
       pkg_root = pkg_root,
       github = github,
-      msg = "BUILD."
+      msg = msg
     )
   }
   setwd(wd)

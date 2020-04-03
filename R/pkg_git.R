@@ -6,8 +6,12 @@
 #' and configured in the system.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param msg Character string. Commit message.
-#' @inheritParams pkg_build
+#' @param pkg_root Character string.
+#'   Package root directory.
+#' @param github Logical.
+#'   Set up and push to a github repository.
+#' @param msg Character string.
+#'   Commit message.
 #' @inheritParams pkg_create
 #' @export
 pkg_git <- function(pkg_root,

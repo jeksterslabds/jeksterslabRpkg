@@ -27,7 +27,6 @@
 #' you may delete the boilerplate `NAMESPACE` and `MAN` files.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
 #' @param pkgdown Logical.
 #'   Create `pkgdown` `YAML` file.
 #' @param travis Logical.
@@ -56,8 +55,8 @@
 #'   in addition to the boilerplate example.
 #' @param git Logical.
 #'   Set up a git repository.
-#' @param github Logical.
-#'   Set up and push to a github repository.
+#' @inheritParams pkg_description
+#' @inheritParams pkg_git
 #' @examples
 #' \dontrun{
 #' pkg_create(
@@ -83,7 +82,8 @@ pkg_create <- function(pkg_dir = getwd(),
                        add_travis = NULL,
                        add_appveyor = NULL,
                        git = FALSE,
-                       github = FALSE) {
+                       github = FALSE,
+                       msg = "And so, it begins") {
   pkg_root <- file.path(
     pkg_dir,
     pkg_name
@@ -187,7 +187,7 @@ pkg_create <- function(pkg_dir = getwd(),
     pkg_git(
       pkg_root = pkg_root,
       github = github,
-      msg = "And so, it begins..."
+      msg = msg
     )
   }
 }

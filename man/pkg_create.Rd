@@ -19,7 +19,8 @@ pkg_create(
   add_travis = NULL,
   add_appveyor = NULL,
   git = FALSE,
-  github = FALSE
+  github = FALSE,
+  msg = "And so, it begins"
 )
 }
 \arguments{
@@ -73,6 +74,9 @@ Set up a git repository.}
 
 \item{github}{Logical.
 Set up and push to a github repository.}
+
+\item{msg}{Character string.
+Commit message.}
 }
 \description{
 Creates a boilerplate \code{R} package by generating the following:

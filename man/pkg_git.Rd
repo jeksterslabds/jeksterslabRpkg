@@ -13,7 +13,8 @@ Package root directory.}
 \item{github}{Logical.
 Set up and push to a github repository.}
 
-\item{msg}{Character string. Commit message.}
+\item{msg}{Character string.
+Commit message.}
 }
 \description{
 Set up a \code{Git} repository
