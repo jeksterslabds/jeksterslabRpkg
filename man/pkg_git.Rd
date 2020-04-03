@@ -4,7 +4,7 @@
 \alias{pkg_git}
 \title{Git and Github}
 \usage{
-pkg_git(pkg_root, github = TRUE, msg = "BUILD.")
+pkg_git(pkg_root, github = TRUE, msg = "BUILD")
 }
 \arguments{
 \item{pkg_root}{Character string.

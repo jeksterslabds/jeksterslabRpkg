@@ -12,7 +12,7 @@
 #' @export
 pkg_git <- function(pkg_root,
                     github = TRUE,
-                    msg = "BUILD.") {
+                    msg = "BUILD") {
   if (nchar(Sys.which("git")) == 0) {
     stop(
       "`git` command is not installed in the system.\n"
