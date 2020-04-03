@@ -8,7 +8,6 @@
 #' ---
 #'
 #+ setup
-library(jeksterslabRutils)
 library(jeksterslabRpkg)
 tmp <- file.path(
   Sys.getenv("HOME"),
