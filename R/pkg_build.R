@@ -193,9 +193,18 @@ pkg_build <- function(pkg_root = NULL,
         "data_raw"
       )
       if (dir.exists(data_raw)) {
+            pattern <- paste0(
+      glob2rx("*.Rmd"),
+      "|",
+      glob2rx("*.rmd"),
+      "|",
+      glob2rx("*.R"),
+      "|",
+      glob2rx("*.r")
+    )
         files <- list.files(
           path = data_raw,
-          pattern = "^*.R$|^*.r$"
+          pattern = pattern
         )
         tryCatch(
           {
