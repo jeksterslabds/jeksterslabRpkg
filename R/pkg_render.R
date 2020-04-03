@@ -43,16 +43,18 @@ pkg_render <- function(pkg_root = NULL,
     stop("Not a valid package root directory.\n")
   }
   if (readme) {
-    render_readme <- file.path(
+    files <- file.path(
       pkg_root,
       "README.Rmd"
     )
-    util_render(
-      recursive = FALSE,
-      files = render_readme,
-      par = par,
-      ncores = ncores
-    )
+    if (length(files) > 0) {
+      util_render(
+        recursive = FALSE,
+        files = files,
+        par = par,
+        ncores = ncores
+      )
+    }
   }
   if (vignettes) {
     pattern <- paste0(
@@ -64,7 +66,7 @@ pkg_render <- function(pkg_root = NULL,
       "|",
       glob2rx("*.r")
     )
-    render_vignette <- list.files(
+    files <- list.files(
       path = file.path(
         pkg_root,
         "vignettes"
@@ -74,12 +76,14 @@ pkg_render <- function(pkg_root = NULL,
       recursive = TRUE,
       include.dirs = TRUE
     )
-    util_render(
-      recursive = FALSE,
-      files = render_vignette,
-      par = par,
-      ncores = ncores
-    )
+    if (length(files) > 0) {
+      util_render(
+        recursive = FALSE,
+        files = files,
+        par = par,
+        ncores = ncores
+      )
+    }
   }
   if (tests) {
     pattern <- paste0(
@@ -87,7 +91,7 @@ pkg_render <- function(pkg_root = NULL,
       "|",
       glob2rx("*.r")
     )
-    render_test <- list.files(
+    files <- list.files(
       path = file.path(
         pkg_root,
         "tests",
@@ -98,22 +102,13 @@ pkg_render <- function(pkg_root = NULL,
       recursive = TRUE,
       include.dirs = TRUE
     )
-    util_render(
-      recursive = FALSE,
-      files = render_test,
-      par = par,
-      ncores = ncores
-    )
+    if (length(files) > 0) {
+      util_render(
+        recursive = FALSE,
+        files = files,
+        par = par,
+        ncores = ncores
+      )
+    }
   }
-  # files <- c(
-  #  render_readme,
-  #  render_vignette,
-  #  render_test
-  # )
-  # if (all(is.na(files))) {
-  #  stop(
-  #    "No files to render.\n"
-  #  )
-  # }
-  # files <- files[!is.na(files)]
 }
