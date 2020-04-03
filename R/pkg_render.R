@@ -47,51 +47,73 @@ pkg_render <- function(pkg_root = NULL,
       pkg_root,
       "README.Rmd"
     )
-  } else {
-    render_readme <- NA
+    util_render(
+      recursive = FALSE,
+      files = render_readme,
+      par = par,
+      ncores = ncores
+    )
   }
   if (vignettes) {
+    pattern <- paste0(
+      glob2rx("*.Rmd"),
+      "|",
+      glob2rx("*.rmd"),
+      "|",
+      glob2rx("*.R"),
+      "|",
+      glob2rx("*.r")
+    )
     render_vignette <- list.files(
       path = file.path(
         pkg_root,
         "vignettes"
       ),
-      pattern = glob2rx("^*.Rmd$|^*.rmd$|^*.R$|^*.r$"),
+      pattern = pattern,
       full.names = TRUE,
       recursive = TRUE,
       include.dirs = TRUE
     )
-  } else {
-    render_vignette <- NA
+    util_render(
+      recursive = FALSE,
+      files = render_vignette,
+      par = par,
+      ncores = ncores
+    )
   }
   if (tests) {
+    pattern <- paste0(
+      glob2rx("*.R"),
+      "|",
+      glob2rx("*.r")
+    )
     render_test <- list.files(
       path = file.path(
         pkg_root,
         "tests",
         "testthat"
       ),
-      pattern = glob2rx("^*.R$|^*.r$"),
+      pattern = pattern,
       full.names = TRUE,
       recursive = TRUE,
       include.dirs = TRUE
     )
-  } else {
-    render_test <- NA
+    util_render(
+      recursive = FALSE,
+      files = render_test,
+      par = par,
+      ncores = ncores
+    )
   }
-  files <- c(
-    render_readme,
-    render_vignette,
-    render_test
-  )
-  if (all(is.na(files))) {
-    stop("No files to render.")
-  }
-  files <- files[!is.na(files)]
-  util_render(
-    recursive = FALSE,
-    files = files,
-    par = par,
-    ncores = ncores
-  )
+  # files <- c(
+  #  render_readme,
+  #  render_vignette,
+  #  render_test
+  # )
+  # if (all(is.na(files))) {
+  #  stop(
+  #    "No files to render.\n"
+  #  )
+  # }
+  # files <- files[!is.na(files)]
 }
