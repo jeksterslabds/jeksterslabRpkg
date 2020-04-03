@@ -84,7 +84,7 @@ pkg_create <- function(pkg_dir = getwd(),
                        add_appveyor = NULL,
                        git = FALSE,
                        github = FALSE) {
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
@@ -171,7 +171,7 @@ pkg_create <- function(pkg_dir = getwd(),
     paste0(
       pkg_name,
       " has been saved in ",
-      root,
+      pkg_root,
       ".",
       "\n"
     )
@@ -184,89 +184,10 @@ pkg_create <- function(pkg_dir = getwd(),
     )
   )
   if (git) {
-    if (nchar(Sys.which("git")) == 0) {
-      stop(
-        "`git` command is not installed in the system.\n"
-      )
-    }
-    message(
-      "Setting up git repository.\n"
+    pkg_git(
+      pkg_root = pkg_root,
+      github = github,
+      msg = "And so, it begins..."
     )
-    try(
-      system(
-        paste(
-          "git -C",
-          shQuote(root),
-          "init"
-        )
-      )
-    )
-    try(
-      system(
-        paste(
-          "git -C",
-          shQuote(root),
-          "add --all"
-        )
-      )
-    )
-    tryCatch(
-      {
-        system(
-          paste(
-            "git -C",
-            shQuote(root),
-            "commit -m \"And so, it begins.\""
-          )
-        )
-      },
-      error = function(err) {
-        warning(
-          "Error in git -C commit.\n"
-        )
-      }
-    )
-    if (github) {
-      if (nchar(Sys.which("hub")) == 0) {
-        stop(
-          "`hub` command is not installed in the system.\n"
-        )
-      }
-      message(
-        "Creating and pushing to a remote GiHub repository.\n"
-      )
-      tryCatch(
-        {
-          system(
-            paste(
-              "hub -C",
-              shQuote(root),
-              "create"
-            )
-          )
-        },
-        error = function(err) {
-          warning(
-            "Error in hub -C create.\n"
-          )
-        }
-      )
-      tryCatch(
-        {
-          system(
-            paste(
-              "git -C",
-              shQuote(root),
-              "push -u origin HEAD"
-            )
-          )
-        },
-        error = function(err) {
-          warning(
-            "Error in git -C push -u origin HEAD.\n"
-          )
-        }
-      )
-    }
   }
 }

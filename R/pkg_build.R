@@ -33,6 +33,7 @@
 #' @param pkgdown Logical.
 #'   Build `pkgdown` site.
 #' @inheritParams pkg_description
+#' @inheritParams pkg_create
 #' @inheritParams util_lapply
 #' @importFrom devtools document
 #' @importFrom devtools load_all
@@ -56,7 +57,9 @@ pkg_build <- function(pkg_root = NULL,
                       tests = TRUE,
                       pkgdown = TRUE,
                       par = TRUE,
-                      ncores = NULL) {
+                      ncores = NULL,
+                      git = FALSE,
+                      github = FALSE) {
   if (is.null(pkg_root)) {
     pkg_root <- getwd()
   }
@@ -193,15 +196,15 @@ pkg_build <- function(pkg_root = NULL,
         "data_raw"
       )
       if (dir.exists(data_raw)) {
-            pattern <- paste0(
-      glob2rx("*.Rmd"),
-      "|",
-      glob2rx("*.rmd"),
-      "|",
-      glob2rx("*.R"),
-      "|",
-      glob2rx("*.r")
-    )
+        pattern <- paste0(
+          glob2rx("*.Rmd"),
+          "|",
+          glob2rx("*.rmd"),
+          "|",
+          glob2rx("*.R"),
+          "|",
+          glob2rx("*.r")
+        )
         files <- list.files(
           path = data_raw,
           pattern = pattern
@@ -264,6 +267,13 @@ pkg_build <- function(pkg_root = NULL,
         pkg_name,
         "complete.\n"
       )
+    )
+  }
+  if (git) {
+    pkg_git(
+      pkg_root = pkg_root,
+      github = github,
+      msg = "BUILD."
     )
   }
   setwd(wd)
