@@ -33,12 +33,11 @@
 #' @param pkgdown Logical.
 #'   Build `pkgdown` site.
 #' @inheritParams pkg_description
-#' @inheritParams jeksterslabRutils::util_lapply
+#' @inheritParams util_lapply
 #' @importFrom devtools document
 #' @importFrom devtools load_all
 #' @importFrom devtools check
 #' @importFrom devtools install
-#' @importFrom jeksterslabRutils util_style
 #' @examples
 #' \dontrun{
 #' pkg_build(
@@ -54,7 +53,7 @@ pkg_build <- function(pkg_root = NULL,
                       render = TRUE,
                       readme = TRUE,
                       vignettes = TRUE,
-                      tests = FALSE,
+                      tests = TRUE,
                       pkgdown = TRUE,
                       par = TRUE,
                       ncores = NULL) {
@@ -170,20 +169,20 @@ pkg_build <- function(pkg_root = NULL,
     document(
       pkg = pkg_root
     )
-    install(
-      pkg = pkg_root
+    load_all(
+      path = pkg_root
     )
-    tryCatch(
-      {
-        unloadNamespace(
-          pkg_name
-        )
-        requireNamespace(
-          pkg_name
-        )
-      },
-      error = function(err) err
-    )
+    # tryCatch(
+    #  {
+    #    unloadNamespace(
+    #      pkg_name
+    #    )
+    #    requireNamespace(
+    #      pkg_name
+    #    )
+    #  },
+    #  error = function(err) err
+    # )
     if (data) {
       message(
         "Generating data...\n"
