@@ -10,11 +10,9 @@
 #' @param tests Logical.
 #'   Render `tests/testhat/*.R`.
 #' @inheritParams pkg_build
-#' @inheritParams jeksterslabRutils::util_lapply
+#' @inheritParams util_lapply
 #' @importFrom utils glob2rx
 #' @importFrom rmarkdown render
-#' @importFrom jeksterslabRutils util_lapply
-#' @importFrom jeksterslabRutils util_render
 #' @examples
 #' \dontrun{
 #' pkg_render(

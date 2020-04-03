@@ -24,7 +24,6 @@
 #'   Additional entries to the `DESCRIPTION` file
 #'   not included in `input_file`
 #' @importFrom utils read.csv
-#' @importFrom jeksterslabRutils util_txt2file
 #' @examples
 #' \dontrun{
 #' pkg_description(

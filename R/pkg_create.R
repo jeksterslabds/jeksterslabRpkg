@@ -58,7 +58,6 @@
 #'   Set up a git repository.
 #' @param github Logical.
 #'   Set up and push to a github repository.
-#' @import jeksterslabRutils
 #' @examples
 #' \dontrun{
 #' pkg_create(
