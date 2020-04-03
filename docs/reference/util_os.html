@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Build Package. — pkg_build • jeksterslabRpkg</title>
+<title>Get Operating System. — util_os • jeksterslabRpkg</title>
 
 
 <!-- jquery -->
@@ -39,14 +39,9 @@
 
 
 
-<meta property="og:title" content="Build Package. — pkg_build" />
-<meta property="og:description" content="Builds the R package on pkg_root by:
-styling the R scripts and R Markdown files,
-building package data by running R scripts stored in data_raw,
-rendering the R scripts and R Markdown files using rmarkdown::render(), and
-building pkgdown site.
-
-" />
+<meta property="og:title" content="Get Operating System. — util_os" />
+<meta property="og:description" content="Utility to detect the operating system of the current R session.
+Based on http://conjugateprior.org/2015/06/identifying-the-os-from-r/." />
 
 
 
@@ -114,111 +109,32 @@ building pkgdown site.
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Build Package.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jeksterslabds/jeksterslabRpkg/blob/master/R/pkg_build.R'><code>R/pkg_build.R</code></a></small>
-    <div class="hidden name"><code>pkg_build.Rd</code></div>
+    <h1>Get Operating System.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jeksterslabds/jeksterslabRpkg/blob/master/R/util_os.R'><code>R/util_os.R</code></a></small>
+    <div class="hidden name"><code>util_os.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Builds the <code>R</code> package on <code>pkg_root</code> by:</p><ul>
-<li><p>styling the <code>R</code> scripts and <code>R</code> Markdown files,</p></li>
-<li><p>building package data by running <code>R</code> scripts stored in <code>data_raw</code>,</p></li>
-<li><p>rendering the <code>R</code> scripts and <code>R</code> Markdown files using <code><a href='https://rdrr.io/pkg/rmarkdown/man/render.html'>rmarkdown::render()</a></code>, and</p></li>
-<li><p>building <code>pkgdown</code> site.</p></li>
-</ul>
-
+    <p>Utility to detect the operating system of the current <code>R</code> session.
+Based on <a href='http://conjugateprior.org/2015/06/identifying-the-os-from-r/'>http://conjugateprior.org/2015/06/identifying-the-os-from-r/</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pkg_build</span>(
-  <span class='kw'>pkg_root</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>minimal</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>style</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>data</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>render</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>readme</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>vignettes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>tests</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>pkgdown</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>par</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>ncores</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
-)</pre>
+    <pre class="usage"><span class='fu'>util_os</span>()</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>pkg_root</th>
-      <td><p>Character string.
-Package root directory.</p></td>
-    </tr>
-    <tr>
-      <th>minimal</th>
-      <td><p>Logical.
-If <code>TRUE</code>, minimal check, build, and install
-using <code>R CMD</code> will be performed,
-ignoring all the other function arguments.
-If <code>FALSE</code>, a more thorough check is performed
-with additional options.</p></td>
-    </tr>
-    <tr>
-      <th>style</th>
-      <td><p>Logical.
-Style <code>R</code> scripts and <code>R</code> Markdown files.</p></td>
-    </tr>
-    <tr>
-      <th>data</th>
-      <td><p>Logical.
-Generate data from <code>data_raw</code>.</p></td>
-    </tr>
-    <tr>
-      <th>render</th>
-      <td><p>Logical.
-Render <code>R</code> scripts and <code>R</code> Markdown files.</p></td>
-    </tr>
-    <tr>
-      <th>readme</th>
-      <td><p>Logical.
-Render <code>README.Rmd</code>.
-Ignored if <code>render = FALSE</code>.</p></td>
-    </tr>
-    <tr>
-      <th>vignettes</th>
-      <td><p>Logical.
-Render <code>vignettes/*.Rmd</code>.
-Ignored if <code>render = FALSE</code>.</p></td>
-    </tr>
-    <tr>
-      <th>tests</th>
-      <td><p>Logical.
-Render <code>tests/testhat/*.R</code>.
-Ignored if <code>render = FALSE</code>.</p></td>
-    </tr>
-    <tr>
-      <th>pkgdown</th>
-      <td><p>Logical.
-Build <code>pkgdown</code> site.</p></td>
-    </tr>
-    <tr>
-      <th>par</th>
-      <td><p>Logical.
-If <code>TRUE</code>, use multiple cores.</p></td>
-    </tr>
-    <tr>
-      <th>ncores</th>
-      <td><p>Integer.
-Number of cores to use if <code>par = TRUE</code>.
-If unspecified, defaults to <code>detectCores() - 1</code>.</p></td>
-    </tr>
-    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Return any of the following:</p><ul>
+<li><p><code>linux</code> for GNU/Linux operating system</p></li>
+<li><p><code>osx</code> for Macintosh operating system</p></li>
+<li><p><code>windows</code> for Windows operating system</p></li>
+<li><p>mystery machine</p></li>
+</ul>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>pkg_build</span>(
-  <span class='kw'>pkg_root</span> <span class='kw'>=</span> <span class='st'>"~/boilerplatePackage"</span>,
-  <span class='kw'>minimal</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>util_os</span>()</div><div class='output co'>#&gt; sysname 
+#&gt; "linux" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

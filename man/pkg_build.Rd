@@ -12,7 +12,7 @@ pkg_build(
   render = TRUE,
   readme = TRUE,
   vignettes = TRUE,
-  tests = FALSE,
+  tests = TRUE,
   pkgdown = TRUE,
   par = TRUE,
   ncores = NULL
