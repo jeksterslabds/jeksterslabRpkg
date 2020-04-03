@@ -81,6 +81,7 @@ pkg_build <- function(pkg_root = NULL,
     )
   )
   wd <- getwd()
+
   if (minimal) {
     tmp <- tempdir()
     setwd(tmp)
