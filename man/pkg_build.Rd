@@ -15,7 +15,9 @@ pkg_build(
   tests = TRUE,
   pkgdown = TRUE,
   par = TRUE,
-  ncores = NULL
+  ncores = NULL,
+  git = FALSE,
+  github = FALSE
 )
 }
 \arguments{
@@ -59,6 +61,12 @@ If \code{TRUE}, use multiple cores.}
 \item{ncores}{Integer.
 Number of cores to use if \code{par = TRUE}.
 If unspecified, defaults to \code{detectCores() - 1}.}
+
+\item{git}{Logical.
+Set up a git repository.}
+
+\item{github}{Logical.
+Set up and push to a github repository.}
 }
 \description{
 Builds the \code{R} package on \code{pkg_root} by:
