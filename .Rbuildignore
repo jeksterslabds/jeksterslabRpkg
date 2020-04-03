@@ -10,3 +10,4 @@
 ^README\.html$
 ^jeksterslabRpkg\.Rproj$
 ^appveyor\.yml$
+Makefile
