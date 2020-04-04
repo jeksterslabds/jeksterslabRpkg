@@ -42,40 +42,47 @@ pkg_render <- function(pkg_root = NULL,
   ) {
     stop("Not a valid package root directory.\n")
   }
-  if (readme) {
-    files <- file.path(
-      pkg_root,
-      "README.Rmd"
-    )
-    if (length(files) > 0) {
-      util_render(
-        recursive = FALSE,
-        files = files,
-        par = par,
-        ncores = ncores
-      )
-    }
-  }
-  if (vignettes) {
-    pattern <- paste0(
-      glob2rx("*.Rmd"),
-      "|",
-      glob2rx("*.rmd"),
-      "|",
-      glob2rx("*.R"),
-      "|",
-      glob2rx("*.r")
-    )
-    files <- list.files(
-      path = file.path(
+  exe <- function(render = c(
+                    "readme",
+                    "tests", "vignettes"
+                  )) {
+    if (render == "readme") {
+      files <- file.path(
         pkg_root,
-        "vignettes"
-      ),
-      pattern = pattern,
-      full.names = TRUE,
-      recursive = TRUE,
-      include.dirs = TRUE
-    )
+        "README.Rmd"
+      )
+    }
+    if (render %in% c("tests", "vignettes")) {
+      pattern <- paste0(
+        glob2rx("*.Rmd"),
+        "|",
+        glob2rx("*.rmd"),
+        "|",
+        glob2rx("*.R"),
+        "|",
+        glob2rx("*.r")
+      )
+      if (render == "vignettes") {
+        path <- file.path(
+          pkg_root,
+          "vignettes"
+        )
+      }
+      if (render == "tests") {
+        path <- file.path(
+          pkg_root,
+          "tests",
+          "testthat"
+        )
+      }
+      files <- list.files(
+        path = path,
+        pattern = pattern,
+        full.names = TRUE,
+        recursive = TRUE,
+        include.dirs = TRUE
+      )
+    }
     if (length(files) > 0) {
       util_render(
         recursive = FALSE,
@@ -85,30 +92,81 @@ pkg_render <- function(pkg_root = NULL,
       )
     }
   }
-  if (tests) {
-    pattern <- paste0(
-      glob2rx("*.R"),
-      "|",
-      glob2rx("*.r")
-    )
-    files <- list.files(
-      path = file.path(
-        pkg_root,
-        "tests",
-        "testthat"
-      ),
-      pattern = pattern,
-      full.names = TRUE,
-      recursive = TRUE,
-      include.dirs = TRUE
-    )
-    if (length(files) > 0) {
-      util_render(
-        recursive = FALSE,
-        files = files,
-        par = par,
-        ncores = ncores
-      )
-    }
+  render <- c(
+    "readme",
+    "tests",
+    "vignettes"
+  )
+  for (i in seq_along(render)) {
+    exe(render = render[i])
   }
+  #  if (readme) {
+  #    files <- file.path(
+  #      pkg_root,
+  #      "README.Rmd"
+  #    )
+  #    if (length(files) > 0) {
+  #      util_render(
+  #        recursive = FALSE,
+  #        files = files,
+  #        par = par,
+  #        ncores = ncores
+  #      )
+  #    }
+  #  }
+  #  if (vignettes) {
+  #    pattern <- paste0(
+  #      glob2rx("*.Rmd"),
+  #      "|",
+  #      glob2rx("*.rmd"),
+  #      "|",
+  #      glob2rx("*.R"),
+  #      "|",
+  #      glob2rx("*.r")
+  #    )
+  #    files <- list.files(
+  #      path = file.path(
+  #        pkg_root,
+  #        "vignettes"
+  #      ),
+  #      pattern = pattern,
+  #      full.names = TRUE,
+  #      recursive = TRUE,
+  #      include.dirs = TRUE
+  #    )
+  #    if (length(files) > 0) {
+  #      util_render(
+  #        recursive = FALSE,
+  #        files = files,
+  #        par = par,
+  #        ncores = ncores
+  #      )
+  #    }
+  #  }
+  #  if (tests) {
+  #    pattern <- paste0(
+  #      glob2rx("*.R"),
+  #      "|",
+  #      glob2rx("*.r")
+  #    )
+  #    files <- list.files(
+  #      path = file.path(
+  #        pkg_root,
+  #        "tests",
+  #        "testthat"
+  #      ),
+  #      pattern = pattern,
+  #      full.names = TRUE,
+  #      recursive = TRUE,
+  #      include.dirs = TRUE
+  #    )
+  #    if (length(files) > 0) {
+  #      util_render(
+  #        recursive = FALSE,
+  #        files = files,
+  #        par = par,
+  #        ncores = ncores
+  #      )
+  #    }
+  #  }
 }
