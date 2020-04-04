@@ -60,10 +60,10 @@ pkg_git <- function(pkg_root,
   tryCatch(
     {
       system(
-        paste(
-          "git -C",
+        paste0(
+          "git -C ",
           shQuote(pkg_root),
-          "commit -m \"",
+          " commit -m \"",
           msg,
           ".\""
         )
