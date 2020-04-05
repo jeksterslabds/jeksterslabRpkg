@@ -17,4 +17,5 @@ all :
 	cp $(RUTILS)/util_style.R $(RPKG)
 	cp $(RUTILS)/util_txt2file.R $(RPKG)
 	Rscript -e 'devtools::install("$(PKG)")'
-	Rscript -e 'jeksterslabRpkg::pkg_build("$(PKG)", git = TRUE, github = TRUE)'
+	Rscript -e 'jeksterslabRpkg::pkg_build("$(PKG)", git = TRUE, github = FALSE)'
+	hub push origin master
