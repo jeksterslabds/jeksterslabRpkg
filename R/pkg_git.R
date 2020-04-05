@@ -12,7 +12,6 @@
 #'   Set up and push to a github repository.
 #' @param msg Character string.
 #'   Commit message.
-#' @inheritParams pkg_create
 #' @export
 pkg_git <- function(pkg_root,
                     github = TRUE,
