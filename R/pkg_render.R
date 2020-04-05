@@ -40,7 +40,9 @@ pkg_render <- function(pkg_root = NULL,
     )
   )
   ) {
-    stop("Not a valid package root directory.\n")
+    stop(
+      "Not a valid package root directory.\n"
+    )
   }
   exe <- function(render = c(
                     "readme",
