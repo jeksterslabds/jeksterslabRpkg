@@ -20,7 +20,6 @@ deploy:
   skip-cleaning: true
   github-token: "$GITHUB_PAT"
   keep-history: true
-  target_branch: master/docs
   local-dir: docs
   on:
     branch: master
