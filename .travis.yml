@@ -17,8 +17,10 @@ after_success:
 
 deploy:
   provider: pages
-  skip_cleaning: true
-  github_token: $GITHUB_PAT
+  cleanup: false
+  strategy: git
+  dist: xenial
+  token: $GITHUB_PAT
   keep_history: true
   local_dir: docs
   on:
