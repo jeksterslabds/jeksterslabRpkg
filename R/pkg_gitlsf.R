@@ -48,12 +48,13 @@ pkg_gitlsf <- function(pkg_dir = getwd(),
       collapse = "\n"
     )
   } else {
-    output <- paste0(
-      output,
-      "\n",
-      gitlfs
-    )
+    output <- ""
   }
+  output <- paste0(
+    output,
+    "\n",
+    gitlfs
+  )
   util_txt2file(
     text = output,
     dir = pkg_root,
