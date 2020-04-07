@@ -41,7 +41,7 @@ pkg_render <- function(pkg_root = NULL,
       )
     )
   }
-  if (!file.exists(file.path(dir, "README.Rmd"))) {
+  if (!file.exists(file.path(pkg_root, "README.Rmd"))) {
     readme <- FALSE
   }
   if (!pkg_checkroot_subdir(dir = pkg_root, subdir = file.path("tests", "testthat"))) {

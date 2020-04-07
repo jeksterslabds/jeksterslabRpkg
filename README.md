@@ -1,7 +1,7 @@
 jeksterslabRpkg
 ================
 Ivan Jacob Agaloos Pesigan
-2020-04-06
+2020-04-07
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
