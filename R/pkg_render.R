@@ -33,8 +33,6 @@ pkg_render <- function(pkg_root = NULL,
   if (is.null(pkg_root)) {
     pkg_root <- getwd()
   }
-
-
   if (!pkg_checkroot(dir = pkg_root)) {
     stop(
       paste(
@@ -69,26 +67,16 @@ pkg_render <- function(pkg_root = NULL,
   ) {
     vignettes <- FALSE
   }
-  if (readme == FALSE && tests == FALSE && vignettes == FALSE) {
-    render <- FALSE
-  }
   exe <- function(render = c(
                     "readme",
-                    "tests", "vignettes"
+                    "tests",
+                    "vignettes"
                   )) {
     if (render == "readme") {
       files <- file.path(
         pkg_root,
         "README.Rmd"
       )
-      if (!file.exists(files)) {
-        stop(
-          paste(
-            file,
-            "does not exist.\n"
-          )
-        )
-      }
     }
     if (render %in% c("tests", "vignettes")) {
       pattern <- paste0(
@@ -105,14 +93,6 @@ pkg_render <- function(pkg_root = NULL,
           pkg_root,
           "vignettes"
         )
-        if (!dir.exists(path)) {
-          stop(
-            paste(
-              path,
-              "does not exist.\n"
-            )
-          )
-        }
       }
       if (render == "tests") {
         path <- file.path(
@@ -120,14 +100,6 @@ pkg_render <- function(pkg_root = NULL,
           "tests",
           "testthat"
         )
-        if (!dir.exists(path)) {
-          stop(
-            paste(
-              path,
-              "does not exist.\n"
-            )
-          )
-        }
       }
       files <- list.files(
         path = path,
@@ -146,12 +118,22 @@ pkg_render <- function(pkg_root = NULL,
       )
     }
   }
-  render <- c(
-    "readme",
-    "tests",
-    "vignettes"
-  )
-  for (i in seq_along(render)) {
-    exe(render = render[i])
+  if (readme == FALSE && tests == FALSE && vignettes == FALSE) {
+
+  } else {
+    render <- rep(x = NA, times = 3)
+    if (readme) {
+      render[1] <- "readme"
+    }
+    if (tests) {
+      render[2] <- "tests"
+    }
+    if (tests) {
+      render[3] <- "vignettes"
+    }
+    render <- render[!is.na(render)]
+    for (i in seq_along(render)) {
+      exe(render = render[i])
+    }
   }
 }
