@@ -119,7 +119,9 @@ pkg_render <- function(pkg_root = NULL,
     }
   }
   if (readme == FALSE && tests == FALSE && vignettes == FALSE) {
-
+    message(
+      "Nothing to render.\n"
+    )
   } else {
     render <- rep(x = NA, times = 3)
     if (readme) {
