@@ -156,11 +156,7 @@ pkg_build <- function(pkg_root = NULL,
     ) {
       data <- FALSE
     }
-    if (!file.exists(
-      pkg_root,
-      "_pkgdown.yml"
-    )
-    ) {
+    if (!file.exists(file.path(pkg_root, "_pkgdown.yml"))) {
       pkgdown <- FALSE
     }
     if (style) {
