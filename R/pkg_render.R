@@ -41,30 +41,13 @@ pkg_render <- function(pkg_root = NULL,
       )
     )
   }
-  if (!file.exists(
-    file.path(
-      dir,
-      "README.Rmd"
-    )
-  )
-  ) {
+  if (!file.exists(file.path(dir, "README.Rmd"))) {
     readme <- FALSE
   }
-  if (!pkg_checkroot_subdir(
-    dir = pkg_root,
-    subdir = file.path(
-      "tests",
-      "testthat"
-    )
-  )
-  ) {
+  if (!pkg_checkroot_subdir(dir = pkg_root, subdir = file.path("tests", "testthat"))) {
     tests <- FALSE
   }
-  if (!pkg_checkroot_subdir(
-    dir = pkg_root,
-    subdir = "vignettes"
-  )
-  ) {
+  if (!pkg_checkroot_subdir(dir = pkg_root, subdir = "vignettes")) {
     vignettes <- FALSE
   }
   exe <- function(render = c(
