@@ -1,31 +1,59 @@
-pkg_gitlsf <- function(ext = c(
+#' Create a Boilerplate Package `.gitattributes` File with Git LFS Settings.
+#'
+#' @param ext Character vector.
+#'   File extensions.
+#' @inheritParams pkg_description
+#' @examples
+#' \dontrun{
+#' pkg_gitlfs(
+#'   pkg_root = getwd(),
+#'   ext = c("pdf", "jpg")
+#' )
+#' }
+#' @export
+pkg_gitlsf <- function(pkg_dir = getwd(),
+                       pkg_name,
+                       ext = c(
                          "gz",
                          "zip",
                          "Rds",
                          "rds",
                          "Rda",
-                         "rda"
+                         "rda",
+                         "jpg",
+                         "jpeg",
+                         "png",
+                         "pdf"
                        )) {
-  if (is.null(pkg_root)) {
-    pkg_root <- getwd()
-  }
-  if (!file.exists(
-    file.path(
-      pkg_root,
-      "DESCRIPTION"
-    )
+  pkg_root <- file.path(
+    pkg_dir,
+    pkg_name
   )
-  ) {
-    stop("Not a valid package root directory.\n")
-  }
-  output <- sort(
+  gitlfs <- sort(
     paste0(
       "*.",
       ext,
       " filter=lfs diff=lfs merge=lfs -text"
     )
   )
-  # add script to check if .gitattributes exists first and append line by line
+  file <- file.path(
+    pkg_root,
+    ".gitattributes"
+  )
+  if (file.exists(file)) {
+    output <- paste0(
+      readLines(
+        con = file
+      ),
+      collapse = "\n"
+    )
+  } else {
+    output <- paste0(
+      output,
+      "\n",
+      gitlfs
+    )
+  }
   util_txt2file(
     text = output,
     dir = pkg_root,

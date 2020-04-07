@@ -63,14 +63,13 @@ pkg_build <- function(pkg_root = NULL,
   if (is.null(pkg_root)) {
     pkg_root <- getwd()
   }
-  if (!file.exists(
-    file.path(
-      pkg_root,
-      "DESCRIPTION"
+  if (!pkg_checkroot(dir = pkg_root)) {
+    stop(
+      paste(
+        pkg_root,
+        "is an invalid package directory.\n"
+      )
     )
-  )
-  ) {
-    stop("Not a valid package root directory.\n")
   }
   pkg_name <- basename(pkg_root)
   message(
@@ -84,7 +83,6 @@ pkg_build <- function(pkg_root = NULL,
     )
   )
   wd <- getwd()
-
   if (minimal) {
     tmp <- tempdir()
     setwd(tmp)
@@ -151,6 +149,20 @@ pkg_build <- function(pkg_root = NULL,
       }
     )
   } else {
+    if (!pkg_checkroot_subdir(
+      dir = pkg_root,
+      subdir = "data_raw"
+    )
+    ) {
+      data <- FALSE
+    }
+    if (!file.exists(
+      pkg_root,
+      "_pkgdown.yml"
+    )
+    ) {
+      pkgdown <- FALSE
+    }
     if (style) {
       message(
         "Styling...\n"
@@ -176,17 +188,6 @@ pkg_build <- function(pkg_root = NULL,
     load_all(
       path = pkg_root
     )
-    # tryCatch(
-    #  {
-    #    unloadNamespace(
-    #      pkg_name
-    #    )
-    #    requireNamespace(
-    #      pkg_name
-    #    )
-    #  },
-    #  error = function(err) err
-    # )
     if (data) {
       message(
         "Generating data...\n"

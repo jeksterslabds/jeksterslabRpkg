@@ -59,7 +59,7 @@ pkg_license <- function(pkg_dir = getwd(),
       "input_csv does not have the necessary fields.\n"
     )
   }
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
@@ -74,7 +74,7 @@ pkg_license <- function(pkg_dir = getwd(),
   )
   util_txt2file(
     text = license,
-    dir = root,
+    dir = pkg_root,
     fn = "LICENSE"
   )
   license_md <- readLines(
@@ -100,7 +100,7 @@ pkg_license <- function(pkg_dir = getwd(),
   )
   util_txt2file(
     text = license_md,
-    dir = root,
+    dir = pkg_root,
     fn = "LICENSE.md"
   )
   pkg_rbuildignore(

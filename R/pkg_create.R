@@ -100,6 +100,10 @@ pkg_create <- function(pkg_dir = getwd(),
     pkg_name = pkg_name,
     add = add_gitignore
   )
+  pkg_gitlsf(
+    pkg_dir = pkg_dir,
+    pkg_name = pkg_name
+  )
   pkg_description(
     pkg_dir = pkg_dir,
     pkg_name = pkg_name,

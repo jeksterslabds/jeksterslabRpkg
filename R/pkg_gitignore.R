@@ -25,17 +25,15 @@
 pkg_gitignore <- function(pkg_dir = getwd(),
                           pkg_name,
                           add = NULL) {
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
-  if (file.exists(file.path(root, ".gitignore"))) {
+  file <- file.path(pkg_root, ".gitignore")
+  if (file.exists(file)) {
     output <- paste0(
       readLines(
-        con = file.path(
-          root,
-          ".gitignore"
-        )
+        con = file
       ),
       collapse = "\n"
     )
@@ -61,7 +59,7 @@ pkg_gitignore <- function(pkg_dir = getwd(),
   }
   util_txt2file(
     text = output,
-    dir = root,
+    dir = pkg_root,
     fn = ".gitignore"
   )
 }

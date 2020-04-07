@@ -25,17 +25,15 @@
 pkg_rbuildignore <- function(pkg_dir = getwd(),
                              pkg_name,
                              add = NULL) {
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
-  if (file.exists(file.path(root, ".Rbuildignore"))) {
+  file <- file.path(pkg_root, ".Rbuildignore")
+  if (file.exists(file)) {
     output <- paste0(
       readLines(
-        con = file.path(
-          root,
-          ".Rbuildignore"
-        )
+        con = file
       ),
       collapse = "\n"
     )
@@ -61,7 +59,7 @@ pkg_rbuildignore <- function(pkg_dir = getwd(),
   }
   util_txt2file(
     text = output,
-    dir = root,
+    dir = pkg_root,
     fn = ".Rbuildignore"
   )
 }

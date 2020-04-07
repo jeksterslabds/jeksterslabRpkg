@@ -57,7 +57,7 @@ pkg_pkgdown <- function(pkg_dir = getwd(),
     )
   }
   Github <- input[["Github"]]
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
@@ -81,10 +81,10 @@ pkg_pkgdown <- function(pkg_dir = getwd(),
   )
   util_txt2file(
     text = output,
-    dir = root,
+    dir = pkg_root,
     fn = "_pkgdown.yml"
   )
-  build_site(pkg = root)
+  build_site(pkg = pkg_root)
   pkg_rbuildignore(
     pkg_dir = pkg_dir,
     pkg_name = pkg_name,

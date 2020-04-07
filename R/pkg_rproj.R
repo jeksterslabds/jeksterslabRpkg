@@ -21,7 +21,7 @@
 #' @export
 pkg_rproj <- function(pkg_dir = getwd(),
                       pkg_name) {
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
@@ -35,7 +35,7 @@ pkg_rproj <- function(pkg_dir = getwd(),
   )
   util_txt2file(
     text = rproj,
-    dir = root,
+    dir = pkg_root,
     fn = paste0(
       pkg_name,
       ".Rproj"

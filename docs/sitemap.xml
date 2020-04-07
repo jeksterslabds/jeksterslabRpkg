@@ -10,6 +10,12 @@
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_build.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_checkroot.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_checkroot_subdir.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_create.html</loc>
   </url>
   <url>
@@ -23,6 +29,9 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_gitignore.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_gitlsf.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_license.html</loc>

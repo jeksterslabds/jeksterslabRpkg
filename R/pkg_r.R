@@ -17,7 +17,7 @@
 #' @export
 pkg_r <- function(pkg_dir = getwd(),
                   pkg_name) {
-  r <- file.path(
+  root_r <- file.path(
     pkg_dir,
     pkg_name,
     "R"
@@ -32,7 +32,7 @@ pkg_r <- function(pkg_dir = getwd(),
   )
   util_txt2file(
     text = output,
-    dir = r,
+    dir = root_r,
     fn = "z.R"
   )
 }

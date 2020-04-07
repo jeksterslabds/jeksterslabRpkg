@@ -28,7 +28,7 @@
 pkg_namespace <- function(pkg_dir = getwd(),
                           pkg_name,
                           add = NULL) {
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
@@ -51,7 +51,7 @@ pkg_namespace <- function(pkg_dir = getwd(),
   }
   util_txt2file(
     text = output,
-    dir = root,
+    dir = pkg_root,
     fn = "NAMESPACE"
   )
 }

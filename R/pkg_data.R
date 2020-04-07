@@ -17,7 +17,7 @@
 #' @export
 pkg_data <- function(pkg_dir = getwd(),
                      pkg_name) {
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
@@ -53,7 +53,7 @@ pkg_data <- function(pkg_dir = getwd(),
     )
     util_txt2file(
       text = Rbuildignore,
-      dir = root,
+      dir = pkg_root,
       fn = ".Rbuildignore"
     )
   }

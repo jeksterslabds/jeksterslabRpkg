@@ -76,7 +76,7 @@ pkg_description <- function(pkg_dir = getwd(),
       "input_csv does not have the necessary fields.\n"
     )
   }
-  root <- file.path(
+  pkg_root <- file.path(
     pkg_dir,
     pkg_name
   )
@@ -286,7 +286,7 @@ pkg_description <- function(pkg_dir = getwd(),
   }
   util_txt2file(
     text = output,
-    dir = root,
+    dir = pkg_root,
     fn = "DESCRIPTION"
   )
 }

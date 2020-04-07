@@ -20,7 +20,7 @@
 #' @export
 pkg_rd <- function(pkg_dir = getwd(),
                    pkg_name) {
-  man <- file.path(
+  root_man <- file.path(
     pkg_dir,
     pkg_name,
     "man"
@@ -45,7 +45,7 @@ pkg_rd <- function(pkg_dir = getwd(),
   )
   util_txt2file(
     text = output,
-    dir = man,
+    dir = root_man,
     fn = "z.Rd"
   )
 }
