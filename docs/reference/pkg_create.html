@@ -155,7 +155,6 @@ other files like .Rbuildignore, .gitignore, and Rproj.
 
     <pre class="usage"><span class='fu'>pkg_create</span>(
   <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
-  <span class='kw'>pkg_name</span> <span class='kw'>=</span> <span class='st'>"boilerplatePackage"</span>,
   <span class='kw'>input_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>pkgdown</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>travis</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
@@ -169,7 +168,7 @@ other files like .Rbuildignore, .gitignore, and Rproj.
   <span class='kw'>add_appveyor</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>git</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>github</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>msg</span> <span class='kw'>=</span> <span class='st'>"And so, it begins"</span>
+  <span class='kw'>commit_msg</span> <span class='kw'>=</span> <span class='st'>"And so, it begins"</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -181,14 +180,9 @@ other files like .Rbuildignore, .gitignore, and Rproj.
 Directory where the package is initialized.</p></td>
     </tr>
     <tr>
-      <th>pkg_name</th>
-      <td><p>Character string.
-Package name.</p></td>
-    </tr>
-    <tr>
       <th>input_file</th>
       <td><p>Character string.
-<code>csv</code> file containing <code>DESCRIPTION</code> fields and entries.</p></td>
+<code>YAML</code> file containing <code>DESCRIPTION</code> fields and entries.</p></td>
     </tr>
     <tr>
       <th>pkgdown</th>
@@ -257,9 +251,9 @@ Set up a git repository.</p></td>
 Set up and push to a github repository.</p></td>
     </tr>
     <tr>
-      <th>msg</th>
+      <th>commit_msg</th>
       <td><p>Character string.
-Commit message.</p></td>
+Git commit message.</p></td>
     </tr>
     </table>
 

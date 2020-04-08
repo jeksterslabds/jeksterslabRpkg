@@ -4,17 +4,17 @@
 \alias{pkg_pkgdown}
 \title{Create a Boilerplate Package \verb{_pkgdown.yml}.}
 \usage{
-pkg_pkgdown(pkg_dir = getwd(), pkg_name, input_file = NULL)
+pkg_pkgdown(pkg_root, input_file = NULL, msg = "_pkgdown.yml file path:")
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
-
-\item{pkg_name}{Character string.
-Package name.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
 \item{input_file}{Character string.
-\code{csv} file containing \code{DESCRIPTION} fields and entries.}
+\code{YAML} file containing \code{DESCRIPTION} fields and entries.}
+
+\item{msg}{Character string.
+Prints optional message and output directory.}
 }
 \description{
 Creates a \verb{_pkgdown.yml} build file.
@@ -31,9 +31,8 @@ USE WITH CAUTION.}
 \examples{
 \dontrun{
 pkg_pkgdown(
-  pkg_dir = getwd(),
-  pkg_name = "boilerplatePackage",
-  input_file = "DESCRIPTION.csv"
+  pkg_root = getwd(),
+  input_file = "DESCRIPTION.yml"
 )
 }
 }

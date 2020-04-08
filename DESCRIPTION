@@ -21,12 +21,14 @@ SystemRequirements:
     hub
 Depends: R (>= 3.5.0)
 Imports:
+    yaml,
     styler,
     rmarkdown,
     parallel,
     readxl,
     usethis,
     pkgdown,
+    tools,
     devtools
 Suggests:
     knitr,

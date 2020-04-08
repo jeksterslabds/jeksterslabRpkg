@@ -4,14 +4,16 @@
 \alias{pkg_data}
 \title{Create a Boilerplate Package Data File.}
 \usage{
-pkg_data(pkg_dir = getwd(), pkg_name)
+pkg_data(pkg_root = getwd(), msg = "Data script file path:")
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
-\item{pkg_name}{Character string.
-Package name.}
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package data file.
@@ -23,8 +25,7 @@ this function will be called.
 \examples{
 \dontrun{
 pkg_data(
-  pkg_dir = getwd(),
-  pkg_name = "boilerplatePackage"
+  pkg_root = getwd()
 )
 }
 }

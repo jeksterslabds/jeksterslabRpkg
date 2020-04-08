@@ -4,14 +4,16 @@
 \alias{pkg_rproj}
 \title{Create a Package \code{.Rproj} File.}
 \usage{
-pkg_rproj(pkg_dir = getwd(), pkg_name)
+pkg_rproj(pkg_root = getwd(), msg = "Rproj file path:")
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
-\item{pkg_name}{Character string.
-Package name.}
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a package \code{.Rproj} file.
@@ -27,8 +29,7 @@ USE WITH CAUTION.}
 \examples{
 \dontrun{
 pkg_rproj(
-  pkg_dir = getwd(),
-  pkg_name = "boilerplatePackage"
+  pkg_root = getwd()
 )
 }
 }

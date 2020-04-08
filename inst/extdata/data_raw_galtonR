@@ -6,11 +6,11 @@
 #'   rmarkdown::html_vignette:
 #'     toc: true
 #' ---
-
+#'
 #+ data
 galton <- read.delim("data_galton.tsv")
 head(galton)
-
+#'
 #+ usedata
 usethis::use_data(
   galton,

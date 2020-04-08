@@ -18,7 +18,7 @@ pkg_build(
   ncores = NULL,
   git = FALSE,
   github = FALSE,
-  msg = "BUILD"
+  commit_msg = "BUILD"
 )
 }
 \arguments{
@@ -69,8 +69,8 @@ Set up a git repository.}
 \item{github}{Logical.
 Set up and push to a github repository.}
 
-\item{msg}{Character string.
-Commit message.}
+\item{commit_msg}{Character string.
+Git commit message.}
 }
 \description{
 Builds the \code{R} package on \code{pkg_root} by:

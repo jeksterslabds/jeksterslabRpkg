@@ -6,7 +6,6 @@
 \usage{
 pkg_create(
   pkg_dir = getwd(),
-  pkg_name = "boilerplatePackage",
   input_file = NULL,
   pkgdown = FALSE,
   travis = FALSE,
@@ -20,18 +19,15 @@ pkg_create(
   add_appveyor = NULL,
   git = FALSE,
   github = FALSE,
-  msg = "And so, it begins"
+  commit_msg = "And so, it begins"
 )
 }
 \arguments{
 \item{pkg_dir}{Character string.
 Directory where the package is initialized.}
 
-\item{pkg_name}{Character string.
-Package name.}
-
 \item{input_file}{Character string.
-\code{csv} file containing \code{DESCRIPTION} fields and entries.}
+\code{YAML} file containing \code{DESCRIPTION} fields and entries.}
 
 \item{pkgdown}{Logical.
 Create \code{pkgdown} \code{YAML} file.}
@@ -75,8 +71,8 @@ Set up a git repository.}
 \item{github}{Logical.
 Set up and push to a github repository.}
 
-\item{msg}{Character string.
-Commit message.}
+\item{commit_msg}{Character string.
+Git commit message.}
 }
 \description{
 Creates a boilerplate \code{R} package by generating the following:

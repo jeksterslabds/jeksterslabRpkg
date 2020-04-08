@@ -4,14 +4,16 @@
 \alias{pkg_r}
 \title{Create a Boilerplate Package \code{R} Script.}
 \usage{
-pkg_r(pkg_dir = getwd(), pkg_name)
+pkg_r(pkg_root, msg = "z.R file path:")
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
-\item{pkg_name}{Character string.
-Package name.}
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package \code{R} script.
@@ -23,8 +25,7 @@ this function will be called.
 \examples{
 \dontrun{
 pkg_r(
-  pkg_dir = getwd(),
-  pkg_name = "boilerplatePackage"
+  pkg_root = getwd()
 )
 }
 }

@@ -42,8 +42,8 @@
 <meta property="og:title" content="Create a Package <code>DESCRIPTION</code> File. — pkg_description" />
 <meta property="og:description" content="Creates a package DESCRIPTION file
 by extracting information
-from an external csv input_file.
-See system.file(&quot;extdata&quot;, &quot;DESCRIPTION.csv&quot;, package = &quot;jeksterslabRpkg&quot;, mustWork = TRUE)
+from an external yml input_file.
+See system.file(&quot;extdata&quot;, &quot;DESCRIPTION.yml&quot;, package = &quot;jeksterslabRpkg&quot;, mustWork = TRUE)
 for the input_file template." />
 
 
@@ -120,12 +120,17 @@ for the input_file template." />
     <div class="ref-description">
     <p>Creates a package <code>DESCRIPTION</code> file
 by extracting information
-from an external <code>csv</code> <code>input_file</code>.
-See <code><a href='https://rdrr.io/r/base/system.file.html'>system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)</a></code>
+from an external <code>yml</code> <code>input_file</code>.
+See <code><a href='https://rdrr.io/r/base/system.file.html'>system.file("extdata", "DESCRIPTION.yml", package = "jeksterslabRpkg", mustWork = TRUE)</a></code>
 for the <code>input_file</code> template.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pkg_description</span>(<span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(), <span class='no'>pkg_name</span>, <span class='kw'>input_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>pkg_description</span>(
+  <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
+  <span class='kw'>input_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>msg</span> <span class='kw'>=</span> <span class='st'>"DESCRIPTION file path:"</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -136,20 +141,20 @@ for the <code>input_file</code> template.</p>
 Directory where the package is initialized.</p></td>
     </tr>
     <tr>
-      <th>pkg_name</th>
-      <td><p>Character string.
-Package name.</p></td>
-    </tr>
-    <tr>
       <th>input_file</th>
       <td><p>Character string.
-<code>csv</code> file containing <code>DESCRIPTION</code> fields and entries.</p></td>
+<code>YAML</code> file containing <code>DESCRIPTION</code> fields and entries.</p></td>
     </tr>
     <tr>
       <th>add</th>
       <td><p>Character string.
 Additional entries to the <code>DESCRIPTION</code> file
 not included in <code>input_file</code></p></td>
+    </tr>
+    <tr>
+      <th>msg</th>
+      <td><p>Character string.
+Prints optional message and output directory.</p></td>
     </tr>
     </table>
 
@@ -165,8 +170,7 @@ USE WITH CAUTION.</strong></p>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='fu'>pkg_description</span>(
   <span class='kw'>pkg_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(),
-  <span class='kw'>pkg_name</span> <span class='kw'>=</span> <span class='st'>"boilerplatePackage"</span>,
-  <span class='kw'>input_file</span> <span class='kw'>=</span> <span class='st'>"DESCRIPTION.csv"</span>
+  <span class='kw'>input_file</span> <span class='kw'>=</span> <span class='st'>"DESCRIPTION.yml"</span>
 )
 }</div></pre>
   </div>

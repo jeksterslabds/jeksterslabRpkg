@@ -4,7 +4,7 @@
 \alias{pkg_git}
 \title{Git and Github}
 \usage{
-pkg_git(pkg_root, github = TRUE, msg = "BUILD")
+pkg_git(pkg_root, github = TRUE, commit_msg = "BUILD")
 }
 \arguments{
 \item{pkg_root}{Character string.
@@ -13,8 +13,8 @@ Package root directory.}
 \item{github}{Logical.
 Set up and push to a github repository.}
 
-\item{msg}{Character string.
-Commit message.}
+\item{commit_msg}{Character string.
+Git commit message.}
 }
 \description{
 Set up a \code{Git} repository

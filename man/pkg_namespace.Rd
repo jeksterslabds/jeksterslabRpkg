@@ -4,18 +4,20 @@
 \alias{pkg_namespace}
 \title{Create a Boilerplate Package \code{NAMESPACE}.}
 \usage{
-pkg_namespace(pkg_dir = getwd(), pkg_name, add = NULL)
+pkg_namespace(pkg_root, add = NULL, msg = "NAMESPACE file path:")
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
-
-\item{pkg_name}{Character string.
-Package name.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
 \item{add}{Character string.
 Entries to the \code{NAMESPACE}
 in addition to the boilerplate example.}
+
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package \code{NAMESPACE}.
@@ -34,8 +36,7 @@ USE WITH CAUTION.}
 \examples{
 \dontrun{
 pkg_namespace(
-  pkg_dir = getwd(),
-  pkg_name = "boilerplatePackage"
+  pkg_root = getwd()
 )
 }
 }

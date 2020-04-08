@@ -4,18 +4,20 @@
 \alias{pkg_rbuildignore}
 \title{Create a Boilerplate Package \code{.Rbuildignore} File.}
 \usage{
-pkg_rbuildignore(pkg_dir = getwd(), pkg_name, add = NULL)
+pkg_rbuildignore(pkg_root, add = NULL, msg = ".Rbuildignore file path:")
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
-
-\item{pkg_name}{Character string.
-Package name.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
 \item{add}{Character string.
 Entries to the \code{.Rbuildignore}
 in addition to the boilerplate example.}
+
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package \code{.Rbuildignore} file.
@@ -31,8 +33,7 @@ Additional entries in the \code{add} argument will be appended.
 \examples{
 \dontrun{
 pkg_rbuildignore(
-  pkg_dir = getwd(),
-  pkg_name = "boilerplatePackage"
+  pkg_root = getwd()
 )
 }
 }

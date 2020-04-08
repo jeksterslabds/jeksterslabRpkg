@@ -16,5 +16,6 @@ all :
 	cp $(RUTILS)/util_render.R $(RPKG)
 	cp $(RUTILS)/util_style.R $(RPKG)
 	cp $(RUTILS)/util_txt2file.R $(RPKG)
+	cp $(RUTILS)/util_list2vector.R $(RPKG)
 	Rscript -e 'devtools::install("$(PKG)")'
 	Rscript -e 'jeksterslabRpkg::pkg_build("$(PKG)", git = TRUE, github = TRUE)'

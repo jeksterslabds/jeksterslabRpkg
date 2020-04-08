@@ -25,13 +25,16 @@
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_description.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_description_yml.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_find_root.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_git.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_gitignore.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_gitlsf.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_license.html</loc>
@@ -67,10 +70,16 @@
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_travis.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_valid_name.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/pkg_vignette.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/util_lapply.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/util_list2vector.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslabds/jeksterslabRpkg//reference/util_os.html</loc>

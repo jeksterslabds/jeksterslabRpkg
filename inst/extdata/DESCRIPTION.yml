@@ -1,0 +1,27 @@
+Package: "boilerplatePackage"
+Version: "0.9.0"
+Title: "This is a Boilerplate Package"
+Given: "Ivan Jacob Agaloos"
+Family: "Pesigan"
+Email: "i.j.a.pesigan@connect.um.edu.mo"
+ORCID: "0000-0003-4818-8420"
+Github: "jeksterslabds"
+Description:
+  Sets up a boilerplate R package.
+License: "MIT + file LICENSE"
+Encoding: "UTF-8"
+Language: "en-US"
+LazyData: "true"
+VignetteBuilder: "knitr"
+Roxygen: "list(markdown = TRUE)"
+SystemRequirements:
+  - "git"
+Depends:
+  - "R (>= 3.5.0)"
+Imports:
+  - "utils"
+  - "stats"
+Suggests:
+  - "knitr"
+  - "rmarkdown"
+  - "testthat"

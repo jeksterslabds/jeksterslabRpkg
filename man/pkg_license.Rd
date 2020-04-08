@@ -4,23 +4,23 @@
 \alias{pkg_license}
 \title{Create a Package License.}
 \usage{
-pkg_license(pkg_dir = getwd(), pkg_name, input_file = NULL)
+pkg_license(pkg_root, input_file = NULL, msg = "LICENSE file path:")
 }
 \arguments{
-\item{pkg_dir}{Character string.
-Directory where the package is initialized.}
-
-\item{pkg_name}{Character string.
-Package name.}
+\item{pkg_root}{Character string.
+Package root directory.}
 
 \item{input_file}{Character string.
-\code{csv} file containing \code{DESCRIPTION} fields and entries.}
+\code{YAML} file containing \code{DESCRIPTION} fields and entries.}
+
+\item{msg}{Character string.
+Prints optional message and output directory.}
 }
 \description{
 Creates a package \code{LICENSE} and \code{LICENSE.md}
 by extracting information
-from an external \code{csv} \code{input_file}.
-See \code{system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)}
+from an external \code{yml} \code{input_file}.
+See \code{system.file("extdata", "DESCRIPTION.yml", package = "jeksterslabRpkg", mustWork = TRUE)}
 for the \code{input_file} template.
 }
 \details{
@@ -34,9 +34,8 @@ USE WITH CAUTION.}
 \examples{
 \dontrun{
 pkg_license(
-  pkg_dir = getwd(),
-  pkg_name = "boilerplatePackage",
-  input_file = "DESCRIPTION.csv"
+  pkg_root = getwd(),
+  input_file = "DESCRIPTION.yml"
 )
 }
 }
