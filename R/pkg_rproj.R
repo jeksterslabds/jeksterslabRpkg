@@ -10,21 +10,17 @@
 #' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
+#' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_rproj(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_rproj <- function(pkg_dir = getwd(),
-                      pkg_name) {
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
-  )
+pkg_rproj <- function(pkg_root = getwd(),
+                      msg = "Rproj file path:") {
+  pkg_name <- basename(pkg_root)
   rproj <- readLines(
     con = system.file(
       "extdata",
@@ -39,11 +35,11 @@ pkg_rproj <- function(pkg_dir = getwd(),
     fn = paste0(
       pkg_name,
       ".Rproj"
-    )
+    ),
+    msg = msg
   )
   pkg_rbuildignore(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     add = paste0(
       "^",
       pkg_name,

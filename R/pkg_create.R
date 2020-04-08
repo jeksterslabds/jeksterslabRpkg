@@ -69,7 +69,6 @@
 #' }
 #' @export
 pkg_create <- function(pkg_dir = getwd(),
-                       pkg_name = "boilerplatePackage",
                        input_file = NULL,
                        pkgdown = FALSE,
                        travis = FALSE,
@@ -83,97 +82,94 @@ pkg_create <- function(pkg_dir = getwd(),
                        add_appveyor = NULL,
                        git = FALSE,
                        github = FALSE,
-                       msg = "And so, it begins") {
+                       commit_msg = "And so, it begins") {
+  yml <- pkg_description_yml(
+    input_file = input_file,
+    fields = "Package",
+    required = FALSE,
+    dependencies = FALSE
+  )
+  input <- yml[["single"]]
+  Package <- input[["Package"]]
   pkg_root <- file.path(
     pkg_dir,
-    pkg_name
+    Package
+  )
+  message(
+    paste(
+      "Creating",
+      pkg_root,
+      "\n"
+    )
   )
   # It is important to create the .Rbuildignore and .gitignore first
   # because other functions add entries to it.
   pkg_rbuildignore(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     add = add_rbuildignore
   )
   pkg_gitignore(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     add = add_gitignore
-  )
-  pkg_gitlsf(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name
   )
   pkg_description(
     pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
     input_file = input_file,
     add = add_description
   )
   pkg_license(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     input_file = input_file
   )
   pkg_namespace(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     add = add_namespace
   )
   pkg_r(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name
+    pkg_root = pkg_root
   )
   pkg_rd(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name
+    pkg_root = pkg_root
   )
   pkg_vignette(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name
+    pkg_root = pkg_root
   )
   pkg_test(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name
+    pkg_root = pkg_root
   )
   pkg_data(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name
+    pkg_root = pkg_root
   )
   pkg_rproj(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name
+    pkg_root = pkg_root
   )
   if (travis) {
     pkg_travis(
-      pkg_dir = pkg_dir,
-      pkg_name = pkg_name,
+      pkg_root = pkg_root,
       add = add_travis
     )
   }
   if (appveyor) {
     pkg_appveyor(
-      pkg_dir = pkg_dir,
-      pkg_name = pkg_name,
+      pkg_root = pkg_root,
       add = add_appveyor
     )
   }
   if (pkgdown) {
     pkg_pkgdown(
-      pkg_dir = pkg_dir,
-      pkg_name = pkg_name
+      pkg_root = pkg_root,
+      input_file = input_file
     )
   }
   if (readme) {
     pkg_readme(
-      pkg_dir = pkg_dir,
-      pkg_name = pkg_name,
+      pkg_root = pkg_root,
       input_file = input_file
     )
   }
   message(
     paste0(
-      pkg_name,
+      Package,
       " has been saved in ",
       pkg_root,
       ".",
@@ -183,7 +179,7 @@ pkg_create <- function(pkg_dir = getwd(),
   message(
     paste(
       "If you are going to document, check, and build",
-      pkg_name,
+      Package,
       "using `devtools`, you may delete the boilerplate `NAMESPACE` and `MAN` files.\n"
     )
   )
@@ -191,7 +187,7 @@ pkg_create <- function(pkg_dir = getwd(),
     pkg_git(
       pkg_root = pkg_root,
       github = github,
-      msg = msg
+      commit_msg = commit_msg
     )
   }
 }

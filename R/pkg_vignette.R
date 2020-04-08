@@ -6,20 +6,19 @@
 #' this function will be called.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
+#' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_vignette(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_vignette <- function(pkg_dir = getwd(),
-                         pkg_name) {
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name,
+pkg_vignette <- function(pkg_root,
+                         msg = "z.Rmd file path:") {
+  pkg_name <- basename(pkg_root)
+  root_vignettes <- file.path(
+    pkg_root,
     "vignettes"
   )
   output <- readLines(
@@ -41,7 +40,8 @@ pkg_vignette <- function(pkg_dir = getwd(),
   )
   util_txt2file(
     text = output,
-    dir = pkg_root,
-    fn = "z.Rmd"
+    dir = root_vignettes,
+    fn = "z.Rmd",
+    msg = msg
   )
 }

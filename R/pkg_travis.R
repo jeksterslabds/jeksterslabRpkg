@@ -11,25 +11,20 @@
 #' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
 #' @param add Character string.
 #'   Entries to the `.travis.yml`
 #'   in addition to the boilerplate example.
+#' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_travis(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_travis <- function(pkg_dir = getwd(),
-                       pkg_name,
-                       add = NULL) {
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
-  )
+pkg_travis <- function(pkg_root,
+                       add = NULL,
+                       msg = ".travis.yml file path:") {
   output <- readLines(
     con = system.file(
       "extdata",
@@ -48,11 +43,11 @@ pkg_travis <- function(pkg_dir = getwd(),
   util_txt2file(
     text = output,
     dir = pkg_root,
-    fn = ".travis.yml"
+    fn = ".travis.yml",
+    msg = msg
   )
   pkg_rbuildignore(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     add = "^.travis.yml$\n^.covrignore$"
   )
 }

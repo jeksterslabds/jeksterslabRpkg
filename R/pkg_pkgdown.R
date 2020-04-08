@@ -12,55 +12,36 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
+#' @inheritParams pkg_rbuildignore
 #' @importFrom pkgdown build_site
 #' @examples
 #' \dontrun{
 #' pkg_pkgdown(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage",
-#'   input_file = "DESCRIPTION.csv"
+#'   pkg_root = getwd(),
+#'   input_file = "DESCRIPTION.yml"
 #' )
 #' }
 #' @export
-pkg_pkgdown <- function(pkg_dir = getwd(),
-                        pkg_name,
-                        input_file = NULL) {
+pkg_pkgdown <- function(pkg_root,
+                        input_file = NULL,
+                        msg = "_pkgdown.yml file path:") {
+  pkg_name <- basename(pkg_root)
   if (is.null(input_file)) {
     input_file <- system.file(
       "extdata",
-      "DESCRIPTION.csv",
+      "DESCRIPTION.yml",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )
   }
-  input <- t(
-    read.csv(
-      file = input_file,
-      stringsAsFactors = FALSE,
-      row.names = "field"
-    )
+  yml <- pkg_description_yml(
+    input_file = input_file,
+    fields = "Github",
+    required = FALSE,
+    dependencies = FALSE
   )
-  input_names <- colnames(input)
-  input <- as.vector(input[-1, ])
-  names(input) <- input_names
-  if (
-    !all(
-      c(
-        "Github"
-      )
-      %in%
-        names(input)
-    )
-  ) {
-    stop(
-      "input_csv does not have the necessary fields.\n"
-    )
-  }
+  input <- yml[["single"]]
   Github <- input[["Github"]]
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
-  )
   output <- readLines(
     con = system.file(
       "extdata",
@@ -82,12 +63,12 @@ pkg_pkgdown <- function(pkg_dir = getwd(),
   util_txt2file(
     text = output,
     dir = pkg_root,
-    fn = "_pkgdown.yml"
+    fn = "_pkgdown.yml",
+    msg = msg
   )
   build_site(pkg = pkg_root)
   pkg_rbuildignore(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     add = "^_pkgdown.yml$\n^docs$"
   )
 }

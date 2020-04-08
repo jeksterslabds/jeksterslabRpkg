@@ -6,23 +6,22 @@
 #' this function will be called.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
+#' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_test(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_test <- function(pkg_dir = getwd(),
-                     pkg_name) {
-  tests <- file.path(
-    pkg_dir,
-    pkg_name,
+pkg_test <- function(pkg_root,
+                     msg = "test_z.R file path:") {
+  pkg_name <- basename(pkg_root)
+  root_tests <- file.path(
+    pkg_root,
     "tests"
   )
-  testthat <- paste0(
+  root_testthat <- paste0(
     "library(testthat)",
     "\n",
     "library(",
@@ -34,8 +33,8 @@ pkg_test <- function(pkg_dir = getwd(),
     "\")"
   )
   util_txt2file(
-    text = testthat,
-    dir = tests,
+    text = root_testthat,
+    dir = root_tests,
     fn = "testthat.R"
   )
   output <- readLines(
@@ -54,9 +53,10 @@ pkg_test <- function(pkg_dir = getwd(),
   util_txt2file(
     text = output,
     dir = file.path(
-      tests,
+      root_tests,
       "testthat"
     ),
-    fn = "test_z.R"
+    fn = "test_z.R",
+    msg = msg
   )
 }

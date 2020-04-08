@@ -10,56 +10,45 @@
 #' Additional entries in the `add` argument will be appended.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
 #' @param add Character string.
 #'   Entries to the \code{.gitignore}
 #'   in addition to the boilerplate example.
+#' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_gitignore(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_gitignore <- function(pkg_dir = getwd(),
-                          pkg_name,
-                          add = NULL) {
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
-  )
+pkg_gitignore <- function(pkg_root,
+                          add = NULL,
+                          msg = ".gitignore file path:") {
   file <- file.path(pkg_root, ".gitignore")
   if (file.exists(file)) {
-    output <- paste0(
-      readLines(
-        con = file
-      ),
-      collapse = "\n"
+    output <- readLines(
+      con = file
     )
   } else {
-    output <- paste0(
-      readLines(
-        con = system.file(
-          "extdata",
-          "gitignore",
-          package = "jeksterslabRpkg",
-          mustWork = TRUE
-        )
-      ),
-      collapse = "\n"
+    output <- readLines(
+      con = system.file(
+        "extdata",
+        "gitignore",
+        package = "jeksterslabRpkg",
+        mustWork = TRUE
+      )
     )
   }
   if (!is.null(add)) {
-    output <- paste0(
+    output <- unique(
       output,
-      "\n",
       add
     )
   }
   util_txt2file(
     text = output,
     dir = pkg_root,
-    fn = ".gitignore"
+    fn = ".gitignore",
+    msg = msg
   )
 }

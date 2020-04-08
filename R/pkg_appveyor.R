@@ -10,25 +10,20 @@
 #' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
+#' @inheritParams pkg_rbuildignore
 #' @param add Character string.
 #'   Entries to the `appveyor.yml`
 #'   in addition to the boilerplate example.
 #' @examples
 #' \dontrun{
 #' pkg_appveyor(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_appveyor <- function(pkg_dir = getwd(),
-                         pkg_name,
-                         add = NULL) {
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
-  )
+pkg_appveyor <- function(pkg_root,
+                         add = NULL,
+                         msg = "appveyor.yml file path:") {
   output <- readLines(
     con = system.file(
       "extdata",
@@ -47,11 +42,11 @@ pkg_appveyor <- function(pkg_dir = getwd(),
   util_txt2file(
     text = output,
     dir = pkg_root,
-    fn = "appveyor.yml"
+    fn = "appveyor.yml",
+    msg = msg
   )
   pkg_rbuildignore(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     add = "^appveyor.yml$"
   )
 }

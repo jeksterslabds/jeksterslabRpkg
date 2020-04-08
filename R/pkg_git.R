@@ -10,12 +10,12 @@
 #'   Package root directory.
 #' @param github Logical.
 #'   Set up and push to a github repository.
-#' @param msg Character string.
-#'   Commit message.
+#' @param commit_msg Character string.
+#'   Git commit message.
 #' @export
 pkg_git <- function(pkg_root,
                     github = TRUE,
-                    msg = "BUILD") {
+                    commit_msg = "BUILD") {
   if (nchar(Sys.which("git")) == 0) {
     stop(
       "`git` command is not installed in the system.\n"
@@ -63,7 +63,7 @@ pkg_git <- function(pkg_root,
           "git -C ",
           shQuote(pkg_root),
           " commit -m \"",
-          msg,
+          commit_msg,
           ".\""
         )
       )

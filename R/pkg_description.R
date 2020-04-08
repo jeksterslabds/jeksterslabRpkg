@@ -2,8 +2,8 @@
 #'
 #' Creates a package `DESCRIPTION` file
 #' by extracting information
-#' from an external `csv` `input_file`.
-#' See `system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)`
+#' from an external `yml` `input_file`.
+#' See `system.file("extdata", "DESCRIPTION.yml", package = "jeksterslabRpkg", mustWork = TRUE)`
 #' for the `input_file` template.
 #'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
@@ -16,103 +16,53 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param pkg_dir Character string.
 #'   Directory where the package is initialized.
-#' @param pkg_name Character string.
-#'   Package name.
-#' @param input_file Character string.
-#'   `csv` file containing `DESCRIPTION` fields and entries.
 #' @param add Character string.
 #'   Additional entries to the `DESCRIPTION` file
 #'   not included in `input_file`
-#' @importFrom utils read.csv
+#' @param msg Character string.
+#'   Prints optional message and output directory.
+#' @inheritParams pkg_description_yml
+#' @inheritParams util_txt2file
 #' @examples
 #' \dontrun{
 #' pkg_description(
 #'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage",
-#'   input_file = "DESCRIPTION.csv"
+#'   input_file = "DESCRIPTION.yml"
 #' )
 #' }
 #' @export
 pkg_description <- function(pkg_dir = getwd(),
-                            pkg_name,
                             input_file = NULL,
-                            add = NULL) {
+                            add = NULL,
+                            msg = "DESCRIPTION file path:") {
   if (is.null(input_file)) {
     input_file <- system.file(
       "extdata",
-      "DESCRIPTION.csv",
+      "DESCRIPTION.yml",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )
   }
-  input <- t(
-    read.csv(
-      file = input_file,
-      stringsAsFactors = FALSE,
-      row.names = "field"
-    )
+  yml <- pkg_description_yml(
+    input_file = input_file
   )
-  input_names <- colnames(input)
-  input <- as.vector(input[-1, ])
-  names(input) <- input_names
-  if (
-    !all(
-      c(
-        "Title",
-        "Version",
-        "Given",
-        "Family",
-        "Email",
-        "Github",
-        "License",
-        "Encoding",
-        "LazyData"
-      )
-      %in%
-        names(input)
-    )
-  ) {
-    stop(
-      "input_csv does not have the necessary fields.\n"
-    )
-  }
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
+  input <- yml[["single"]]
+  Package <- input[["Package"]]
+  SystemRequirements <- yml[["SystemRequirements"]]
+  Depends <- yml[["Depends"]]
+  Imports <- yml[["Imports"]]
+  Suggests <- yml[["Suggests"]]
+  author <- c(
+    "Given",
+    "Family",
+    "Email",
+    "ORCID",
+    "Github"
   )
-  Package <- paste(
-    "Package:",
-    pkg_name
-  )
-  Title <- paste(
-    "Title:",
-    input[["Title"]]
-  )
-  Version <- paste(
-    "Version:",
-    input[["Version"]]
-  )
-  Github <- input[["Github"]]
-  URL <- paste(
-    "URL:",
-    paste0(
-      "https://github.com/",
-      Github,
-      "/",
-      pkg_name
-    )
-  )
-  BugReports <- paste(
-    "BugReports:",
-    paste0(
-      "https://github.com/",
-      Github,
-      "/",
-      pkg_name,
-      "/issues"
-    )
-  )
-  if (is.na(input[["ORCID"]])) {
+  author <- input[author]
+  input <- input[!input %in% author]
+  ORCID <- author[["ORCID"]]
+  if (is.na(ORCID) | is.null(ORCID)) {
     ORCID <- "\n"
   } else {
     ORCID <- paste0(
@@ -121,7 +71,7 @@ pkg_description <- function(pkg_dir = getwd(),
       "        ",
       "comment = c(ORCID = ",
       "\"",
-      input[["ORCID"]],
+      ORCID,
       "\"",
       ")",
       "\n"
@@ -136,14 +86,14 @@ pkg_description <- function(pkg_dir = getwd(),
     "        ",
     "given = ",
     "\"",
-    input[["Given"]],
+    author[["Given"]],
     "\"",
     ",",
     "\n",
     "        ",
     "family = ",
     "\"",
-    input[["Family"]],
+    author[["Family"]],
     "\"",
     ",",
     "\n",
@@ -154,129 +104,131 @@ pkg_description <- function(pkg_dir = getwd(),
     "        ",
     "email = ",
     "\"",
-    input[["Email"]],
+    author[["Email"]],
     "\"",
-    ORCID,
+    ORCID, # this has already been extracted previously
     "    ",
     ")"
   )
-  author <- paste(
-    input[["Given"]],
-    input[["Family"]]
+  Github <- author[["Github"]]
+  if (!is.null(Github) && !is.na(Github)) {
+    URL <- paste(
+      "URL:",
+      paste0(
+        "https://github.com/",
+        Github,
+        "/",
+        Package
+      )
+    )
+    BugReports <- paste(
+      "BugReports:",
+      paste0(
+        "https://github.com/",
+        Github,
+        "/",
+        Package,
+        "/issues"
+      )
+    )
+  }
+  if (!is.null(SystemRequirements) && !is.na(SystemRequirements)) {
+    SystemRequirements <- paste0(
+      "\t",
+      SystemRequirements,
+      collapse = ",\n"
+    )
+    SystemRequirements <- paste0(
+      "SystemRequirements:",
+      "\n",
+      SystemRequirements
+    )
+  }
+  if (!is.null(Depends) && !is.na(Depends)) {
+    Depends <- paste0(
+      "\t",
+      Depends,
+      collapse = ",\n"
+    )
+    Depends <- paste0(
+      "Depends:",
+      "\n",
+      Depends
+    )
+  }
+  if (!is.null(Imports) && !is.na(Imports)) {
+    Imports <- paste0(
+      "\t",
+      Imports,
+      collapse = ",\n"
+    )
+    Imports <- paste0(
+      "Imports:",
+      "\n",
+      Imports
+    )
+  }
+  if (!is.null(Suggests) && !is.na(Suggests)) {
+    Suggests <- paste0(
+      "\t",
+      Suggests,
+      collapse = ",\n"
+    )
+    Suggests <- paste0(
+      "Suggests:",
+      "\n",
+      Suggests
+    )
+  }
+  input <- paste0(
+    names(input),
+    ": ",
+    input
   )
-  input_description <- strwrap(
-    x = input["Description"],
-    width = 65,
+  input <- strwrap(
+    x = input,
+    width = 80,
     exdent = 4
   )
-  Description <- vector(
-    length = length(input_description)
+  input <- append(
+    x = input,
+    values = AuthorR,
+    after = 3
   )
-  for (i in seq_along(input_description)) {
-    if (i == 1) {
-      Description[i] <- paste(
-        "Description:",
-        input_description[i]
-      )
-    } else {
-      Description[i] <- input_description[i]
-    }
+  if (!is.null(Github) && !is.na(Github)) {
+    input <- append(
+      x = input,
+      values = c(URL, BugReports),
+    )
   }
-  Description <- paste0(
-    Description,
+  if (!is.null(SystemRequirements) && !is.na(SystemRequirements)) {
+    input <- append(
+      x = input,
+      values = SystemRequirements
+    )
+  }
+  if (!is.null(Depends) && !is.na(Depends)) {
+    input <- append(
+      x = input,
+      values = Depends
+    )
+  }
+  if (!is.null(Imports) && !is.na(Imports)) {
+    input <- append(
+      x = input,
+      values = Imports
+    )
+  }
+  if (!is.null(Suggests) && !is.na(Suggests)) {
+    input <- append(
+      x = input,
+      values = Suggests
+    )
+  }
+  output <- paste0(
+    input,
     collapse = "\n"
   )
-  License <- paste(
-    "License:",
-    input[["License"]]
-  )
-  Encoding <- paste(
-    "Encoding:",
-    input[["Encoding"]]
-  )
-  LazyData <- paste(
-    "LazyData:",
-    tolower(input[["LazyData"]])
-  )
-  output <- paste(
-    Package,
-    Title,
-    Version,
-    AuthorR,
-    Description,
-    License,
-    URL,
-    BugReports,
-    Encoding,
-    LazyData,
-    sep = "\n"
-  )
-  if ("Language" %in% names(input)) {
-    Language <- paste(
-      "Language:",
-      input[["Language"]]
-    )
-    output <- paste(
-      output,
-      Language,
-      sep = "\n"
-    )
-  }
-  if ("Depends" %in% names(input)) {
-    Depends <- paste(
-      "Depends:",
-      input[["Depends"]]
-    )
-    output <- paste(
-      output,
-      Depends,
-      sep = "\n"
-    )
-  }
-  if ("Imports" %in% names(input)) {
-    Imports <- paste(
-      "Imports:",
-      input[["Imports"]]
-    )
-    output <- paste(
-      output,
-      Imports,
-      sep = "\n"
-    )
-  }
-  if ("Suggests" %in% names(input)) {
-    Suggests <- paste(
-      "Suggests:",
-      input[["Suggests"]]
-    )
-    output <- paste(
-      output,
-      Suggests,
-      sep = "\n"
-    )
-  }
-  if ("VignetteBuilder" %in% names(input)) {
-    VignetteBuilder <- paste(
-      "VignetteBuilder:",
-      input[["VignetteBuilder"]]
-    )
-    output <- paste(
-      output,
-      VignetteBuilder,
-      sep = "\n"
-    )
-  }
-  if ("Roxygen" %in% names(input)) {
-    Roxygen <- paste(
-      "Roxygen:",
-      input[["Roxygen"]]
-    )
-    output <- paste(
-      output,
-      Roxygen,
-      sep = "\n"
-    )
-  }
   if (!is.null(add)) {
     output <- paste0(
       output,
@@ -286,7 +238,11 @@ pkg_description <- function(pkg_dir = getwd(),
   }
   util_txt2file(
     text = output,
-    dir = pkg_root,
-    fn = "DESCRIPTION"
+    dir = file.path(
+      pkg_dir,
+      Package
+    ),
+    fn = "DESCRIPTION",
+    msg = msg
   )
 }

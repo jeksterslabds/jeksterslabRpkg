@@ -2,8 +2,8 @@
 #'
 #' Creates a boilerplate package `README.Rmd` file
 #' by extracting information
-#' from an external `csv` `input_file`.
-#' See `system.file("extdata", "DESCRIPTION.csv", package = "jeksterslabRpkg", mustWork = TRUE)`
+#' from an external `yml` `input_file`.
+#' See `system.file("extdata", "DESCRIPTION.yml", package = "jeksterslabRpkg", mustWork = TRUE)`
 #' for the `input_file` template.
 #'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
@@ -14,55 +14,41 @@
 #' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
+#' @inheritParams pkg_rbuildignore
 #' @inheritParams pkg_description
 #' @examples
 #' \dontrun{
 #' pkg_readme(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage",
-#'   input_file = "DESCRIPTION.csv"
+#'   pkg_root = getwd(),
+#'   input_file = "DESCRIPTION.yml"
 #' )
 #' }
 #' @export
-pkg_readme <- function(pkg_dir = getwd(),
-                       pkg_name,
-                       input_file = NULL) {
+pkg_readme <- function(pkg_root,
+                       input_file = NULL,
+                       msg = "README.Rmd file path:") {
+  pkg_name <- basename(pkg_root)
   if (is.null(input_file)) {
     input_file <- system.file(
       "extdata",
-      "DESCRIPTION.csv",
+      "DESCRIPTION.yml",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )
   }
-  input <- t(
-    read.csv(
-      file = input_file,
-      stringsAsFactors = FALSE,
-      row.names = "field"
-    )
+  yml <- pkg_description_yml(
+    input_file = input_file,
+    fields = c(
+      "Given",
+      "Family",
+      "Github"
+    ),
+    required = FALSE,
+    dependencies = FALSE
   )
-  input_names <- colnames(input)
-  input <- as.vector(input[-1, ])
-  names(input) <- input_names
-  if (
-    !all(
-      c(
-        "Given",
-        "Family"
-      )
-      %in%
-        names(input)
-    )
-  ) {
-    stop(
-      "input_csv does not have the necessary fields.\n"
-    )
-  }
-  root <- file.path(
-    pkg_dir,
-    pkg_name
-  )
+  input <- yml[["single"]]
+  Given <- input[["Given"]]
+  Family <- input[["Family"]]
   Github <- input[["Github"]]
   author <- paste(
     input[["Given"]],
@@ -96,12 +82,12 @@ pkg_readme <- function(pkg_dir = getwd(),
   )
   util_txt2file(
     text = readme,
-    dir = root,
-    fn = "README.Rmd"
+    dir = pkg_root,
+    fn = "README.Rmd",
+    msg = msg
   )
   pkg_rbuildignore(
-    pkg_dir = pkg_dir,
-    pkg_name = pkg_name,
+    pkg_root = pkg_root,
     add = paste(
       "^README\\.Rmd$",
       "^README\\.md$",

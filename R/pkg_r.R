@@ -6,20 +6,18 @@
 #' this function will be called.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
+#' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_r(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_r <- function(pkg_dir = getwd(),
-                  pkg_name) {
+pkg_r <- function(pkg_root,
+                  msg = "z.R file path:") {
   root_r <- file.path(
-    pkg_dir,
-    pkg_name,
+    pkg_root,
     "R"
   )
   output <- readLines(
@@ -33,6 +31,7 @@ pkg_r <- function(pkg_dir = getwd(),
   util_txt2file(
     text = output,
     dir = root_r,
-    fn = "z.R"
+    fn = "z.R",
+    msg = msg
   )
 }

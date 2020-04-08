@@ -13,45 +13,41 @@
 #' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
+
 #' @param add Character string.
 #'   Entries to the \code{NAMESPACE}
 #'   in addition to the boilerplate example.
+#' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_namespace(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_namespace <- function(pkg_dir = getwd(),
-                          pkg_name,
-                          add = NULL) {
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
+pkg_namespace <- function(pkg_root,
+                          add = NULL,
+                          msg = "NAMESPACE file path:") {
+  output <- c(
+    "# This is a boilerplate example.",
+    "# Delete this file if you are building documentation files with roxygen.",
+    "export(z)",
+    "import(utils)"
   )
   output <- paste0(
-    "# This is a boilerplate example.",
-    "\n",
-    "# Delete this file if you are building documentation files with roxygen.",
-    "\n",
-    "export(z)",
-    "\n",
-    "import(utils)",
-    "\n"
+    output,
+    collapse = "\n"
   )
   if (!is.null(add)) {
-    output <- paste0(
+    output <- union(
       output,
-      "\n",
       add
     )
   }
   util_txt2file(
     text = output,
     dir = pkg_root,
-    fn = "NAMESPACE"
+    fn = "NAMESPACE",
+    msg = msg
   )
 }

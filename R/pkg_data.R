@@ -6,30 +6,23 @@
 #' this function will be called.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
+#' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_data(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_data <- function(pkg_dir = getwd(),
-                     pkg_name) {
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
-  )
+pkg_data <- function(pkg_root = getwd(),
+                     msg = "Data script file path:") {
   Rbuildignore <- file.path(
-    pkg_dir,
-    pkg_name,
+    pkg_root,
     ".Rbuildignore"
   )
   if (!file.exists(Rbuildignore)) {
     pkg_rbuildignore(
-      pkg_dir = pkg_dir,
-      pkg_name = pkg_name
+      pkg_root = pkg_root
     )
   }
   Rbuildignore <- paste0(
@@ -59,8 +52,7 @@ pkg_data <- function(pkg_dir = getwd(),
   }
   wd <- getwd()
   data_raw <- file.path(
-    pkg_dir,
-    pkg_name,
+    pkg_root,
     "data_raw"
   )
   data_raw_galton_r <- "data_raw_galton.R"
@@ -75,7 +67,8 @@ pkg_data <- function(pkg_dir = getwd(),
   util_txt2file(
     text = output_data_raw_galton_r,
     dir = data_raw,
-    fn = data_raw_galton_r
+    fn = data_raw_galton_r,
+    msg = msg
   )
   data_galton_tsv <- "data_galton.tsv"
   output_data_galton_tsv <- readLines(
@@ -95,8 +88,7 @@ pkg_data <- function(pkg_dir = getwd(),
   source(data_raw_galton_r)
   setwd(wd)
   root_r <- file.path(
-    pkg_dir,
-    pkg_name,
+    pkg_root,
     "R"
   )
   data_galton_r <- "data_galton.R"
@@ -114,8 +106,7 @@ pkg_data <- function(pkg_dir = getwd(),
     fn = data_galton_r
   )
   root_man <- file.path(
-    pkg_dir,
-    pkg_name,
+    pkg_root,
     "man"
   )
   output_galton_rd <- readLines(

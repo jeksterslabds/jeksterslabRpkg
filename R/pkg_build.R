@@ -59,7 +59,7 @@ pkg_build <- function(pkg_root = NULL,
                       ncores = NULL,
                       git = FALSE,
                       github = FALSE,
-                      msg = "BUILD") {
+                      commit_msg = "BUILD") {
   if (is.null(pkg_root)) {
     pkg_root <- getwd()
   }
@@ -270,7 +270,7 @@ pkg_build <- function(pkg_root = NULL,
     pkg_git(
       pkg_root = pkg_root,
       github = github,
-      msg = msg
+      commit_msg = commit_msg
     )
   }
   setwd(wd)

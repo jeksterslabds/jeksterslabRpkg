@@ -10,56 +10,47 @@
 #' Additional entries in the `add` argument will be appended.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @inheritParams pkg_description
+#' @param pkg_root Character string.
+#'   Package root directory.
 #' @param add Character string.
 #'   Entries to the \code{.Rbuildignore}
 #'   in addition to the boilerplate example.
+#' @inheritParams util_txt2file
 #' @examples
 #' \dontrun{
 #' pkg_rbuildignore(
-#'   pkg_dir = getwd(),
-#'   pkg_name = "boilerplatePackage"
+#'   pkg_root = getwd()
 #' )
 #' }
 #' @export
-pkg_rbuildignore <- function(pkg_dir = getwd(),
-                             pkg_name,
-                             add = NULL) {
-  pkg_root <- file.path(
-    pkg_dir,
-    pkg_name
-  )
+pkg_rbuildignore <- function(pkg_root,
+                             add = NULL,
+                             msg = ".Rbuildignore file path:") {
   file <- file.path(pkg_root, ".Rbuildignore")
   if (file.exists(file)) {
-    output <- paste0(
-      readLines(
-        con = file
-      ),
-      collapse = "\n"
+    output <- readLines(
+      con = file
     )
   } else {
-    output <- paste0(
-      readLines(
-        con = system.file(
-          "extdata",
-          "Rbuildignore",
-          package = "jeksterslabRpkg",
-          mustWork = TRUE
-        )
-      ),
-      collapse = "\n"
+    output <- readLines(
+      con = system.file(
+        "extdata",
+        "Rbuildignore",
+        package = "jeksterslabRpkg",
+        mustWork = TRUE
+      )
     )
   }
   if (!is.null(add)) {
-    output <- paste0(
+    output <- union(
       output,
-      "\n",
       add
     )
   }
   util_txt2file(
     text = output,
     dir = pkg_root,
-    fn = ".Rbuildignore"
+    fn = ".Rbuildignore",
+    msg = msg
   )
 }
