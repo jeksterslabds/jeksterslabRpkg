@@ -4,7 +4,9 @@ author: "Ivan Jacob Agaloos Pesigan"
 date: "`r Sys.Date()`"
 description: >
   Learn how to get started with the basics of BOILERPLATEPACKAGE.
-output: rmarkdown::html_vignette
+output:
+  rmarkdown::html_vignette:
+    toc: true
 vignette: >
   %\VignetteIndexEntry{Introduction to BOILERPLATEPACKAGE}
   %\VignetteEngine{knitr::rmarkdown}
