@@ -34,7 +34,7 @@ USE WITH CAUTION.}
 \examples{
 \dontrun{
 pkg_travis(
-  pkg_root = getwd()
+  pkg_root = "~/boilerplatePackage"
 )
 }
 }

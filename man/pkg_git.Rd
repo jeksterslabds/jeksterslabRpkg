@@ -4,7 +4,7 @@
 \alias{pkg_git}
 \title{Git and Github}
 \usage{
-pkg_git(pkg_root, github = TRUE, commit_msg = "BUILD")
+pkg_git(pkg_root, github = TRUE, commit_msg = "AUTOMATED BUILD")
 }
 \arguments{
 \item{pkg_root}{Character string.
@@ -21,6 +21,15 @@ Set up a \code{Git} repository
 and push the created repo to \code{Github}.
 This requires that \code{git} and \code{hub} are installed
 and configured in the system.
+}
+\examples{
+\dontrun{
+pkg_git(
+  pkg_root = "boilerplatePackage",
+  github = TRUE,
+  commit_msg = "Meaningful commit message"
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

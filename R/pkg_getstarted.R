@@ -15,7 +15,7 @@
 #' }
 #' @export
 pkg_getstarted <- function(pkg_root,
-                         msg = "Get started file path:") {
+                           msg = "Get started file path:") {
   pkg_name <- basename(pkg_root)
   root_vignettes <- file.path(
     pkg_root,

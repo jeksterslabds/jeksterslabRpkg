@@ -33,7 +33,7 @@ Additional entries in the \code{add} argument will be appended.
 \examples{
 \dontrun{
 pkg_rbuildignore(
-  pkg_root = getwd()
+  pkg_root = "~/boilerplatePackage"
 )
 }
 }

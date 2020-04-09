@@ -32,7 +32,7 @@
 #'     "LazyData",
 #'     "VignetteBuilder",
 #'     "Roxygen"
-#'     ),
+#'   ),
 #'   required = TRUE,
 #'   dependencies = TRUE
 #' )

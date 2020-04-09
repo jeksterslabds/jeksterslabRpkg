@@ -31,3 +31,29 @@ Extract dependencies
 \description{
 Parse Description \code{YAML}
 }
+\examples{
+\dontrun{
+pkg_description_yml(
+  input_file = "DESCRIPTION.yml",
+  fields = c(
+    "Package",
+    "Given",
+    "Family",
+    "Email",
+    "ORCID",
+    "Version",
+    "Title",
+    "Description",
+    "License",
+    "Github",
+    "Encoding",
+    "Language",
+    "LazyData",
+    "VignetteBuilder",
+    "Roxygen"
+  ),
+  required = TRUE,
+  dependencies = TRUE
+)
+}
+}

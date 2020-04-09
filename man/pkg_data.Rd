@@ -25,7 +25,7 @@ this function will be called.
 \examples{
 \dontrun{
 pkg_data(
-  pkg_root = "boilerplatePackage"
+  pkg_root = "~/boilerplatePackage"
 )
 }
 }

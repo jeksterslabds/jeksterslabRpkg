@@ -31,7 +31,7 @@ USE WITH CAUTION.}
 \examples{
 \dontrun{
 pkg_pkgdown(
-  pkg_root = getwd(),
+  pkg_root = "~/boilerplatePackage",
   input_file = "DESCRIPTION.yml"
 )
 }
