@@ -6,7 +6,8 @@
 \usage{
 pkg_checkroot_subdir(
   dir = getwd(),
-  subdir = c("R", "man", "tests", file.path("tests", "testthat"), "vignettes")
+  subdir = c("R", "data", "data_raw", "man", "tests", file.path("tests", "testthat"),
+    "vignettes")
 )
 }
 \arguments{
