@@ -10,12 +10,27 @@
 #' @examples
 #' \dontrun{
 #' pkg_news(
-#'   pkg_root = "~/boilerplatePackage"
+#'   pkg_root = "~/boilerplatePackage",
+#'   input_file = "DESCRIPTION.yml"
 #' )
 #' }
 #' @export
 pkg_news <- function(pkg_root,
+                     input_file = NULL,
                      msg = "NEWS.md file path:") {
+  if (is.null(input_file)) {
+    input_file <- system.file(
+      "extdata",
+      "DESCRIPTION.yml",
+      package = "jeksterslabRpkg",
+      mustWork = TRUE
+    )
+  }
+  yml <- pkg_description_yml(
+    input_file = input_file
+  )
+  input <- yml[["single"]]
+  Version <- input[["Version"]]
   pkg_name <- basename(pkg_root)
   output <- readLines(
     con = system.file(
@@ -28,6 +43,11 @@ pkg_news <- function(pkg_root,
   output <- gsub(
     pattern = "BOILERPLATEPACKAGE",
     replacement = pkg_name,
+    x = output
+  )
+  output <- gsub(
+    pattern = "VERSION",
+    replacement = Version,
     x = output
   )
   output <- paste0(
