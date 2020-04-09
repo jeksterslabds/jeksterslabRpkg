@@ -12,6 +12,31 @@
 #'   (`SystemRequirements`, `Depends`, `Imports`, `Suggests`).
 #' @importFrom yaml read_yaml
 #' @importFrom tools toTitleCase
+#' @examples
+#' \dontrun{
+#' pkg_description_yml(
+#'   input_file = "DESCRIPTION.yml",
+#'   fields = c(
+#'     "Package",
+#'     "Given",
+#'     "Family",
+#'     "Email",
+#'     "ORCID",
+#'     "Version",
+#'     "Title",
+#'     "Description",
+#'     "License",
+#'     "Github",
+#'     "Encoding",
+#'     "Language",
+#'     "LazyData",
+#'     "VignetteBuilder",
+#'     "Roxygen"
+#'     ),
+#'   required = TRUE,
+#'   dependencies = TRUE
+#' )
+#' }
 #' @export
 pkg_description_yml <- function(input_file = NULL,
                                 fields = c(

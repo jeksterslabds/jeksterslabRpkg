@@ -10,7 +10,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_vignette(
-#'   pkg_root = getwd()
+#'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
 #' @export
@@ -29,7 +29,7 @@ pkg_vignette <- function(pkg_root,
       mustWork = TRUE
     )
   )
-  output <- sub(
+  output <- gsub(
     pattern = "BOILERPLATEPACKAGE",
     replacement = pkg_name,
     x = output

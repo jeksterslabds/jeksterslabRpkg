@@ -14,7 +14,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_rproj(
-#'   pkg_root = getwd()
+#'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
 #' @export

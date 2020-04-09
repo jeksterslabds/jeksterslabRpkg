@@ -17,7 +17,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_gitignore(
-#'   pkg_root = getwd()
+#'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
 #' @export

@@ -3,6 +3,12 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param pkg_name Character string.
 #'   Package name.
+#' @examples
+#' \dontrun{
+#' pkg_valid_name(
+#'   pkg_name = "boilerplatePackage"
+#' )
+#' }
 #' @export
 pkg_valid_name <- function(pkg_name) {
   pattern <- c(

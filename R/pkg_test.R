@@ -10,7 +10,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_test(
-#'   pkg_root = getwd()
+#'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
 #' @export

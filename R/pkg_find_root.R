@@ -23,6 +23,14 @@
 #'   Package name.
 #' @inheritParams pkg_description
 #' @inheritParams util_lapply
+#' @examples
+#' \dontrun{
+#' pkg_find_root(
+#'   dir = getwd(),
+#'   pkg_name = "boilerplatePackage",
+#'   par = FALSE
+#' )
+#' }
 #' @export
 pkg_find_root <- function(dir = getwd(),
                           pkg_name,
