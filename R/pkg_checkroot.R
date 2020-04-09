@@ -38,6 +38,8 @@ pkg_checkroot <- function(dir = getwd()) {
 pkg_checkroot_subdir <- function(dir = getwd(),
                                  subdir = c(
                                    "R",
+                                   "data",
+                                   "data_raw",
                                    "man",
                                    "tests",
                                    file.path("tests", "testthat"),
