@@ -4,7 +4,7 @@
 \alias{pkg_data}
 \title{Create a Boilerplate Package Data File.}
 \usage{
-pkg_data(pkg_root = getwd(), msg = "Data script file path:")
+pkg_data(pkg_root, msg = "Data script file path:")
 }
 \arguments{
 \item{pkg_root}{Character string.
@@ -25,7 +25,7 @@ this function will be called.
 \examples{
 \dontrun{
 pkg_data(
-  pkg_root = getwd()
+  pkg_root = "boilerplatePackage"
 )
 }
 }

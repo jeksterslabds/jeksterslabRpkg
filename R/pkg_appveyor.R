@@ -33,9 +33,8 @@ pkg_appveyor <- function(pkg_root,
     )
   )
   if (!is.null(add)) {
-    output <- paste0(
+    output <- union(
       output,
-      "\n",
       add
     )
   }

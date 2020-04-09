@@ -230,9 +230,8 @@ pkg_description <- function(pkg_dir = getwd(),
     collapse = "\n"
   )
   if (!is.null(add)) {
-    output <- paste0(
+    output <- union(
       output,
-      "\n",
       add
     )
   }

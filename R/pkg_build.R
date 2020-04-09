@@ -78,7 +78,7 @@ pkg_build <- function(pkg_root = NULL,
       pkg_name,
       "\n",
       "Path: ",
-      pkg_root,
+      normalizePath(pkg_root),
       "\n"
     )
   )
@@ -149,10 +149,7 @@ pkg_build <- function(pkg_root = NULL,
       }
     )
   } else {
-    if (!pkg_checkroot_subdir(
-      dir = pkg_root,
-      subdir = "data_raw"
-    )
+    if (!pkg_checkroot_subdir(dir = pkg_root, subdir = "data_raw")
     ) {
       data <- FALSE
     }
@@ -193,6 +190,7 @@ pkg_build <- function(pkg_root = NULL,
         "data_raw"
       )
       if (dir.exists(data_raw)) {
+        setwd(data_raw)
         pattern <- paste0(
           glob2rx("*.Rmd"),
           "|",
@@ -204,18 +202,24 @@ pkg_build <- function(pkg_root = NULL,
         )
         files <- list.files(
           path = data_raw,
-          pattern = pattern
+          pattern = pattern,
+          full.names = TRUE,
+          recursive = TRUE,
+          include.dirs = TRUE
         )
         tryCatch(
           {
-            util_lapply(
-              FUN = source,
-              args = list(
-                file = files
-              ),
-              par = par,
-              ncores = ncores
-            )
+            for (i in seq_along(files)) {
+              source(files[i])
+            }
+            # util_lapply(
+            #  FUN = source,
+            #  args = list(
+            #    file = files
+            #  ),
+            #  par = par,
+            #  ncores = ncores
+            # )
           },
           error = function(err) {
             warning(
@@ -223,6 +227,7 @@ pkg_build <- function(pkg_root = NULL,
             )
           }
         )
+        setwd(wd)
       }
     }
     if (render) {
