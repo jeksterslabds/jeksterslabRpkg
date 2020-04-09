@@ -55,6 +55,7 @@
 #'   in addition to the boilerplate example.
 #' @param git Logical.
 #'   Set up a git repository.
+#' @inheritParams pkg_gitignore
 #' @inheritParams pkg_description
 #' @inheritParams pkg_git
 #' @examples
@@ -70,6 +71,7 @@
 #' @export
 pkg_create <- function(pkg_dir = getwd(),
                        input_file = NULL,
+                       docs = TRUE,
                        pkgdown = FALSE,
                        travis = FALSE,
                        appveyor = FALSE,
@@ -110,7 +112,8 @@ pkg_create <- function(pkg_dir = getwd(),
   )
   pkg_gitignore(
     pkg_root = pkg_root,
-    add = add_gitignore
+    add = add_gitignore,
+    docs = docs
   )
   pkg_description(
     pkg_dir = pkg_dir,
