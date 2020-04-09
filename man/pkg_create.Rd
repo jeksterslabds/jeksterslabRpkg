@@ -7,6 +7,7 @@
 pkg_create(
   pkg_dir = getwd(),
   input_file = NULL,
+  docs = TRUE,
   pkgdown = FALSE,
   travis = FALSE,
   appveyor = FALSE,
@@ -28,6 +29,9 @@ Directory where the package is initialized.}
 
 \item{input_file}{Character string.
 \code{YAML} file containing \code{DESCRIPTION} fields and entries.}
+
+\item{docs}{Character string.
+Ignore \code{docs} containing \code{pkgdown} files.}
 
 \item{pkgdown}{Logical.
 Create \code{pkgdown} \code{YAML} file.}
