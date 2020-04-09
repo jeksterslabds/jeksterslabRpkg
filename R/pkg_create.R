@@ -143,6 +143,12 @@ pkg_create <- function(pkg_dir = getwd(),
   pkg_rproj(
     pkg_root = pkg_root
   )
+  pkg_news(
+    pkg_root = pkg_root
+  )
+  pkg_getstarted(
+    pkg_root = pkg_root
+  )
   if (travis) {
     pkg_travis(
       pkg_root = pkg_root,
