@@ -51,7 +51,7 @@ pkg_gitignore <- function(pkg_root,
   if (!docs) {
     output <- gsub(
       pattern = "docs/",
-      replacement = "#docs/"
+      replacement = "#docs/",
       x = output
     )
   }
