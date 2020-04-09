@@ -17,10 +17,6 @@
 pkg_news <- function(pkg_root,
                      msg = "NEWS.md file path:") {
   pkg_name <- basename(pkg_root)
-  root_vignettes <- file.path(
-    pkg_root,
-    "vignettes"
-  )
   output <- readLines(
     con = system.file(
       "extdata",
@@ -40,8 +36,12 @@ pkg_news <- function(pkg_root,
   )
   util_txt2file(
     text = output,
-    dir = root_vignettes,
+    dir = pkg_root,
     fn = "NEWS.md",
     msg = msg
+  )
+  pkg_rbuildignore(
+    pkg_root = pkg_root,
+    add = "^NEWS.md$\n"
   )
 }
