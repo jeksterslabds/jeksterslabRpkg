@@ -10,11 +10,11 @@
 #' @examples
 #' \dontrun{
 #' pkg_data(
-#'   pkg_root = getwd()
+#'   pkg_root = "boilerplatePackage"
 #' )
 #' }
 #' @export
-pkg_data <- function(pkg_root = getwd(),
+pkg_data <- function(pkg_root,
                      msg = "Data script file path:") {
   Rbuildignore <- file.path(
     pkg_root,
@@ -51,7 +51,7 @@ pkg_data <- function(pkg_root = getwd(),
     )
   }
   wd <- getwd()
-  data_raw <- file.path(
+  root_data_raw <- file.path(
     pkg_root,
     "data_raw"
   )
@@ -66,7 +66,7 @@ pkg_data <- function(pkg_root = getwd(),
   )
   util_txt2file(
     text = output_data_raw_galton_r,
-    dir = data_raw,
+    dir = root_data_raw,
     fn = data_raw_galton_r,
     msg = msg
   )
@@ -81,16 +81,12 @@ pkg_data <- function(pkg_root = getwd(),
   )
   util_txt2file(
     text = output_data_galton_tsv,
-    dir = data_raw,
+    dir = root_data_raw,
     fn = data_galton_tsv
   )
-  setwd(data_raw)
+  setwd(root_data_raw)
   source(data_raw_galton_r)
   setwd(wd)
-  root_r <- file.path(
-    pkg_root,
-    "R"
-  )
   data_galton_r <- "data_galton.R"
   output_data_galton_r <- readLines(
     con = system.file(
@@ -102,7 +98,7 @@ pkg_data <- function(pkg_root = getwd(),
   )
   util_txt2file(
     text = output_data_galton_r,
-    dir = root_r,
+    dir = file.path(pkg_root, "R"),
     fn = data_galton_r
   )
   root_man <- file.path(
