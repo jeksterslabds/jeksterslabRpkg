@@ -37,5 +37,6 @@ successful `boilerplatePackage` build provides evidence that
 
 ## Package Documentation
 
-See [GitHub Pages](https://jeksterslabds.github.io/jeksterslabRpkg/) for
+See [GitHub
+Pages](https://jeksterslabds.github.io/jeksterslabRpkg/index.html) for
 package documentation.
