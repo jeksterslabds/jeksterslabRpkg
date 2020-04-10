@@ -15,13 +15,13 @@ LazyData: "true"
 VignetteBuilder: "knitr"
 Roxygen: "list(markdown = TRUE)"
 SystemRequirements:
-  - "git"
+- "git"
 Depends:
-  - "R (>= 3.5.0)"
+- "R (>= 3.5.0)"
 Imports:
-  - "utils"
-  - "stats"
+- "utils"
+- "stats"
 Suggests:
-  - "knitr"
-  - "rmarkdown"
-  - "testthat"
+- "knitr"
+- "rmarkdown"
+- "testthat"
