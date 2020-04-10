@@ -6,6 +6,7 @@
 #' this function will be called.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
+#' @inheritParams pkg_description
 #' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
