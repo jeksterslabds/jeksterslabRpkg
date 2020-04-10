@@ -4,7 +4,7 @@
 \alias{pkg_gitignore}
 \title{Create a Boilerplate Package \code{.gitignore} File.}
 \usage{
-pkg_gitignore(pkg_root, add = NULL, msg = ".gitignore file path:")
+pkg_gitignore(pkg_root, add = NULL, docs = TRUE, msg = ".gitignore file path:")
 }
 \arguments{
 \item{pkg_root}{Character string.
@@ -13,6 +13,9 @@ Package root directory.}
 \item{add}{Character string.
 Entries to the \code{.gitignore}
 in addition to the boilerplate example.}
+
+\item{docs}{Character string.
+Ignore \code{docs} containing \code{pkgdown} files.}
 
 \item{msg}{Character string.
 Optional message.
@@ -33,7 +36,7 @@ Additional entries in the \code{add} argument will be appended.
 \examples{
 \dontrun{
 pkg_gitignore(
-  pkg_root = getwd()
+  pkg_root = "~/boilerplatePackage"
 )
 }
 }

@@ -40,6 +40,15 @@ the following directories will be searched:
 \item "/"
 }
 }
+\examples{
+\dontrun{
+pkg_find_root(
+  dir = getwd(),
+  pkg_name = "boilerplatePackage",
+  par = FALSE
+)
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

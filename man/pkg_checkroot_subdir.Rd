@@ -20,6 +20,13 @@ Sub directory.}
 \description{
 Check pkg_root/subdir
 }
+\examples{
+\dontrun{
+pkg_checkroot_subdir(
+  dir = getwd()
+)
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

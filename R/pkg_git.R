@@ -12,10 +12,18 @@
 #'   Set up and push to a github repository.
 #' @param commit_msg Character string.
 #'   Git commit message.
+#' @examples
+#' \dontrun{
+#' pkg_git(
+#'   pkg_root = "boilerplatePackage",
+#'   github = TRUE,
+#'   commit_msg = "Meaningful commit message"
+#' )
+#' }
 #' @export
 pkg_git <- function(pkg_root,
                     github = TRUE,
-                    commit_msg = "BUILD") {
+                    commit_msg = "AUTOMATED BUILD") {
   if (nchar(Sys.which("git")) == 0) {
     stop(
       "`git` command is not installed in the system.\n"

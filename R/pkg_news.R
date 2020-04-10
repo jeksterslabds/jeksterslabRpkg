@@ -1,31 +1,24 @@
-#' Create a Boilerplate Package `_pkgdown.yml`.
+#' Create a Boilerplate Package NEWS.md File.
 #'
-#' Creates a `_pkgdown.yml` build file.
+#' Creates a boilerplate package NEWS.md file.
 #'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
-#' and the argument `pkgdown = TRUE` is specified,
 #' this function will be called.
-#'
-#' **THIS FUNCTION OVERWRITES AN EXISTING `_pkgdown.yml` FILE
-#' IN THE SPECIFIED PACKAGE ROOT DIRECTORY.
-#' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
 #' @inheritParams pkg_rbuildignore
-#' @importFrom pkgdown build_site
 #' @examples
 #' \dontrun{
-#' pkg_pkgdown(
+#' pkg_news(
 #'   pkg_root = "~/boilerplatePackage",
 #'   input_file = "DESCRIPTION.yml"
 #' )
 #' }
 #' @export
-pkg_pkgdown <- function(pkg_root,
-                        input_file = NULL,
-                        msg = "_pkgdown.yml file path:") {
-  pkg_name <- basename(pkg_root)
+pkg_news <- function(pkg_root,
+                     input_file = NULL,
+                     msg = "NEWS.md file path:") {
   if (is.null(input_file)) {
     input_file <- system.file(
       "extdata",
@@ -35,40 +28,41 @@ pkg_pkgdown <- function(pkg_root,
     )
   }
   yml <- pkg_description_yml(
-    input_file = input_file,
-    fields = "Github",
-    required = FALSE,
-    dependencies = FALSE
+    input_file = input_file
   )
   input <- yml[["single"]]
-  Github <- input[["Github"]]
+  Version <- input[["Version"]]
+  pkg_name <- basename(pkg_root)
   output <- readLines(
     con = system.file(
       "extdata",
-      "pkgdown",
+      "NEWS",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )
-  )
-  output <- gsub(
-    pattern = "GITHUBACCOUNT",
-    replacement = Github,
-    x = output
   )
   output <- gsub(
     pattern = "BOILERPLATEPACKAGE",
     replacement = pkg_name,
     x = output
   )
+  output <- gsub(
+    pattern = "VERSION",
+    replacement = Version,
+    x = output
+  )
+  output <- paste0(
+    output,
+    collapse = "\n"
+  )
   util_txt2file(
     text = output,
     dir = pkg_root,
-    fn = "_pkgdown.yml",
+    fn = "NEWS.md",
     msg = msg
   )
-  build_site(pkg = pkg_root)
   pkg_rbuildignore(
     pkg_root = pkg_root,
-    add = "^_pkgdown.yml$\n^docs$"
+    add = "^NEWS.md$\n"
   )
 }

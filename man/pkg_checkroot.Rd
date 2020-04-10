@@ -13,6 +13,13 @@ Directory.}
 \description{
 Check Package Root
 }
+\examples{
+\dontrun{
+pkg_checkroot(
+  dir = getwd()
+)
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

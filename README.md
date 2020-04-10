@@ -1,7 +1,7 @@
 jeksterslabRpkg
 ================
 Ivan Jacob Agaloos Pesigan
-2020-04-09
+2020-04-10
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -15,8 +15,7 @@ status](https://ci.appveyor.com/api/projects/status/github/jeksterslabds/jekster
 <!-- badges: end -->
 
 The goal of `jeksterslabRpkg` is to provide useful utility functions to
-create a boilerplate package. It also includes other package related
-functions.
+create a boilerplate package.
 
 ## Installation
 
@@ -24,11 +23,20 @@ You can install the released version of `jeksterslabRpkg` from
 [GitHub](https://github.com/jeksterslabds/jeksterslabRpkg) with:
 
 ``` r
-library(devtools)
-install_github("jeksterslabds/jeksterslabRpkg")
+remotes::install_github("jeksterslabds/jeksterslabRpkg")
 ```
 
-## Example
+## Test
 
-See [GitHub Pages](https://jeksterslabds.github.io/jeksterslabRpkg/) for
+It is difficult to perform automatic unit tests and code coverage on a
+package that generates another package. As a proxy, `jeksterslabRpkg` is
+used to generate a new package `boilerplatePackage` pushed to
+[Github](https://github.com/jeksterslabds/boilerplatePackage/). A
+successful `boilerplatePackage` build provides evidence that
+`jeksterslabRpkg` work properly.
+
+## Package Documentation
+
+See [GitHub
+Pages](https://jeksterslabds.github.io/jeksterslabRpkg/index.html) for
 package documentation.

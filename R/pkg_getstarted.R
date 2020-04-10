@@ -1,6 +1,6 @@
-#' Create a Boilerplate Package Vignette File.
+#' Create a Boilerplate Package Get Started Vignette.
 #'
-#' Creates a boilerplate package vignette file.
+#' Creates a boilerplate package Get Started vignette.
 #'
 #' Note that if [jeksterslabRpkg::pkg_create()] is used,
 #' this function will be called.
@@ -9,13 +9,13 @@
 #' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
-#' pkg_vignette(
+#' pkg_getstarted(
 #'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
 #' @export
-pkg_vignette <- function(pkg_root,
-                         msg = "z.Rmd file path:") {
+pkg_getstarted <- function(pkg_root,
+                           msg = "Get started file path:") {
   pkg_name <- basename(pkg_root)
   root_vignettes <- file.path(
     pkg_root,
@@ -24,7 +24,7 @@ pkg_vignette <- function(pkg_root,
   output <- readLines(
     con = system.file(
       "extdata",
-      "vignette_z",
+      "getstarted",
       package = "jeksterslabRpkg",
       mustWork = TRUE
     )
@@ -41,7 +41,7 @@ pkg_vignette <- function(pkg_root,
   util_txt2file(
     text = output,
     dir = root_vignettes,
-    fn = "z.Rmd",
+    fn = paste0(pkg_name, ".Rmd"),
     msg = msg
   )
 }

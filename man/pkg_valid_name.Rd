@@ -13,6 +13,13 @@ Package name.}
 \description{
 Validate Package Name
 }
+\examples{
+\dontrun{
+pkg_valid_name(
+  pkg_name = "boilerplatePackage"
+)
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

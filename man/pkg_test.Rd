@@ -25,7 +25,7 @@ this function will be called.
 \examples{
 \dontrun{
 pkg_test(
-  pkg_root = getwd()
+  pkg_root = "~/boilerplatePackage"
 )
 }
 }

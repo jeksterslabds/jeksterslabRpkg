@@ -13,16 +13,19 @@
 #' @param add Character string.
 #'   Entries to the \code{.gitignore}
 #'   in addition to the boilerplate example.
+#' @param docs Character string.
+#'   Ignore `docs` containing `pkgdown` files.
 #' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{
 #' pkg_gitignore(
-#'   pkg_root = getwd()
+#'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
 #' @export
 pkg_gitignore <- function(pkg_root,
                           add = NULL,
+                          docs = TRUE,
                           msg = ".gitignore file path:") {
   file <- file.path(pkg_root, ".gitignore")
   if (file.exists(file)) {
@@ -43,6 +46,13 @@ pkg_gitignore <- function(pkg_root,
     output <- unique(
       output,
       add
+    )
+  }
+  if (!docs) {
+    output <- gsub(
+      pattern = "docs/",
+      replacement = "#docs/",
+      x = output
     )
   }
   util_txt2file(

@@ -3,6 +3,12 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param dir Character string.
 #'   Directory.
+#' @examples
+#' \dontrun{
+#' pkg_checkroot(
+#'   dir = getwd()
+#' )
+#' }
 #' @export
 pkg_checkroot <- function(dir = getwd()) {
   if (file.exists(
@@ -34,6 +40,12 @@ pkg_checkroot <- function(dir = getwd()) {
 #' @param subdir Character string.
 #'   Sub directory.
 #' @inheritParams pkg_checkroot
+#' @examples
+#' \dontrun{
+#' pkg_checkroot_subdir(
+#'   dir = getwd()
+#' )
+#' }
 #' @export
 pkg_checkroot_subdir <- function(dir = getwd(),
                                  subdir = c(

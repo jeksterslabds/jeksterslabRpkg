@@ -36,7 +36,7 @@ USE WITH CAUTION.}
 \examples{
 \dontrun{
 pkg_namespace(
-  pkg_root = getwd()
+  pkg_root = "~/boilerplatePackage"
 )
 }
 }

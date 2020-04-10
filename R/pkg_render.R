@@ -16,7 +16,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_render(
-#'   pkg_root = getwd(),
+#'   pkg_root = "~/boilerplatePackage",
 #'   readme = TRUE,
 #'   vignettes = TRUE,
 #'   tests = TRUE,

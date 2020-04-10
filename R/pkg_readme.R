@@ -19,7 +19,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_readme(
-#'   pkg_root = getwd(),
+#'   pkg_root = "~/boilerplatePackage",
 #'   input_file = "DESCRIPTION.yml"
 #' )
 #' }

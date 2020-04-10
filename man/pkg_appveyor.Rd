@@ -33,7 +33,7 @@ USE WITH CAUTION.}
 \examples{
 \dontrun{
 pkg_appveyor(
-  pkg_root = getwd()
+  pkg_root = "~/boilerplatePackage"
 )
 }
 }

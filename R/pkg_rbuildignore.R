@@ -19,7 +19,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_rbuildignore(
-#'   pkg_root = getwd()
+#'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
 #' @export

@@ -10,7 +10,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_data(
-#'   pkg_root = "boilerplatePackage"
+#'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
 #' @export

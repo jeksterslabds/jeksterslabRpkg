@@ -29,11 +29,10 @@ knitr::opts_chunk$set(
 You can install the released version of `jeksterslabRpkg` from [GitHub](https://github.com/jeksterslabds/jeksterslabRpkg) with:
 
 ```r
-library(devtools)
-install_github("jeksterslabds/jeksterslabRpkg")
+remotes::install_github("jeksterslabds/jeksterslabRpkg")
 ```
 
 ## Example
 
-See [GitHub Pages](https://GITHUBACCOUNT.github.io/BOILERPLATEPACKAGE/)
+See [GitHub Pages](https://GITHUBACCOUNT.github.io/BOILERPLATEPACKAGE/index.html)
 for package documentation.

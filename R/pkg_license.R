@@ -19,7 +19,7 @@
 #' @examples
 #' \dontrun{
 #' pkg_license(
-#'   pkg_root = getwd(),
+#'   pkg_root = "~/boilerplatePackage",
 #'   input_file = "DESCRIPTION.yml"
 #' )
 #' }
