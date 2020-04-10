@@ -34,5 +34,5 @@ remotes::install_github("jeksterslabds/jeksterslabRpkg")
 
 ## Example
 
-See [GitHub Pages](https://GITHUBACCOUNT.github.io/BOILERPLATEPACKAGE/)
+See [GitHub Pages](https://GITHUBACCOUNT.github.io/BOILERPLATEPACKAGE/index.html)
 for package documentation.

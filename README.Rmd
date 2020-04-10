@@ -45,5 +45,5 @@ provides evidence that `jeksterslabRpkg` work properly.
 
 ## Package Documentation
 
-See [GitHub Pages](https://jeksterslabds.github.io/jeksterslabRpkg/)
+See [GitHub Pages](https://jeksterslabds.github.io/jeksterslabRpkg/index.html)
 for package documentation.
