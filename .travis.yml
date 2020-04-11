@@ -11,7 +11,7 @@ r:
 - oldrel
 jobs:
   exclude:
-  - r:devel
+  - r: devel
     os: osx
 before_install:
 - Rscript -e 'if (!require("covr")) install.packages("covr")'
