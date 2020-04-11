@@ -2,14 +2,33 @@
 os:
 - linux
 - osx
+# vanilla macOS
+disable_homebrew: true
 language: r
 cache: packages
+r:
+- devel
+- release
+- oldrel
+jobs:
+  exclude:
+  # macOS binary packages may not be available for r-devel
+  - r: devel
+    os: osx
 before_install:
 - Rscript -e 'if (!require("covr")) install.packages("covr")'
 - Rscript -e 'if (!require("pkgdown")) install.packages("pkgdown")'
 after_success:
-- Rscript -e 'pkgdown::build_site()'
-- Rscript -e 'covr::codecov()'
+- >-
+  if [ "$TRAVIS_OS_NAME" = "linux" ] && [ "$TRAVIS_R_VERSION_STRING" = "release" ]; then
+    echo Code coverage...
+    Rscript -e 'covr::codecov()'
+    echo Build pkgdown site...
+    Rscript -e 'pkgdown::build_site()'
+  else
+    echo Skip code coverage.
+    echo Skip building pkgdown site.
+  fi
 deploy:
   provider: pages
   skip_cleanup: true
