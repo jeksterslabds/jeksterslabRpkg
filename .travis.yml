@@ -2,6 +2,7 @@
 os:
 - linux
 - osx
+# vanilla macOS
 disable_homebrew: true
 language: r
 cache: packages
@@ -11,6 +12,7 @@ r:
 - oldrel
 jobs:
   exclude:
+  # macOS binary packages may not be available for r-devel
   - r: devel
     os: osx
 before_install:
@@ -21,9 +23,11 @@ after_success:
   if [ "$TRAVIS_OS_NAME" = "linux" ] && [ "$TRAVIS_R_VERSION_STRING" = "release" ]; then
     echo Code coverage...
     Rscript -e 'covr::codecov()'
+    echo Build pkgdown site...
     Rscript -e 'pkgdown::build_site()'
   else
-    echo Skip code coverage
+    echo Skip code coverage.
+    echo Skip building pkgdown site.
   fi
 deploy:
   provider: pages
