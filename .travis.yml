@@ -9,6 +9,10 @@ r:
 - devel
 - release
 - oldrel
+jobs:
+  exclude:
+  - r:devel
+    os: osx
 before_install:
 - Rscript -e 'if (!require("covr")) install.packages("covr")'
 - Rscript -e 'if (!require("pkgdown")) install.packages("pkgdown")'
