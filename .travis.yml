@@ -3,7 +3,7 @@ os:
 - linux
 - osx
 # vanilla macOS
-disable_homebrew: true
+# disable_homebrew: true
 language: r
 cache: packages
 r:
