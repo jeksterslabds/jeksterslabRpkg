@@ -1,4 +1,4 @@
-PREFIX=${HOME}/scripts/r
+PREFIX=/media/jeksterslab/scripts/r
 PKG=${PREFIX}/jeksterslabRpkg
 UTILS=${PREFIX}/jeksterslabRutils
 RPKG=${PKG}/R
