@@ -19,16 +19,8 @@ before_install:
 - Rscript -e 'if (!require("covr")) install.packages("covr")'
 - Rscript -e 'if (!require("pkgdown")) install.packages("pkgdown")'
 after_success:
-- >-
-  if [ "$TRAVIS_OS_NAME" = "linux" ] && [ "$TRAVIS_R_VERSION_STRING" = "release" ]; then
-    echo Code coverage...
-    Rscript -e 'covr::codecov()'
-    echo Build pkgdown site...
-    Rscript -e 'pkgdown::build_site()'
-  else
-    echo Skip code coverage.
-    echo Skip building pkgdown site.
-  fi
+- Rscript -e 'covr::codecov()'
+- Rscript -e 'pkgdown::build_site()'
 deploy:
   provider: pages
   skip_cleanup: true
