@@ -38,4 +38,5 @@ deploy:
   local_dir: docs
   on:
     branch: master
-    condition: $TRAVIS_R_VERSION_STRING = "release"
+    TRAVIS_OS_NAME: "linux"
+    TRAVIS_R_VERSION_STRING: "release"
