@@ -9,7 +9,6 @@
 #'
 #+ setup
 library(testthat)
-library(jeksterslabRpkg)
 context("Test 2 + 2.")
 #'
 #+ test that_01, echo=TRUE

@@ -38,4 +38,3 @@ clean :
 	git add --all
 	git commit -m "Automated clean."
 	git push
-
