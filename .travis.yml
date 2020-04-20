@@ -1,33 +1,18 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+language: r
+r:
+- oldrel
+- release
 os:
 - linux
 - osx
-language: r
 cache: packages
-r:
-- oldrel
-- devel
-- release
-jobs:
-  exclude:
-  # macOS binary packages may not be available for r-devel
-  - r: devel
-    os: osx
 before_install:
 - Rscript -e 'if (!require("covr")) install.packages("covr")'
 - Rscript -e 'if (!require("pkgdown")) install.packages("pkgdown")'
 after_success:
-- >-
-  if [ "$TRAVIS_OS_NAME" = "linux" ] && [ "$TRAVIS_R_VERSION_STRING" = "release" ]; then
-    echo Code coverage...
-    Rscript -e 'covr::codecov()'
-    echo Build pkgdown site...
-    Rscript -e 'pkgdown::build_site()'
-  else
-    echo Skip code coverage.
-    echo Skip building pkgdown site.
-    mkdir docs
-  fi
+- Rscript -e 'covr::codecov()'
+- Rscript -e 'pkgdown::build_site()'
 deploy:
   provider: pages
   skip_cleanup: true
@@ -37,4 +22,3 @@ deploy:
   local_dir: docs
   on:
     branch: master
-    condition: "$TRAVIS_OS_NAME" = "linux"
