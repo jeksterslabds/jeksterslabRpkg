@@ -5,9 +5,9 @@ os:
 language: r
 cache: packages
 r:
+- oldrel
 - devel
 - release
-- oldrel
 jobs:
   exclude:
   # macOS binary packages may not be available for r-devel
@@ -26,6 +26,7 @@ after_success:
   else
     echo Skip code coverage.
     echo Skip building pkgdown site.
+    mkdir docs
   fi
 deploy:
   provider: pages
@@ -36,4 +37,4 @@ deploy:
   local_dir: docs
   on:
     branch: master
-    condition: "$TRAVIS_OS_NAME" = "linux" && "$TRAVIS_R_VERSION_STRING" = "release"
+    condition: "$TRAVIS_OS_NAME" = "linux"
