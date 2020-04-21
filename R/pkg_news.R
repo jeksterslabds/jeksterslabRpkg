@@ -63,6 +63,6 @@ pkg_news <- function(pkg_root,
   )
   pkg_rbuildignore(
     pkg_root = pkg_root,
-    add = "^NEWS.md$\n"
+    add = "^NEWS.md$"
   )
 }
