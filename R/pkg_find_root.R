@@ -73,9 +73,9 @@ pkg_find_root <- function(dir = getwd(),
     # Return pkg_dir character(0)
     # if length(files) == 0
     if (length(files) == 0) {
-      warning(
-        "No files matched the filename DESCRIPTION.\n"
-      )
+      # warning(
+      #  "No files matched the filename DESCRIPTION.\n"
+      # )
       pkg_dir <- character(0)
       return(pkg_dir)
     } else {
@@ -185,6 +185,11 @@ pkg_find_root <- function(dir = getwd(),
         ncores = ncores
       )
     }
+    return(
+      normalizePath(
+        pkg_dir
+      )
+    )
   }
   # no match
   if (length(pkg_dir) == 0) {
