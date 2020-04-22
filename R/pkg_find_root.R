@@ -73,9 +73,6 @@ pkg_find_root <- function(dir = getwd(),
     # Return pkg_dir character(0)
     # if length(files) == 0
     if (length(files) == 0) {
-      # warning(
-      #  "No files matched the filename DESCRIPTION.\n"
-      # )
       pkg_dir <- character(0)
       return(pkg_dir)
     } else {
@@ -150,32 +147,52 @@ pkg_find_root <- function(dir = getwd(),
       }
     }
   }
+  bar <- function(pkg_dir) {
+    # single output
+    if (length(pkg_dir) == 1) {
+      message(
+        paste0(
+          "Valid package root directory found.\n",
+          pkg_dir
+        )
+      )
+      return(
+        normalizePath(
+          pkg_dir
+        )
+      )
+    }
+    # multiple output
+    if (length(pkg_dir) > 1) {
+      message(
+        "More than one package root directory found.\n"
+      )
+      return(
+        normalizePath(
+          pkg_dir
+        )
+      )
+    }
+    # no match
+    if (length(pkg_dir) == 0) {
+      message(
+        "No valid package root directory found.\n"
+      )
+    }
+  }
+  #################################
+  # dir
+  #################################
   pkg_dir <- foo(
     dir = dir,
     pkg_name = pkg_name,
     par = par,
     ncores = ncores
   )
-  # single output
-  if (length(pkg_dir) == 1) {
-    return(
-      normalizePath(
-        pkg_dir
-      )
-    )
-  }
-  # multiple output
-  if (length(pkg_dir) > 1) {
-    warning(
-      "More than one package root directory found.\n"
-    )
-    return(
-      normalizePath(
-        pkg_dir
-      )
-    )
-  }
-  # rerun id no match found in dir
+  bar(pkg_dir = pkg_dir)
+  #################################
+  # rerun if no match found in dir
+  #################################
   for (i in seq_along(dir_vec)) {
     if (length(pkg_dir) == 0) {
       pkg_dir <- foo(
@@ -185,16 +202,6 @@ pkg_find_root <- function(dir = getwd(),
         ncores = ncores
       )
     }
-    return(
-      normalizePath(
-        pkg_dir
-      )
-    )
   }
-  # no match
-  if (length(pkg_dir) == 0) {
-    stop(
-      "No valid package root directory found.\n"
-    )
-  }
+  bar(pkg_dir = pkg_dir)
 }
