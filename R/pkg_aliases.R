@@ -1,3 +1,15 @@
+#' Aliases jeksterslabRpkg::util_render() Recursive and Parallel
+#'
+#' @export
+rpkg <- function() {
+  jeksterslabRpkg::util_render(
+    dir = getwd(),
+    recursive = TRUE,
+    files = NULL,
+    par = TRUE,
+    ncores = NULL
+  )
+}
 #' Aliases styler::style_dir()
 #'
 #' @export
