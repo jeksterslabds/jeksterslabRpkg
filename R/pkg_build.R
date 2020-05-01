@@ -164,6 +164,7 @@ pkg_build <- function(pkg_root = NULL,
         {
           util_style(
             dir = pkg_root,
+            recursive = TRUE,
             par = par,
             ncores = ncores
           )
