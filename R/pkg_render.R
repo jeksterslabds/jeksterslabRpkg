@@ -94,7 +94,6 @@ pkg_render <- function(pkg_root = NULL,
     }
     if (length(files) > 0) {
       util_render(
-        recursive = FALSE,
         files = files,
         par = par,
         ncores = ncores

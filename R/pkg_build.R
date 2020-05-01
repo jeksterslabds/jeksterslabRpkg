@@ -192,35 +192,23 @@ pkg_build <- function(pkg_root = NULL,
       )
       if (dir.exists(data_raw)) {
         setwd(data_raw)
-        pattern <- paste0(
-          glob2rx("*.Rmd"),
-          "|",
-          glob2rx("*.rmd"),
-          "|",
-          glob2rx("*.R"),
-          "|",
-          glob2rx("*.r")
-        )
-        files <- list.files(
-          path = data_raw,
-          pattern = pattern,
-          full.names = TRUE,
-          recursive = TRUE,
-          include.dirs = TRUE
-        )
+    files <- list.files(
+      path = normalizePath(data_raw),
+      pattern = "^.*\\.[r|rmd]$",
+      full.names = TRUE,
+      recursive = TRUE,
+      ignore.case = TRUE,
+      include.dirs = TRUE
+    )
         tryCatch(
           {
-            for (i in seq_along(files)) {
-              source(files[i])
-            }
-            # util_lapply(
-            #  FUN = source,
-            #  args = list(
-            #    file = files
-            #  ),
-            #  par = par,
-            #  ncores = ncores
-            # )
+        #    for (i in seq_along(files)) {
+        #      source(files[i])
+        #    }
+            lapply(
+              X = files,
+              FUN = source
+             )
           },
           error = function(err) {
             warning(

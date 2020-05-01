@@ -13,6 +13,7 @@ all :
 	-rm -rf ${PKG}/tests/testthat/*.md
 	-rm -rf ${PKG}/vignettes/*.html
 	-rm -rf ${PKG}/vignettes/*.md
+	cp ${RUTILS}/util_search.R ${RPKG}
 	cp ${RUTILS}/util_os.R ${RPKG}
 	cp ${RUTILS}/util_lapply.R ${RPKG}
 	cp ${RUTILS}/util_render.R ${RPKG}
@@ -29,6 +30,7 @@ clean :
 	-rm -rf ${PKG}/tests/testthat/*.md
 	-rm -rf ${PKG}/vignettes/*.html
 	-rm -rf ${PKG}/vignettes/*.md
+	cp ${RUTILS}/util_search.R ${RPKG}
 	cp ${RUTILS}/util_os.R ${RPKG}
 	cp ${RUTILS}/util_lapply.R ${RPKG}
 	cp ${RUTILS}/util_render.R ${RPKG}
