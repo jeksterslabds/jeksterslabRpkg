@@ -10,6 +10,28 @@ rsty <- function() {
 rspkg <- function() {
   styler::style_pkg()
 }
+#' Aliases jeksterslabRpkg::util_style() Recursive and Parallel
+#' 
+#' `jeksterslabRpkg::util_style(
+#'   dir = getwd(),
+#'   recursive = TRUE,
+#'   par = TRUE,
+#'   ncores = NULL
+#' )`
+#'
+#' @inheritParams util_style
+#' @export
+rstyle <- function(dir = getwd(),
+  recursive = TRUE,
+  par = TRUE,
+  ncores = NULL) {
+  jeksterslabRpkg::util_style(
+    dir = dir,
+    recursive = recursive,
+    par = par,
+    ncores = ncores
+  )
+  }
 #' Aliases devtools::test()
 #'
 #' @export
