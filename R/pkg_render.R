@@ -62,15 +62,6 @@ pkg_render <- function(pkg_root = NULL,
       )
     }
     if (render %in% c("tests", "vignettes")) {
-      pattern <- paste0(
-        glob2rx("^*.Rmd$"),
-        "|",
-        glob2rx("^*.rmd$"),
-        "|",
-        glob2rx("^*.R$"),
-        "|",
-        glob2rx("^*.r$")
-      )
       if (render == "vignettes") {
         path <- file.path(
           pkg_root,
@@ -84,12 +75,21 @@ pkg_render <- function(pkg_root = NULL,
           "testthat"
         )
       }
-      files <- list.files(
-        path = path,
-        pattern = pattern,
+      # files <- list.files(
+      #  path = path,
+      #  pattern = pattern,
+      #  full.names = TRUE,
+      #  recursive = TRUE,
+      #  include.dirs = TRUE
+      # )
+      path <- normalizePath(path)
+      files <- util_search_r(
+        dir = path,
+        all.files = FALSE,
         full.names = TRUE,
         recursive = TRUE,
-        include.dirs = TRUE
+        ignore.case = TRUE,
+        no.. = FALSE
       )
     }
     if (length(files) > 0) {

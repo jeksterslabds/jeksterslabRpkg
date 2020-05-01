@@ -192,30 +192,31 @@ pkg_build <- function(pkg_root = NULL,
       )
       if (dir.exists(data_raw)) {
         setwd(data_raw)
-    files <- list.files(
-      path = normalizePath(data_raw),
-      pattern = "^.*\\.[r|rmd]$",
-      full.names = TRUE,
-      recursive = TRUE,
-      ignore.case = TRUE,
-      include.dirs = TRUE
-    )
-        tryCatch(
-          {
-        #    for (i in seq_along(files)) {
-        #      source(files[i])
-        #    }
-            lapply(
-              X = files,
-              FUN = source
-             )
-          },
-          error = function(err) {
-            warning(
-              "Error in data generation.\n"
-            )
-          }
+        files <- util_search_r(
+          dir = normalizePath(data_raw),
+          all.files = FALSE,
+          full.names = TRUE,
+          recursive = TRUE,
+          ignore.case = TRUE,
+          no.. = FALSE
         )
+        if (length(files) > 0) {
+          tryCatch(
+            {
+              lapply(
+                X = files,
+                FUN = source
+              )
+            },
+            error = function(err) {
+              warning(
+                "Error in data generation.\n"
+              )
+            }
+          )
+        } else {
+          message("No R files in data_raw.\n")
+        }
         setwd(wd)
       }
     }

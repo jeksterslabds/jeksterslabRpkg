@@ -36,13 +36,20 @@ pkg_find_root <- function(dir = getwd(),
                           pkg_name,
                           par = TRUE,
                           ncores = NULL) {
-  wd <- getwd()
+  dir <- normalizePath(dir)
+  wd <- normalizePath(
+    getwd()
+  )
   setwd(dir)
   setwd("..")
-  dir_dotdot <- getwd()
+  dir_dotdot <- normalizePath(
+    getwd()
+  )
   setwd(dir)
   setwd("../..")
-  dir_dotdotdotdot <- getwd()
+  dir_dotdotdotdot <- normalizePath(
+    getwd()
+  )
   setwd(wd)
   dir_vec <- c(
     dir_dotdot,
@@ -63,12 +70,21 @@ pkg_find_root <- function(dir = getwd(),
         "\n"
       )
     )
-    files <- list.files(
-      path = dir,
+    #    files <- list.files(
+    #      path = dir,
+    #      pattern = "^DESCRIPTION$",
+    #      recursive = TRUE,
+    #      full.names = TRUE,
+    #      include.dirs = TRUE
+    #    )
+    files <- util_search_pattern(
+      dir = dir,
       pattern = "^DESCRIPTION$",
-      recursive = TRUE,
+      all.files = FALSE,
       full.names = TRUE,
-      include.dirs = TRUE
+      recursive = TRUE,
+      ignore.case = FALSE,
+      no.. = FALSE
     )
     # Return pkg_dir character(0)
     # if length(files) == 0
