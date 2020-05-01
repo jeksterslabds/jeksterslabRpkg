@@ -63,13 +63,13 @@ pkg_render <- function(pkg_root = NULL,
     }
     if (render %in% c("tests", "vignettes")) {
       pattern <- paste0(
-        glob2rx("*.Rmd"),
+        glob2rx("^*.Rmd$"),
         "|",
-        glob2rx("*.rmd"),
+        glob2rx("^*.rmd$"),
         "|",
-        glob2rx("*.R"),
+        glob2rx("^*.R$"),
         "|",
-        glob2rx("*.r")
+        glob2rx("^*.r$")
       )
       if (render == "vignettes") {
         path <- file.path(
