@@ -42,12 +42,12 @@ util_style <- function(dir = getwd(),
     )
   }
   files <- list.files(
-      path = normalizePath(dir),
-      pattern = "^.*\\.[r|rmd]$",
-      full.names = TRUE,
-      recursive = recursive,
-      ignore.case = TRUE,
-      include.dirs = TRUE
+    path = normalizePath(dir),
+    pattern = "^.*\\.[r|rmd]$",
+    full.names = TRUE,
+    recursive = recursive,
+    ignore.case = TRUE,
+    include.dirs = TRUE
   )
   invisible(
     util_lapply(
