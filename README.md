@@ -8,7 +8,7 @@ Ivan Jacob Agaloos Pesigan
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.org/jeksterslabds/jeksterslabRpkg.svg?branch=master)](https://travis-ci.org/jeksterslabds/jeksterslabRpkg)
+status](https://travis-ci.com/jeksterslabds/jeksterslabRpkg.svg?branch=master)](https://travis-ci.com/jeksterslabds/jeksterslabRpkg)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/jeksterslabds/jeksterslabRpkg?branch=master&svg=true)](https://ci.appveyor.com/project/jeksterslabds/jeksterslabRpkg)
 [![codecov](https://codecov.io/github/jeksterslabds/jeksterslabRpkg/branch/master/graphs/badge.svg)](https://codecov.io/github/jeksterslabds/jeksterslabRpkg)
