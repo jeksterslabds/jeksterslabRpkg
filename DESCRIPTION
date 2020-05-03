@@ -21,6 +21,7 @@ SystemRequirements:
     hub
 Depends: R (>= 3.5.0)
 Imports:
+    jeksterslabRutils,
     yaml,
     styler,
     rmarkdown,
@@ -30,6 +31,8 @@ Imports:
     pkgdown,
     tools,
     devtools
+Remotes:
+    jeksterslabds/jeksterslabRutils
 Suggests:
     knitr,
     testthat
