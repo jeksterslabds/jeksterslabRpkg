@@ -15,7 +15,7 @@
 #' @param add Character string.
 #'   Entries to the \code{.Rbuildignore}
 #'   in addition to the boilerplate example.
-#' @inheritParams util_txt2file
+#' @inheritParams jeksterslabRutils::util_txt2file
 #' @examples
 #' \dontrun{
 #' pkg_rbuildignore(

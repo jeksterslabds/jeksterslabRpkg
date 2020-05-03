@@ -22,7 +22,6 @@
 #' @param msg Character string.
 #'   Prints optional message and output directory.
 #' @inheritParams pkg_description_yml
-#' @inheritParams util_txt2file
 #' @examples
 #' \dontrun{
 #' pkg_description(

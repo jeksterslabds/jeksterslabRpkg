@@ -37,6 +37,7 @@
 #'   dependencies = TRUE
 #' )
 #' }
+#' @importFrom jeksterslabRutils util_list2vector
 #' @export
 pkg_description_yml <- function(input_file = NULL,
                                 fields = c(

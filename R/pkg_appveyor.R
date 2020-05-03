@@ -20,6 +20,7 @@
 #'   pkg_root = "~/boilerplatePackage"
 #' )
 #' }
+#' @importFrom jeksterslabRutils util_txt2file
 #' @export
 pkg_appveyor <- function(pkg_root,
                          add = NULL,

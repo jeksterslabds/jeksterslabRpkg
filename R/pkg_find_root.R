@@ -22,7 +22,7 @@
 #' @param pkg_name Character string.
 #'   Package name.
 #' @inheritParams pkg_description
-#' @inheritParams util_lapply
+#' @inheritParams pkg_build
 #' @examples
 #' \dontrun{
 #' pkg_find_root(
@@ -31,6 +31,7 @@
 #'   par = FALSE
 #' )
 #' }
+#' @importFrom jeksterslabRutils util_search_pattern
 #' @export
 pkg_find_root <- function(dir = getwd(),
                           pkg_name,

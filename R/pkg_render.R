@@ -10,9 +10,6 @@
 #' @param tests Logical.
 #'   Render `tests/testhat/*.R`.
 #' @inheritParams pkg_build
-#' @inheritParams util_lapply
-#' @importFrom utils glob2rx
-#' @importFrom rmarkdown render
 #' @examples
 #' \dontrun{
 #' pkg_render(
@@ -23,6 +20,8 @@
 #'   par = FALSE
 #' )
 #' }
+#' @importFrom rmarkdown render
+#' @importFrom jeksterslabRutils util_render
 #' @export
 pkg_render <- function(pkg_root = NULL,
                        readme = TRUE,

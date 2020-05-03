@@ -31,7 +31,7 @@
 #' @param pkgdown Logical.
 #'   Build `pkgdown` site.
 #' @inheritParams pkg_description
-#' @inheritParams util_lapply
+#' @inheritParams jeksterslabRutils::util_lapply
 #' @inheritParams pkg_git
 #' @inheritParams pkg_create
 #' @importFrom devtools document
@@ -45,6 +45,9 @@
 #'   minimal = TRUE
 #' )
 #' }
+#' @importFrom jeksterslabRutils util_lapply
+#' @importFrom jeksterslabRutils util_style
+#' @importFrom jeksterslabRutils util_search_r
 #' @export
 pkg_build <- function(pkg_root = NULL,
                       minimal = FALSE,
