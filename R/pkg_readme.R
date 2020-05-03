@@ -84,7 +84,8 @@ pkg_readme <- function(pkg_root,
     text = readme,
     dir = pkg_root,
     fn = "README.Rmd",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   pkg_rbuildignore(
     pkg_root = pkg_root,

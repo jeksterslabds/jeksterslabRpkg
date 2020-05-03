@@ -51,6 +51,7 @@ pkg_rbuildignore <- function(pkg_root,
     text = output,
     dir = pkg_root,
     fn = ".Rbuildignore",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }

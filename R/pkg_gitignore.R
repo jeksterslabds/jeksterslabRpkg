@@ -59,6 +59,7 @@ pkg_gitignore <- function(pkg_root,
     text = output,
     dir = pkg_root,
     fn = ".gitignore",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }

@@ -36,7 +36,8 @@ pkg_rproj <- function(pkg_root = getwd(),
       pkg_name,
       ".Rproj"
     ),
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   pkg_rbuildignore(
     pkg_root = pkg_root,

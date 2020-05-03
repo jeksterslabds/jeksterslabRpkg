@@ -32,6 +32,7 @@ pkg_r <- function(pkg_root,
     text = output,
     dir = root_r,
     fn = "z.R",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }

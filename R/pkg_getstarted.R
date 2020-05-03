@@ -42,6 +42,7 @@ pkg_getstarted <- function(pkg_root,
     text = output,
     dir = root_vignettes,
     fn = paste0(pkg_name, ".Rmd"),
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }

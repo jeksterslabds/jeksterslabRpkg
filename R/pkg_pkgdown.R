@@ -64,7 +64,8 @@ pkg_pkgdown <- function(pkg_root,
     text = output,
     dir = pkg_root,
     fn = "_pkgdown.yml",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   build_site(pkg = pkg_root)
   pkg_rbuildignore(

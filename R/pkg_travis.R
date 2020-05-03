@@ -43,7 +43,8 @@ pkg_travis <- function(pkg_root,
     text = output,
     dir = pkg_root,
     fn = ".travis.yml",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   pkg_rbuildignore(
     pkg_root = pkg_root,

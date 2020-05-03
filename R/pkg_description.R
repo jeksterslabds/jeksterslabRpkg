@@ -241,6 +241,7 @@ pkg_description <- function(pkg_dir = getwd(),
       Package
     ),
     fn = "DESCRIPTION",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }

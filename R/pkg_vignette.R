@@ -42,6 +42,7 @@ pkg_vignette <- function(pkg_root,
     text = output,
     dir = root_vignettes,
     fn = "z.Rmd",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }

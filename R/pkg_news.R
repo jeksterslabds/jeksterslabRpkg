@@ -59,7 +59,8 @@ pkg_news <- function(pkg_root,
     text = output,
     dir = pkg_root,
     fn = "NEWS.md",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   pkg_rbuildignore(
     pkg_root = pkg_root,

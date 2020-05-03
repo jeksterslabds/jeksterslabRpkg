@@ -60,7 +60,8 @@ pkg_license <- function(pkg_root,
     text = license,
     dir = pkg_root,
     fn = "LICENSE",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   license_md <- readLines(
     con = system.file(
@@ -87,7 +88,8 @@ pkg_license <- function(pkg_root,
     text = license_md,
     dir = pkg_root,
     fn = "LICENSE.md",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   pkg_rbuildignore(
     pkg_root = pkg_root,

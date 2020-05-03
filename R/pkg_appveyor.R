@@ -43,7 +43,8 @@ pkg_appveyor <- function(pkg_root,
     text = output,
     dir = pkg_root,
     fn = "appveyor.yml",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   pkg_rbuildignore(
     pkg_root = pkg_root,

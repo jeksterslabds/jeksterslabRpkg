@@ -47,7 +47,8 @@ pkg_data <- function(pkg_root,
     util_txt2file(
       text = Rbuildignore,
       dir = pkg_root,
-      fn = ".Rbuildignore"
+      fn = ".Rbuildignore",
+      overwrite = TRUE
     )
   }
   wd <- getwd()
@@ -68,7 +69,8 @@ pkg_data <- function(pkg_root,
     text = output_data_raw_galton_r,
     dir = root_data_raw,
     fn = data_raw_galton_r,
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
   data_galton_tsv <- "data_galton.tsv"
   output_data_galton_tsv <- readLines(
@@ -82,7 +84,8 @@ pkg_data <- function(pkg_root,
   util_txt2file(
     text = output_data_galton_tsv,
     dir = root_data_raw,
-    fn = data_galton_tsv
+    fn = data_galton_tsv,
+    overwrite = TRUE
   )
   setwd(root_data_raw)
   source(data_raw_galton_r)
@@ -99,7 +102,8 @@ pkg_data <- function(pkg_root,
   util_txt2file(
     text = output_data_galton_r,
     dir = file.path(pkg_root, "R"),
-    fn = data_galton_r
+    fn = data_galton_r,
+    overwrite = TRUE
   )
   root_man <- file.path(
     pkg_root,
@@ -116,6 +120,7 @@ pkg_data <- function(pkg_root,
   util_txt2file(
     text = output_galton_rd,
     dir = root_man,
-    fn = "galton.Rd"
+    fn = "galton.Rd",
+    overwrite = TRUE
   )
 }

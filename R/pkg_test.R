@@ -35,7 +35,8 @@ pkg_test <- function(pkg_root,
   util_txt2file(
     text = root_testthat,
     dir = root_tests,
-    fn = "testthat.R"
+    fn = "testthat.R",
+    overwrite = TRUE
   )
   output <- readLines(
     con = system.file(
@@ -57,6 +58,7 @@ pkg_test <- function(pkg_root,
       "testthat"
     ),
     fn = "test_z.R",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }

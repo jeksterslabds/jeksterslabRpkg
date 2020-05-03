@@ -48,6 +48,7 @@ pkg_namespace <- function(pkg_root,
     text = output,
     dir = pkg_root,
     fn = "NAMESPACE",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }

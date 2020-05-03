@@ -45,6 +45,7 @@ pkg_rd <- function(pkg_root,
     text = output,
     dir = root_man,
     fn = "z.Rd",
-    msg = msg
+    msg = msg,
+    overwrite = TRUE
   )
 }
