@@ -6,3 +6,18 @@ rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/tests/testthat/*.md
 rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/vignettes/*.html
 rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/vignettes/*.md
 git add --all
+git commit -m "Automated clean."
+[master a8261b2] Automated clean.
+ 2 files changed, 8 insertions(+)
+ create mode 100644 .stderr
+ create mode 100644 .stdout
+git push
+make[1]: Leaving directory '/media/jeksterslab/scripts/r/jeksterslabRpkg'
+make[1]: Entering directory '/media/jeksterslab/scripts/r/jeksterslabRpkg'
+rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/docs/*
+rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/man/*
+rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/tests/testthat/*.html
+rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/tests/testthat/*.md
+rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/vignettes/*.html
+rm -rf /media/jeksterslab/scripts/r/jeksterslabRpkg/vignettes/*.md
+git add --all
