@@ -13,5 +13,5 @@
 #' }
 #' @source Francis Galton, 2017, "Galton height data",
 #'   \url{https://doi.org/10.7910/DVN/T0HSJ1}, Harvard Dataverse, V1,
-#'   UNF:6:2ty+0YgqR2a66FlvjCuPkQ== [fileUNF]
+#'   UNF:6:2ty+0YgqR2a66FlvjCuPkQ== \[fileUNF\]
 "galton"
