@@ -30,12 +30,12 @@ Imports:
     usethis,
     pkgdown,
     tools,
-    devtools
+    devtools,
+    testthat
 Remotes:
     jeksterslabds/jeksterslabRutils
 Suggests:
-    knitr,
-    testthat
+    knitr
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
