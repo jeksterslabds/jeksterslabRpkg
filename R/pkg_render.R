@@ -6,9 +6,9 @@
 #' @param readme Logical.
 #'   Render `README.Rmd`.
 #' @param vignettes Logical.
-#'   Render `vignettes/*.Rmd`.
+#'   Render `vignettes/*.Rmd|*.R`.
 #' @param tests Logical.
-#'   Render `tests/testhat/*.R`.
+#'   Render `tests/testhat/*.Rmd|*.R`.
 #' @inheritParams pkg_build
 #' @examples
 #' \dontrun{
@@ -74,16 +74,11 @@ pkg_render <- function(pkg_root = NULL,
           "testthat"
         )
       }
-      # files <- list.files(
-      #  path = path,
-      #  pattern = pattern,
-      #  full.names = TRUE,
-      #  recursive = TRUE,
-      #  include.dirs = TRUE
-      # )
       path <- normalizePath(path)
       files <- util_search_r(
         dir = path,
+        rscript = TRUE,
+        rmd = TRUE,
         all.files = FALSE,
         full.names = TRUE,
         recursive = TRUE,

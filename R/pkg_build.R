@@ -198,6 +198,8 @@ pkg_build <- function(pkg_root = NULL,
         files <- util_search_r(
           dir = normalizePath(data_raw),
           all.files = FALSE,
+          rscript = TRUE,
+          rmd = TRUE,
           full.names = TRUE,
           recursive = TRUE,
           ignore.case = TRUE,
