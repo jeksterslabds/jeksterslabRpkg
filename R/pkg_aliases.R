@@ -165,7 +165,7 @@ rchk <- function(pkg = ".",
 #'
 #' Alias for [`jeksterslabRpkg::pkg_build()`]
 #' with the following arguments:
-#' - `pkg_root = NULL`
+#' - `pkg_root = getwd()`
 #' - `minimal = FALSE`
 #' - `style = TRUE`
 #' - `data = TRUE`
@@ -173,6 +173,7 @@ rchk <- function(pkg = ".",
 #' - `readme = TRUE`
 #' - `vignettes = TRUE`
 #' - `tests = TRUE`
+#' - `tests2vignettes = TRUE`
 #' - `pkgdown = TRUE`
 #' - `par = TRUE`
 #' - `ncores = NULL`
@@ -183,7 +184,7 @@ rchk <- function(pkg = ".",
 #' @inheritParams pkg_build
 #' @seealso [`jeksterslabRpkg::pkg_build()`]
 #' @export
-rbuild <- function(pkg_root = NULL,
+rbuild <- function(pkg_root = getwd(),
                    minimal = FALSE,
                    style = TRUE,
                    data = TRUE,
@@ -191,6 +192,7 @@ rbuild <- function(pkg_root = NULL,
                    readme = TRUE,
                    vignettes = TRUE,
                    tests = TRUE,
+                   tests2vignettes = TRUE,
                    pkgdown = TRUE,
                    par = TRUE,
                    ncores = NULL,
