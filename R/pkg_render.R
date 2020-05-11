@@ -23,15 +23,12 @@
 #' @importFrom rmarkdown render
 #' @importFrom jeksterslabRutils util_render
 #' @export
-pkg_render <- function(pkg_root = NULL,
+pkg_render <- function(pkg_root = getwd(),
                        readme = TRUE,
                        vignettes = TRUE,
                        tests = TRUE,
                        par = TRUE,
                        ncores = NULL) {
-  if (is.null(pkg_root)) {
-    pkg_root <- getwd()
-  }
   if (!pkg_checkroot(dir = pkg_root)) {
     stop(
       paste(
