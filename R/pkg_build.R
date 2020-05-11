@@ -28,6 +28,11 @@
 #' @param tests Logical.
 #'   Render `tests/testhat/*.R`.
 #'   Ignored if `render = FALSE`.
+#' @param tests2vignettes Logical.
+#'   Copy and spin `tests/testhat/*.R`
+#'   to `vignettes/tests/*.Rmd`.
+#'   It is assumed that `tests/testhat/*.R`
+#'   are written using `Roxygen` comments.
 #' @param pkgdown Logical.
 #'   Build `pkgdown` site.
 #' @inheritParams pkg_description
@@ -49,7 +54,7 @@
 #' @importFrom jeksterslabRutils util_style
 #' @importFrom jeksterslabRutils util_search_r
 #' @export
-pkg_build <- function(pkg_root = NULL,
+pkg_build <- function(pkg_root = getwd(),
                       minimal = FALSE,
                       style = TRUE,
                       data = TRUE,
@@ -57,15 +62,13 @@ pkg_build <- function(pkg_root = NULL,
                       readme = TRUE,
                       vignettes = TRUE,
                       tests = TRUE,
+                      tests2vignettes = TRUE,
                       pkgdown = TRUE,
                       par = TRUE,
                       ncores = NULL,
                       git = FALSE,
                       github = FALSE,
                       commit_msg = "BUILD") {
-  if (is.null(pkg_root)) {
-    pkg_root <- getwd()
-  }
   if (!pkg_checkroot(dir = pkg_root)) {
     stop(
       paste(
@@ -224,6 +227,13 @@ pkg_build <- function(pkg_root = NULL,
         }
         setwd(wd)
       }
+    }
+    if (tests2vignettes) {
+      pkg_tests2vignettes(
+        pkg_root = pkg_root,
+        par = par,
+        ncores = ncores
+      )
     }
     if (render) {
       message(
