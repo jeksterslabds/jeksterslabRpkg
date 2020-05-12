@@ -1,0 +1,60 @@
+---
+title: "Vignette: Build boilerplatePackage"
+author: "Ivan Jacob Agaloos Pesigan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette: Build boilerplatePackage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup}
+library(jeksterslabRpkg)
+tmp <- getwd()
+pkg_name <- "boilerplatePackage"
+pkg_root <- file.path(
+  tmp,
+  pkg_name
+)
+```
+
+## Build Package.
+
+Builds the `R` package on `pkg_root` by:
+
+  - styling the `R` scripts and `R` Markdown files,
+  - building package data by running `R` scripts stored in `data_raw`,
+  - spinning tests in `tests/testthat` and copies them to `vignettes/tests`,
+  - rendering the `R` scripts and `R` Markdown files using `rmarkdown::render()`, and
+  - building `pkgdown` site.
+
+### minimal = TRUE
+
+```{r build_01, eval = FALSE}
+pkg_build(
+  pkg_root = pkg_root,
+  minimal = TRUE,
+  par = TRUE
+)
+```
+
+### minimal = FALSE
+
+```{r build_02, eval = FALSE}
+pkg_build(
+  pkg_root = pkg_root,
+  minimal = FALSE,
+  style = TRUE,
+  data = TRUE,
+  render = TRUE,
+  readme = TRUE,
+  vignettes = TRUE,
+  tests = TRUE,
+  tests2vignettes = TRUE,
+  pkgdown = TRUE,
+  par = TRUE,
+  git = TRUE,
+  github = TRUE
+)
+```
