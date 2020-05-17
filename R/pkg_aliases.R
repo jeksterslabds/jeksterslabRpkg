@@ -234,3 +234,15 @@ rpkg <- function() {
   devtools::check()
   devtools::install()
 }
+
+#' Alias for devtools::install()
+#'
+#' Alias for
+#' [`devtools::install()`]
+#' with default arguments.
+#'
+#' @seealso [`devtools::install()`]
+#' @export
+rins <- function() {
+  devtools::install()
+}
