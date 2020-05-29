@@ -57,7 +57,7 @@
 pkg_build <- function(pkg_root = getwd(),
                       minimal = FALSE,
                       style = TRUE,
-                      data = TRUE,
+                      data = FALSE,
                       render = TRUE,
                       readme = TRUE,
                       vignettes = TRUE,
