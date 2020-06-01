@@ -100,8 +100,7 @@ pkg_create <- function(pkg_dir = getwd(),
   message(
     paste(
       "Creating",
-      pkg_root,
-      "\n"
+      pkg_root
     )
   )
   # It is important to create the .Rbuildignore and .gitignore first
@@ -181,15 +180,14 @@ pkg_create <- function(pkg_dir = getwd(),
       Package,
       " has been saved in ",
       pkg_root,
-      ".",
-      "\n"
+      "."
     )
   )
   message(
     paste(
       "If you are going to document, check, and build",
       Package,
-      "using `devtools`, you may delete the boilerplate `NAMESPACE` and `MAN` files.\n"
+      "using `devtools`, you may delete the boilerplate `NAMESPACE` and `MAN` files."
     )
   )
   if (git) {

@@ -67,8 +67,7 @@ pkg_find_root <- function(dir = getwd(),
     message(
       paste(
         "Searching",
-        dir,
-        "\n"
+        dir
       )
     )
     #    files <- list.files(
@@ -157,7 +156,7 @@ pkg_find_root <- function(dir = getwd(),
       }
       if (length(pkg_dir) == 0) {
         message(
-          "basename != pkg_name.\n"
+          "basename != pkg_name."
         )
         pkg_dir <- character(0)
         return(pkg_dir)
@@ -169,7 +168,7 @@ pkg_find_root <- function(dir = getwd(),
     if (length(pkg_dir) == 1) {
       message(
         paste0(
-          "Valid package root directory found.\n",
+          "Valid package root directory found.",
           pkg_dir
         )
       )
@@ -182,7 +181,7 @@ pkg_find_root <- function(dir = getwd(),
     # multiple output
     if (length(pkg_dir) > 1) {
       message(
-        "More than one package root directory found.\n"
+        "More than one package root directory found."
       )
       return(
         normalizePath(
@@ -193,7 +192,7 @@ pkg_find_root <- function(dir = getwd(),
     # no match
     if (length(pkg_dir) == 0) {
       message(
-        "No valid package root directory found.\n"
+        "No valid package root directory found."
       )
     }
   }

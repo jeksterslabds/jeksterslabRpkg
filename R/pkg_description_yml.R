@@ -86,7 +86,7 @@ pkg_description_yml <- function(input_file = NULL,
           paste0(
             "The required field ",
             required[i],
-            " is NOT PRESENT in the argument fields.\n"
+            " is NOT PRESENT in the argument fields."
           )
         )
       }

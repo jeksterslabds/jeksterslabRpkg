@@ -32,8 +32,7 @@ pkg_valid_name <- function(pkg_name) {
         "\n",
         "have at least two characters,",
         "\n",
-        "start with a letter and not end in a dot.",
-        "\n"
+        "start with a letter and not end in a dot."
       )
     )
   }

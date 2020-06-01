@@ -26,11 +26,11 @@ pkg_git <- function(pkg_root,
                     commit_msg = "AUTOMATED BUILD") {
   if (nchar(Sys.which("git")) == 0) {
     stop(
-      "`git` command is not installed in the system.\n"
+      "`git` command is not installed in the system."
     )
   }
   message(
-    "Setting up `git` repository.\n"
+    "Setting up `git` repository."
   )
   tryCatch(
     {
@@ -44,7 +44,7 @@ pkg_git <- function(pkg_root,
     },
     error = function(err) {
       warning(
-        "Error in `git -C init`.\n"
+        "Error in `git -C init`."
       )
     }
   )
@@ -60,7 +60,7 @@ pkg_git <- function(pkg_root,
     },
     error = function(err) {
       warning(
-        "Error in `git -C add --all`.\n"
+        "Error in `git -C add --all`."
       )
     }
   )
@@ -78,18 +78,18 @@ pkg_git <- function(pkg_root,
     },
     error = function(err) {
       warning(
-        "Error in `git -C commit`.\n"
+        "Error in `git -C commit`."
       )
     }
   )
   if (github) {
     if (nchar(Sys.which("hub")) == 0) {
       stop(
-        "`hub` command is not installed in the system.\n"
+        "`hub` command is not installed in the system."
       )
     }
     message(
-      "Creating and pushing to a remote GiHub repository.\n"
+      "Creating and pushing to a remote GiHub repository."
     )
     tryCatch(
       {
@@ -103,7 +103,7 @@ pkg_git <- function(pkg_root,
       },
       error = function(err) {
         warning(
-          "Error in `hub -C create`.\n"
+          "Error in `hub -C create`."
         )
       }
     )
@@ -119,7 +119,7 @@ pkg_git <- function(pkg_root,
       },
       error = function(err) {
         warning(
-          "Error in `git -C push -u origin HEAD`.\n"
+          "Error in `git -C push -u origin HEAD`."
         )
       }
     )
