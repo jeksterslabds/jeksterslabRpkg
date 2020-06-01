@@ -166,6 +166,7 @@ rchk <- function(pkg = ".",
 #' Alias for [`jeksterslabRpkg::pkg_build()`]
 #' with the following arguments:
 #' - `pkg_root = getwd()`
+#' - `clean = TRUE`
 #' - `minimal = FALSE`
 #' - `style = TRUE`
 #' - `data = TRUE`
@@ -185,6 +186,7 @@ rchk <- function(pkg = ".",
 #' @seealso [`jeksterslabRpkg::pkg_build()`]
 #' @export
 rbuild <- function(pkg_root = getwd(),
+                   clean = TRUE,
                    minimal = FALSE,
                    style = TRUE,
                    data = FALSE,
