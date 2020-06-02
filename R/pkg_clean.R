@@ -22,8 +22,7 @@ pkg_clean <- function(pkg_root = getwd()) {
       dir = path_doc,
       create_dir = TRUE,
       recursive = TRUE,
-      force = TRUE,
-      expand = TRUE
+      force = TRUE
     )
   }
   path_man <- file.path(pkg_root, "man")
@@ -32,8 +31,7 @@ pkg_clean <- function(pkg_root = getwd()) {
       dir = path_man,
       create_dir = TRUE,
       recursive = TRUE,
-      force = TRUE,
-      expand = TRUE
+      force = TRUE
     )
   }
   path_vignettes_tests <- file.path(pkg_root, "vignettes", "tests")
@@ -42,8 +40,7 @@ pkg_clean <- function(pkg_root = getwd()) {
       dir = path_vignettes_tests,
       create_dir = FALSE,
       recursive = TRUE,
-      force = TRUE,
-      expand = TRUE
+      force = TRUE
     )
   }
   path_vignettes <- file.path(pkg_root, "vignettes")
