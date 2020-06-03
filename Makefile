@@ -7,6 +7,7 @@ all : rm
 	Rscript -e 'jeksterslabRpkg::pkg_build("$(PKG)", git = TRUE, github = TRUE, commit_msg = "Automated build")'
 
 clean : rm
+	-Rscript -e 'devtools::document("$(PKG)")'
 	-git add --all
 	-git commit -m "[skip ci] Automated clean."
 	-git push
