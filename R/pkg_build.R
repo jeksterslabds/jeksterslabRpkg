@@ -103,7 +103,12 @@ pkg_build <- function(pkg_root = getwd(),
   )
   wd <- getwd()
   if (minimal) {
-    pkg_build_minimal(pkg_root = pkg_root)
+    document(
+      pkg = pkg_root
+    )
+    pkg_build_minimal(
+      pkg_root = pkg_root
+    )
   } else {
     if (style) {
       pkg_style(
