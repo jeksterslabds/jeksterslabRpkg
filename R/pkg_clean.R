@@ -16,6 +16,16 @@
 #' @importFrom jeksterslabRutils util_clean_dir
 #' @export
 pkg_clean <- function(pkg_root = getwd()) {
+  namespace <- file.path(pkg_root, "NAMESPACE")
+  readme_md <- file.path(pkg_root, "README.md")
+  readme_html <- file.path(pkg_root, "README.html")
+  unlink(
+    c(
+      namespace,
+      readme_md,
+      readme_html
+    )
+  )
   path_doc <- file.path(pkg_root, "docs")
   if (dir.exists(path_doc)) {
     util_clean_dir(
