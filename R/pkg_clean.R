@@ -67,8 +67,8 @@ pkg_clean <- function(pkg_root = getwd()) {
     setwd(path_vignettes_notes)
     unlink(x = "*.html")
     unlink(x = "*.md")
-    unlink(x = "*_files")
-    unlink(x = "*_cache")
+    unlink(x = "*_files", recursive = TRUE)
+    unlink(x = "*_cache", recursive = TRUE)
     setwd(wd)
   }
   path_tests_testthat <- file.path(pkg_root, "tests", "testthat")
@@ -77,6 +77,8 @@ pkg_clean <- function(pkg_root = getwd()) {
     setwd(path_tests_testthat)
     unlink(x = "*.html")
     unlink(x = "*.md")
+    unlink(x = "*_files", recursive = TRUE)
+    unlink(x = "*_cache", recursive = TRUE)
     setwd(wd)
   }
 }
