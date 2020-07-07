@@ -29,7 +29,8 @@ knitr::opts_chunk$set(
 You can install the released version of `jeksterslabRpkg` from [GitHub](https://github.com/jeksterslabds/jeksterslabRpkg) with:
 
 ```r
-remotes::install_github("jeksterslabds/jeksterslabRpkg")
+library(devtools)
+install_github("jeksterslabds/jeksterslabRpkg")
 ```
 
 ## Example
