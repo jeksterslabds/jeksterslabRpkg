@@ -2,7 +2,7 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param dir Character string.
-#'   Directory.
+#' Directory.
 #' @examples
 #' \dontrun{
 #' pkg_checkroot(
@@ -37,9 +37,9 @@ pkg_checkroot <- function(dir = getwd()) {
 #' Check pkg_root/subdir
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param subdir Character string.
-#'   Sub directory.
 #' @inheritParams pkg_checkroot
+#' @param subdir Character string.
+#' Sub directory.
 #' @examples
 #' \dontrun{
 #' pkg_checkroot_subdir(

@@ -11,10 +11,10 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param add Character string.
-#'   Entries to the \code{.gitignore}
-#'   in addition to the boilerplate example.
+#' Entries to the \code{.gitignore}
+#' in addition to the boilerplate example.
 #' @param docs Character string.
-#'   Ignore `docs` containing `pkgdown` files.
+#' Ignore `docs` containing `pkgdown` files.
 #' @inheritParams pkg_rbuildignore
 #' @examples
 #' \dontrun{

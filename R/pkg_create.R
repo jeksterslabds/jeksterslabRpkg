@@ -27,37 +27,37 @@
 #' you may delete the boilerplate `NAMESPACE` and `MAN` files.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param pkgdown Logical.
-#'   Create `pkgdown` `YAML` file.
-#' @param travis Logical.
-#'   Create `travis` `YAML` file.
-#' @param appveyor Logical.
-#'   Create `appveyor` `YAML` file.
-#' @param readme Logical.
-#'   Create `README.Rmd` file.
-#' @param add_description Character string.
-#'   Additional entries to the `DESCRIPTION` file
-#'   not included in `input_file`.
-#' @param add_namespace Character string.
-#'   Entries to the `NAMESPACE`
-#'   in addition to the boilerplate example.
-#' @param add_rbuildignore Character string.
-#'   Entries to the `.Rbuildignore`
-#'   in addition to the boilerplate example.
-#' @param add_gitignore Character string.
-#'   Entries to the `.gitignore`
-#'   in addition to the boilerplate example.
-#' @param add_travis Character string.
-#'   Entries to the `.travis.yml`
-#'   in addition to the boilerplate example.
-#' @param add_appveyor Character string.
-#'   Entries to the `appveyor.yml`
-#'   in addition to the boilerplate example.
-#' @param git Logical.
-#'   Set up a git repository.
 #' @inheritParams pkg_gitignore
 #' @inheritParams pkg_description
 #' @inheritParams pkg_git
+#' @param pkgdown Logical.
+#' Create `pkgdown` `YAML` file.
+#' @param travis Logical.
+#' Create `travis` `YAML` file.
+#' @param appveyor Logical.
+#' Create `appveyor` `YAML` file.
+#' @param readme Logical.
+#' Create `README.Rmd` file.
+#' @param add_description Character string.
+#' Additional entries to the `DESCRIPTION` file
+#' not included in `input_file`.
+#' @param add_namespace Character string.
+#' Entries to the `NAMESPACE`
+#' in addition to the boilerplate example.
+#' @param add_rbuildignore Character string.
+#' Entries to the `.Rbuildignore`
+#' in addition to the boilerplate example.
+#' @param add_gitignore Character string.
+#' Entries to the `.gitignore`
+#' in addition to the boilerplate example.
+#' @param add_travis Character string.
+#' Entries to the `.travis.yml`
+#' in addition to the boilerplate example.
+#' @param add_appveyor Character string.
+#' Entries to the `appveyor.yml`
+#' in addition to the boilerplate example.
+#' @param git Logical.
+#' Set up a git repository.
 #' @examples
 #' \dontrun{
 #' pkg_create(

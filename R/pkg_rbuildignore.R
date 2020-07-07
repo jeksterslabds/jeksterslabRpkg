@@ -10,12 +10,12 @@
 #' Additional entries in the `add` argument will be appended.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param pkg_root Character string.
-#'   Package root directory.
-#' @param add Character string.
-#'   Entries to the \code{.Rbuildignore}
-#'   in addition to the boilerplate example.
 #' @inheritParams jeksterslabRutils::util_txt2file
+#' @param pkg_root Character string.
+#' Package root directory.
+#' @param add Character string.
+#' Entries to the \code{.Rbuildignore}
+#' in addition to the boilerplate example.
 #' @examples
 #' \dontrun{
 #' pkg_rbuildignore(

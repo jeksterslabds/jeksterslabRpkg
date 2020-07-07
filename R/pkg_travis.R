@@ -11,10 +11,10 @@
 #' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param add Character string.
-#'   Entries to the `.travis.yml`
-#'   in addition to the boilerplate example.
 #' @inheritParams pkg_rbuildignore
+#' @param add Character string.
+#' Entries to the `.travis.yml`
+#' in addition to the boilerplate example.
 #' @examples
 #' \dontrun{
 #' pkg_travis(

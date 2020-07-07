@@ -51,6 +51,7 @@ rsty <- function(path = ".",
     include_roxygen_examples = include_roxygen_examples
   )
 }
+
 #' Aliases styler::style_pkg()
 #'
 #' @inheritParams styler::style_pkg

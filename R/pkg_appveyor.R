@@ -12,8 +12,8 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_rbuildignore
 #' @param add Character string.
-#'   Entries to the `appveyor.yml`
-#'   in addition to the boilerplate example.
+#' Entries to the `appveyor.yml`
+#' in addition to the boilerplate example.
 #' @examples
 #' \dontrun{
 #' pkg_appveyor(

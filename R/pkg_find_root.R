@@ -16,13 +16,13 @@
 #'   - "/"
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param dir Character string.
-#'   Directory to search.
-#'   If unspecified, defaults to `Sys.getenv("HOME")`.
-#' @param pkg_name Character string.
-#'   Package name.
 #' @inheritParams pkg_description
 #' @inheritParams pkg_build
+#' @param dir Character string.
+#' Directory to search.
+#' If unspecified, defaults to `Sys.getenv("HOME")`.
+#' @param pkg_name Character string.
+#' Package name.
 #' @examples
 #' \dontrun{
 #' pkg_find_root(

@@ -7,11 +7,11 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param pkg_root Character string.
-#'   Package root directory.
+#' Package root directory.
 #' @param github Logical.
-#'   Set up and push to a github repository.
+#' Set up and push to a github repository.
 #' @param commit_msg Character string.
-#'   Git commit message.
+#' Git commit message.
 #' @examples
 #' \dontrun{
 #' pkg_git(

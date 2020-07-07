@@ -2,7 +2,7 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @param pkg_name Character string.
-#'   Package name.
+#' Package name.
 #' @examples
 #' \dontrun{
 #' pkg_valid_name(

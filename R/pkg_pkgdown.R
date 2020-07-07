@@ -13,7 +13,6 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description
 #' @inheritParams pkg_rbuildignore
-#' @importFrom pkgdown build_site
 #' @examples
 #' \dontrun{
 #' pkg_pkgdown(
@@ -21,6 +20,7 @@
 #'   input_file = "DESCRIPTION.yml"
 #' )
 #' }
+#' @importFrom pkgdown build_site
 #' @export
 pkg_pkgdown <- function(pkg_root,
                         input_file = NULL,

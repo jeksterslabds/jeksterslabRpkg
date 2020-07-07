@@ -14,14 +14,14 @@
 #' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param pkg_dir Character string.
-#'   Directory where the package is initialized.
-#' @param add Character string.
-#'   Additional entries to the `DESCRIPTION` file
-#'   not included in `input_file`
-#' @param msg Character string.
-#'   Prints optional message and output directory.
 #' @inheritParams pkg_description_yml
+#' @param pkg_dir Character string.
+#' Directory where the package is initialized.
+#' @param add Character string.
+#' Additional entries to the `DESCRIPTION` file
+#' not included in `input_file`
+#' @param msg Character string.
+#' Prints optional message and output directory.
 #' @examples
 #' \dontrun{
 #' pkg_description(

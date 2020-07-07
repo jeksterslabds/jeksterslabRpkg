@@ -1,17 +1,15 @@
 #' Parse Description `YAML`
 #'
 #' @param input_file Character string.
-#'   `YAML` file containing `DESCRIPTION` fields and entries.
+#' `YAML` file containing `DESCRIPTION` fields and entries.
 #' @param fields Character vector.
-#'   Fields from `DESCRIPTION.yml` to extract.
-#'   Note that this only works for fields that contain a single value.
+#' Fields from `DESCRIPTION.yml` to extract.
+#' Note that this only works for fields that contain a single value.
 #' @param required Logical.
-#'   Check required fields.
+#' Check required fields.
 #' @param dependencies Logical.
-#'   Extract dependencies
-#'   (`SystemRequirements`, `Depends`, `Imports`, `Suggests`).
-#' @importFrom yaml read_yaml
-#' @importFrom tools toTitleCase
+#' Extract dependencies
+#' (`SystemRequirements`, `Depends`, `Imports`, `Suggests`).
 #' @examples
 #' \dontrun{
 #' pkg_description_yml(
@@ -38,6 +36,8 @@
 #' )
 #' }
 #' @importFrom jeksterslabRutils util_list2vector
+#' @importFrom yaml read_yaml
+#' @importFrom tools toTitleCase
 #' @export
 pkg_description_yml <- function(input_file = NULL,
                                 fields = c(

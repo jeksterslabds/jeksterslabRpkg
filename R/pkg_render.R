@@ -3,13 +3,13 @@
 #' Renders `R` and `R` Markdown files in the package directory.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-#' @param readme Logical.
-#'   Render `README.Rmd`.
-#' @param vignettes Logical.
-#'   Render `vignettes/*.Rmd|*.R`.
-#' @param tests Logical.
-#'   Render `tests/testhat/*.Rmd|*.R`.
 #' @inheritParams pkg_build
+#' @param readme Logical.
+#' Render `README.Rmd`.
+#' @param vignettes Logical.
+#' Render `vignettes/*.Rmd|*.R`.
+#' @param tests Logical.
+#' Render `tests/testhat/*.Rmd|*.R`.
 #' @examples
 #' \dontrun{
 #' pkg_render(

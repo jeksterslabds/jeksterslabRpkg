@@ -13,11 +13,10 @@
 #' USE WITH CAUTION.**
 #'
 #' @author Ivan Jacob Agaloos Pesigan
-
-#' @param add Character string.
-#'   Entries to the \code{NAMESPACE}
-#'   in addition to the boilerplate example.
 #' @inheritParams pkg_rbuildignore
+#' @param add Character string.
+#' Entries to the \code{NAMESPACE}
+#' in addition to the boilerplate example.
 #' @examples
 #' \dontrun{
 #' pkg_namespace(
