@@ -9,6 +9,11 @@ pkg_getstarted(pkg_root, msg = "Get started file path:")
 \arguments{
 \item{pkg_root}{Character string.
 Package root directory.}
+
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package Get Started vignette.

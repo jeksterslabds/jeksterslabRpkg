@@ -13,6 +13,16 @@ If unspecified, defaults to \code{Sys.getenv("HOME")}.}
 
 \item{pkg_name}{Character string.
 Package name.}
+
+\item{par}{Logical.
+If \code{TRUE}, use multiple cores.}
+
+\item{ncores}{Integer.
+Number of cores to use if
+\code{par = TRUE}.
+If unspecified,
+defaults to
+\code{detectCores() - 1}.}
 }
 \description{
 Finds package root directory by seraching for

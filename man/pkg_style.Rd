@@ -9,6 +9,16 @@ pkg_style(pkg_root = getwd(), par = TRUE, ncores = NULL)
 \arguments{
 \item{pkg_root}{Character string.
 Package root directory.}
+
+\item{par}{Logical.
+If \code{TRUE}, use multiple cores.}
+
+\item{ncores}{Integer.
+Number of cores to use if
+\code{par = TRUE}.
+If unspecified,
+defaults to
+\code{detectCores() - 1}.}
 }
 \description{
 Styles \code{R} and \code{R} Markdown files in the package directory.

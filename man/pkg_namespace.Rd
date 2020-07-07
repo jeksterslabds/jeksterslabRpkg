@@ -13,6 +13,11 @@ Package root directory.}
 \item{add}{Character string.
 Entries to the \code{NAMESPACE}
 in addition to the boilerplate example.}
+
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package \code{NAMESPACE}.

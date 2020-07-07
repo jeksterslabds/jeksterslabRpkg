@@ -6,6 +6,26 @@
 \usage{
 rstyle(dir = getwd(), recursive = TRUE, par = TRUE, ncores = NULL)
 }
+\arguments{
+\item{dir}{Character string.
+Directory.}
+
+\item{recursive}{Logical.
+If \code{TRUE},
+recursively style all \code{R} scripts (\code{.R}, \code{.r}) and
+R Markdown files (\code{.Rmd}, \code{.rmd})
+in \code{dir}.}
+
+\item{par}{Logical.
+If \code{TRUE}, use multiple cores.}
+
+\item{ncores}{Integer.
+Number of cores to use if
+\code{par = TRUE}.
+If unspecified,
+defaults to
+\code{detectCores() - 1}.}
+}
 \description{
 Alias for \code{\link[jeksterslabRutils:util_style]{jeksterslabRutils::util_style()}}
 with the following arguments:

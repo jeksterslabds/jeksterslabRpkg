@@ -9,6 +9,11 @@ pkg_rd(pkg_root, msg = "z.Rd file path:")
 \arguments{
 \item{pkg_root}{Character string.
 Package root directory.}
+
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package \code{Rd} function documentation.

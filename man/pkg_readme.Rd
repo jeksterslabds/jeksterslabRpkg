@@ -14,7 +14,9 @@ Package root directory.}
 \code{YAML} file containing \code{DESCRIPTION} fields and entries.}
 
 \item{msg}{Character string.
-Prints optional message and output directory.}
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package \code{README.Rmd} file

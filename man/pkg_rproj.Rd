@@ -9,6 +9,11 @@ pkg_rproj(pkg_root = getwd(), msg = "Rproj file path:")
 \arguments{
 \item{pkg_root}{Character string.
 Package root directory.}
+
+\item{msg}{Character string.
+Optional message.
+If supplied,
+prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a package \code{.Rproj} file.

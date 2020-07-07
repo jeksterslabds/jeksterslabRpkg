@@ -75,6 +75,16 @@ See \code{\link[=pkg_tests2vignettes]{pkg_tests2vignettes()}} for details.}
 \item{pkgdown}{Logical.
 Build \code{pkgdown} site.}
 
+\item{par}{Logical.
+If \code{TRUE}, use multiple cores.}
+
+\item{ncores}{Integer.
+Number of cores to use if
+\code{par = TRUE}.
+If unspecified,
+defaults to
+\code{detectCores() - 1}.}
+
 \item{git}{Logical.
 Set up a git repository.}
 
