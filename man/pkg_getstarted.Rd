@@ -9,17 +9,12 @@ pkg_getstarted(pkg_root, msg = "Get started file path:")
 \arguments{
 \item{pkg_root}{Character string.
 Package root directory.}
-
-\item{msg}{Character string.
-Optional message.
-If supplied,
-prints \verb{msg dir/fn}.}
 }
 \description{
 Creates a boilerplate package Get Started vignette.
 }
 \details{
-Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+Note that if \code{\link[=pkg_create]{pkg_create()}} is used,
 this function will be called.
 }
 \examples{

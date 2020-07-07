@@ -82,20 +82,20 @@ Git commit message.}
 Creates a boilerplate \code{R} package by generating the following:
 \itemize{
 \item \code{DESCRIPTION} file
-(see \code{\link[jeksterslabRpkg:pkg_description]{jeksterslabRpkg::pkg_description()}}),
+(see \code{\link[=pkg_description]{pkg_description()}}),
 \item \code{NAMESPACE} file
-(see \code{\link[jeksterslabRpkg:pkg_namespace]{jeksterslabRpkg::pkg_namespace()}}),
+(see \code{\link[=pkg_namespace]{pkg_namespace()}}),
 \item \code{LICENSE} and \code{LICENSE.md}
-(see \code{\link[jeksterslabRpkg:pkg_license]{jeksterslabRpkg::pkg_license()}}),
+(see \code{\link[=pkg_license]{pkg_license()}}),
 \item a simple \code{R} script and accompanying \code{Rd} documentation file
-(see \code{\link[jeksterslabRpkg:pkg_r]{jeksterslabRpkg::pkg_r()}} and \code{\link[jeksterslabRpkg:pkg_rd]{jeksterslabRpkg::pkg_rd()}}),
+(see \code{\link[=pkg_r]{pkg_r()}} and \code{\link[=pkg_rd]{pkg_rd()}}),
 \item sample data, test, and vignette
-(see \code{\link[jeksterslabRpkg:pkg_data]{jeksterslabRpkg::pkg_data()}}, \code{\link[jeksterslabRpkg:pkg_test]{jeksterslabRpkg::pkg_test()}}, and
-\code{\link[jeksterslabRpkg:pkg_vignette]{jeksterslabRpkg::pkg_vignette()}}),
+(see \code{\link[=pkg_data]{pkg_data()}}, \code{\link[=pkg_test]{pkg_test()}}, and
+\code{\link[=pkg_vignette]{pkg_vignette()}}),
 \item optional \code{pkgdown} and \code{travis} \code{YAML} files
-(see \code{\link[jeksterslabRpkg:pkg_pkgdown]{jeksterslabRpkg::pkg_pkgdown()}} and \code{\link[jeksterslabRpkg:pkg_travis]{jeksterslabRpkg::pkg_travis()}}),
+(see \code{\link[=pkg_pkgdown]{pkg_pkgdown()}} and \code{\link[=pkg_travis]{pkg_travis()}}),
 \item optional \code{README.Rmd} file
-(see \code{\link[jeksterslabRpkg:pkg_readme]{jeksterslabRpkg::pkg_readme()}}), and
+(see \code{\link[=pkg_readme]{pkg_readme()}}), and
 \item other files like \code{.Rbuildignore}, \code{.gitignore}, and \code{Rproj}.
 }
 }

@@ -24,7 +24,7 @@ See \code{system.file("extdata", "DESCRIPTION.yml", package = "jeksterslabRpkg",
 for the \code{input_file} template.
 }
 \details{
-Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+Note that if \code{\link[=pkg_create]{pkg_create()}} is used,
 this function will be called.
 
 \strong{THIS FUNCTION OVERWRITES EXISTING \code{LICENSE} and \code{LICENSE.md} FILES

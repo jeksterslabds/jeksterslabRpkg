@@ -20,7 +20,7 @@ Prints optional message and output directory.}
 Creates a boilerplate package NEWS.md file.
 }
 \details{
-Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+Note that if \code{\link[=pkg_create]{pkg_create()}} is used,
 this function will be called.
 }
 \examples{

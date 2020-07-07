@@ -20,7 +20,7 @@ Prints optional message and output directory.}
 Creates a \verb{_pkgdown.yml} build file.
 }
 \details{
-Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+Note that if \code{\link[=pkg_create]{pkg_create()}} is used,
 and the argument \code{pkgdown = TRUE} is specified,
 this function will be called.
 

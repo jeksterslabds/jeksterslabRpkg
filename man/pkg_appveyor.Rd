@@ -13,17 +13,12 @@ Package root directory.}
 \item{add}{Character string.
 Entries to the \code{appveyor.yml}
 in addition to the boilerplate example.}
-
-\item{msg}{Character string.
-Optional message.
-If supplied,
-prints \verb{msg dir/fn}.}
 }
 \description{
 Creates an \code{appveyor.yml} build file.
 }
 \details{
-Note that if \code{\link[jeksterslabRpkg:pkg_create]{jeksterslabRpkg::pkg_create()}} is used,
+Note that if \code{\link[=pkg_create]{pkg_create()}} is used,
 this function will be called.
 
 \strong{THIS FUNCTION OVERWRITES AN EXISTING \code{appveyor.yml} FILE

@@ -75,16 +75,6 @@ See \code{\link[=pkg_tests2vignettes]{pkg_tests2vignettes()}} for details.}
 \item{pkgdown}{Logical.
 Build \code{pkgdown} site.}
 
-\item{par}{Logical.
-If \code{TRUE}, use multiple cores.}
-
-\item{ncores}{Integer.
-Number of cores to use if
-\code{par = TRUE}.
-If unspecified,
-defaults to
-\code{detectCores() - 1}.}
-
 \item{git}{Logical.
 Set up a git repository.}
 
@@ -95,7 +85,7 @@ Set up and push to a github repository.}
 Git commit message.}
 }
 \description{
-Alias for \code{\link[jeksterslabRpkg:pkg_build]{jeksterslabRpkg::pkg_build()}}
+Alias for \code{\link[=pkg_build]{pkg_build()}}
 with the following arguments:
 \itemize{
 \item \code{pkg_root = getwd()}
@@ -117,5 +107,5 @@ with the following arguments:
 }
 }
 \seealso{
-\code{\link[jeksterslabRpkg:pkg_build]{jeksterslabRpkg::pkg_build()}}
+\code{\link[=pkg_build]{pkg_build()}}
 }
