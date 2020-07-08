@@ -11,15 +11,18 @@ Authors@R:
     )
 Description: Sets up a boilerplate R package.
 License: MIT + file LICENSE
+Encoding: UTF-8
+Language: en-US
+LazyData: true
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
 URL: https://github.com/jeksterslabds/jeksterslabRpkg
 BugReports: https://github.com/jeksterslabds/jeksterslabRpkg/issues
-Encoding: UTF-8
-LazyData: true
-Language: en-US
 SystemRequirements:
     git,
     hub
-Depends: R (>= 3.5.0)
+Depends:
+    R (>= 3.5.0)
 Imports:
     jeksterslabRutils,
     yaml,
@@ -36,6 +39,4 @@ Remotes:
     jeksterslabds/jeksterslabRutils
 Suggests:
     knitr
-VignetteBuilder: knitr
-Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

@@ -18,11 +18,8 @@ Package name.}
 If \code{TRUE}, use multiple cores.}
 
 \item{ncores}{Integer.
-Number of cores to use if
-\code{par = TRUE}.
-If unspecified,
-defaults to
-\code{detectCores() - 1}.}
+Number of cores to use if \code{par = TRUE}.
+If unspecified, defaults to \code{detectCores() - 1}.}
 }
 \description{
 Finds package root directory by seraching for

@@ -32,11 +32,8 @@ Vector of files to render.}
 If \code{TRUE}, use multiple cores.}
 
 \item{ncores}{Integer.
-Number of cores to use if
-\code{par = TRUE}.
-If unspecified,
-defaults to
-\code{detectCores() - 1}.}
+Number of cores to use if \code{par = TRUE}.
+If unspecified, defaults to \code{detectCores() - 1}.}
 }
 \description{
 Alias for \code{\link[jeksterslabRutils:util_render]{jeksterslabRutils::util_render()}}

@@ -14,11 +14,8 @@ Package root directory.}
 If \code{TRUE}, use multiple cores.}
 
 \item{ncores}{Integer.
-Number of cores to use if
-\code{par = TRUE}.
-If unspecified,
-defaults to
-\code{detectCores() - 1}.}
+Number of cores to use if \code{par = TRUE}.
+If unspecified, defaults to \code{detectCores() - 1}.}
 }
 \description{
 Copy and spin \verb{tests/testhat/*.R}

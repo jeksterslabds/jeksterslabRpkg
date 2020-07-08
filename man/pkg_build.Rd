@@ -79,11 +79,8 @@ Build \code{pkgdown} site.}
 If \code{TRUE}, use multiple cores.}
 
 \item{ncores}{Integer.
-Number of cores to use if
-\code{par = TRUE}.
-If unspecified,
-defaults to
-\code{detectCores() - 1}.}
+Number of cores to use if \code{par = TRUE}.
+If unspecified, defaults to \code{detectCores() - 1}.}
 
 \item{git}{Logical.
 Set up a git repository.}
