@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package `.Rbuildignore` File.
+#' Create a Boilerplate Package `.Rbuildignore` File
 #'
 #' Creates a boilerplate package `.Rbuildignore` file.
 #'

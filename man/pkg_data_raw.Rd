@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_data_raw.R
 \name{pkg_data_raw}
 \alias{pkg_data_raw}
-\title{Source \code{R} Files in data_raw.}
+\title{Source \code{R} Files in data_raw}
 \usage{
 pkg_data_raw(pkg_root = getwd())
 }

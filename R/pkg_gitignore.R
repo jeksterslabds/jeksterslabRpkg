@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package `.gitignore` File.
+#' Create a Boilerplate Package `.gitignore` File
 #'
 #' Creates a boilerplate package `.gitignore` file.
 #'

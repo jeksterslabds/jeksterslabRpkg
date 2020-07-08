@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_rproj.R
 \name{pkg_rproj}
 \alias{pkg_rproj}
-\title{Create a Package \code{.Rproj} File.}
+\title{Create a Package \code{.Rproj} File}
 \usage{
 pkg_rproj(pkg_root = getwd(), msg = "Rproj file path:")
 }

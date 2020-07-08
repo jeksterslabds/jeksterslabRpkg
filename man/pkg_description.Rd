@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_description.R
 \name{pkg_description}
 \alias{pkg_description}
-\title{Create a Package \code{DESCRIPTION} File.}
+\title{Create a Package \code{DESCRIPTION} File}
 \usage{
 pkg_description(
   pkg_dir = getwd(),

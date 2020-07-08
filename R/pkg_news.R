@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package NEWS.md File.
+#' Create a Boilerplate Package NEWS.md File
 #'
 #' Creates a boilerplate package NEWS.md file.
 #'

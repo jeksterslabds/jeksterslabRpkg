@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package Data File.
+#' Create a Boilerplate Package Data File
 #'
 #' Creates a boilerplate package data file.
 #'

@@ -1,4 +1,4 @@
-#' Source `R` Files in data_raw.
+#' Source `R` Files in data_raw
 #'
 #' Sources `R` files in data_raw.
 #'

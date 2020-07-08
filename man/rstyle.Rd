@@ -13,8 +13,7 @@ Directory.}
 \item{recursive}{Logical.
 If \code{TRUE},
 recursively style all \code{R} scripts (\code{.R}, \code{.r}) and
-R Markdown files (\code{.Rmd}, \code{.rmd})
-in \code{dir}.}
+R Markdown files (\code{.Rmd}, \code{.rmd}) in \code{dir}.}
 
 \item{par}{Logical.
 If \code{TRUE}, use multiple cores.}

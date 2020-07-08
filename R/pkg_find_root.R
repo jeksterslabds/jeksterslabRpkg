@@ -13,7 +13,7 @@
 #'   - `../../dir`
 #'   - `working directory` (`getwd()`)
 #'   - `Sys.getenv("HOME")`
-#'   - "/"
+#'   - `/`
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #' @inheritParams pkg_description

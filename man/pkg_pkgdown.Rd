@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_pkgdown.R
 \name{pkg_pkgdown}
 \alias{pkg_pkgdown}
-\title{Create a Boilerplate Package \verb{_pkgdown.yml}.}
+\title{Create a Boilerplate Package \verb{_pkgdown.yml}}
 \usage{
 pkg_pkgdown(pkg_root, input_file = NULL, msg = "_pkgdown.yml file path:")
 }

@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package Vignette File.
+#' Create a Boilerplate Package Vignette File
 #'
 #' Creates a boilerplate package vignette file.
 #'

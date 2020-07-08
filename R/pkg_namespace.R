@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package `NAMESPACE`.
+#' Create a Boilerplate Package `NAMESPACE`
 #'
 #' Creates a boilerplate package `NAMESPACE`.
 #'

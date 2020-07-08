@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_rbuildignore.R
 \name{pkg_rbuildignore}
 \alias{pkg_rbuildignore}
-\title{Create a Boilerplate Package \code{.Rbuildignore} File.}
+\title{Create a Boilerplate Package \code{.Rbuildignore} File}
 \usage{
 pkg_rbuildignore(pkg_root, add = NULL, msg = ".Rbuildignore file path:")
 }

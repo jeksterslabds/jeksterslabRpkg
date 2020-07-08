@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_build_minimal.R
 \name{pkg_build_minimal}
 \alias{pkg_build_minimal}
-\title{Build Package (Minimal).}
+\title{Build Package (Minimal)}
 \usage{
 pkg_build_minimal(pkg_root = getwd())
 }

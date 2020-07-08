@@ -1,22 +1,22 @@
-#' Create a Boilerplate `R` Package.
+#' Create a Boilerplate `R` Package
 #'
 #' Creates a boilerplate `R` package by generating the following:
-#'   - `DESCRIPTION` file
-#'     (see [jeksterslabRpkg::pkg_description()]),
-#'   - `NAMESPACE` file
-#'     (see [jeksterslabRpkg::pkg_namespace()]),
-#'   - `LICENSE` and `LICENSE.md`
-#'     (see [jeksterslabRpkg::pkg_license()]),
-#'   - a simple `R` script and accompanying `Rd` documentation file
-#'     (see [jeksterslabRpkg::pkg_r()] and [jeksterslabRpkg::pkg_rd()]),
-#'   - sample data, test, and vignette
-#'     (see [jeksterslabRpkg::pkg_data()], [jeksterslabRpkg::pkg_test()], and
-#'     [jeksterslabRpkg::pkg_vignette()]),
-#'   - optional `pkgdown` and `travis` `YAML` files
-#'     (see [jeksterslabRpkg::pkg_pkgdown()] and [jeksterslabRpkg::pkg_travis()]),
-#'   - optional `README.Rmd` file
-#'     (see [jeksterslabRpkg::pkg_readme()]), and
-#'   - other files like `.Rbuildignore`, `.gitignore`, and `Rproj`.
+#' - `DESCRIPTION` file
+#'   (see [jeksterslabRpkg::pkg_description()]),
+#' - `NAMESPACE` file
+#'   (see [jeksterslabRpkg::pkg_namespace()]),
+#' - `LICENSE` and `LICENSE.md`
+#'   (see [jeksterslabRpkg::pkg_license()]),
+#' - a simple `R` script and accompanying `Rd` documentation file
+#'   (see [jeksterslabRpkg::pkg_r()] and [jeksterslabRpkg::pkg_rd()]),
+#' - sample data, test, and vignette
+#'   (see [jeksterslabRpkg::pkg_data()], [jeksterslabRpkg::pkg_test()], and
+#'   [jeksterslabRpkg::pkg_vignette()]),
+#' - optional `pkgdown` and `travis` `YAML` files
+#'   (see [jeksterslabRpkg::pkg_pkgdown()] and [jeksterslabRpkg::pkg_travis()]),
+#' - optional `README.Rmd` file
+#'   (see [jeksterslabRpkg::pkg_readme()]), and
+#' - other files like `.Rbuildignore`, `.gitignore`, and `Rproj`.
 #'
 #' Optionally, the function can also set up a `Git` repository
 #' and push the created repo to `Github`.

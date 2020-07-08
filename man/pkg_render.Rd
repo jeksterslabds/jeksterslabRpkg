@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_render.R
 \name{pkg_render}
 \alias{pkg_render}
-\title{Render \code{R} and \code{R} Markdown Files in the Package Directory.}
+\title{Render \code{R} and \code{R} Markdown Files in the Package Directory}
 \usage{
 pkg_render(
   pkg_root = getwd(),

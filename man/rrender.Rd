@@ -19,10 +19,8 @@ Ignored if \code{file} is NOT NULL.}
 
 \item{recursive}{Logical.
 If \code{TRUE},
-recursively render\\
-all \code{R} scripts (\code{.R}, \code{.r}) and
-R Markdown files (\code{.Rmd}, \code{.rmd})
-in \code{dir}.
+recursively render all \code{R} scripts (\code{.R}, \code{.r}) and
+R Markdown files (\code{.Rmd}, \code{.rmd}) in \code{dir}.
 Ignored if \code{file} is NOT NULL.}
 
 \item{files}{Character vector.

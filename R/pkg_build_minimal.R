@@ -1,4 +1,4 @@
-#' Build Package (Minimal).
+#' Build Package (Minimal)
 #'
 #' Minimal check, build, and install
 #' using `R CMD`.

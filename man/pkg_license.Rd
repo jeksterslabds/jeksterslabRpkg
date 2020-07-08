@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_license.R
 \name{pkg_license}
 \alias{pkg_license}
-\title{Create a Package License.}
+\title{Create a Package License}
 \usage{
 pkg_license(pkg_root, input_file = NULL, msg = "LICENSE file path:")
 }

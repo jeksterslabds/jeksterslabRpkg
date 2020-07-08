@@ -1,4 +1,4 @@
-#' Create a Package License.
+#' Create a Package License
 #'
 #' Creates a package `LICENSE` and `LICENSE.md`
 #' by extracting information

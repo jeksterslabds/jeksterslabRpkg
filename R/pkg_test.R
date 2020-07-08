@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package Test File.
+#' Create a Boilerplate Package Test File
 #'
 #' Creates a boilerplate package test file.
 #'

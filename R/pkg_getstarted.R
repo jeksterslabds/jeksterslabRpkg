@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package Get Started Vignette.
+#' Create a Boilerplate Package Get Started Vignette
 #'
 #' Creates a boilerplate package Get Started vignette.
 #'

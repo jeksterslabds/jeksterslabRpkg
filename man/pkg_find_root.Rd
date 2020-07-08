@@ -37,7 +37,7 @@ the following directories will be searched:
 \item \code{../../dir}
 \item \verb{working directory} (\code{getwd()})
 \item \code{Sys.getenv("HOME")}
-\item "/"
+\item \code{/}
 }
 }
 \examples{

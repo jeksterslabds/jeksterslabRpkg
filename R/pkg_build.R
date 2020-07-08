@@ -1,4 +1,4 @@
-#' Build Package.
+#' Build Package
 #'
 #' Builds the `R` package on `pkg_root` by:
 #' - styling the `R` scripts and `R` Markdown files,

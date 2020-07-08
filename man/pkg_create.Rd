@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_create.R
 \name{pkg_create}
 \alias{pkg_create}
-\title{Create a Boilerplate \code{R} Package.}
+\title{Create a Boilerplate \code{R} Package}
 \usage{
 pkg_create(
   pkg_dir = getwd(),

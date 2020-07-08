@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_r.R
 \name{pkg_r}
 \alias{pkg_r}
-\title{Create a Boilerplate Package \code{R} Script.}
+\title{Create a Boilerplate Package \code{R} Script}
 \usage{
 pkg_r(pkg_root, msg = "z.R file path:")
 }

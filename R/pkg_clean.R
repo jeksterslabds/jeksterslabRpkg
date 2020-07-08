@@ -1,10 +1,14 @@
-#' Clean Package.
+#' Clean Package
 #'
 #' Cleans the following:
 #' - `docs/*`
 #' - `man/*`
 #' - `vignettes/*.html`
 #' - `vignettes/*.md`
+#' - `vignettes/articles/*.html`
+#' - `vignettes/articles/*.md`
+#' - `vignettes/articles/*_files`
+#' - `vignettes/notes/*_cache`
 #' - `vignettes/notes/*.html`
 #' - `vignettes/notes/*.md`
 #' - `vignettes/notes/*_files`
@@ -61,7 +65,7 @@ pkg_clean <- function(pkg_root = getwd()) {
     unlink(x = "*.md")
     setwd(wd)
   }
-  path_vignettes_notes <- file.path(pkg_root, "vignettes", "notes")
+  path_vignettes_notes <- file.path(pkg_root, "vignettes", "articles", "notes")
   if (dir.exists(path_vignettes_notes)) {
     wd <- getwd()
     setwd(path_vignettes_notes)

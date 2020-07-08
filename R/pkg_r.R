@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package `R` Script.
+#' Create a Boilerplate Package `R` Script
 #'
 #' Creates a boilerplate package `R` script.
 #'

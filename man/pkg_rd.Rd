@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_rd.R
 \name{pkg_rd}
 \alias{pkg_rd}
-\title{Create a Boilerplate Package \code{Rd} Function Documentation.}
+\title{Create a Boilerplate Package \code{Rd} Function Documentation}
 \usage{
 pkg_rd(pkg_root, msg = "z.Rd file path:")
 }

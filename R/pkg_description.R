@@ -1,4 +1,4 @@
-#' Create a Package `DESCRIPTION` File.
+#' Create a Package `DESCRIPTION` File
 #'
 #' Creates a package `DESCRIPTION` file
 #' by extracting information

@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_vignette.R
 \name{pkg_vignette}
 \alias{pkg_vignette}
-\title{Create a Boilerplate Package Vignette File.}
+\title{Create a Boilerplate Package Vignette File}
 \usage{
 pkg_vignette(pkg_root, msg = "z.Rmd file path:")
 }

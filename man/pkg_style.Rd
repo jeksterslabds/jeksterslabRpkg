@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_style.R
 \name{pkg_style}
 \alias{pkg_style}
-\title{Style \code{R} and \code{R} Markdown Files in the Package Directory.}
+\title{Style \code{R} and \code{R} Markdown Files in the Package Directory}
 \usage{
 pkg_style(pkg_root = getwd(), par = TRUE, ncores = NULL)
 }

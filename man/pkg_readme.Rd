@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_readme.R
 \name{pkg_readme}
 \alias{pkg_readme}
-\title{Create a Boilerplate Package README File.}
+\title{Create a Boilerplate Package README File}
 \usage{
 pkg_readme(pkg_root, input_file = NULL, msg = "README.Rmd file path:")
 }

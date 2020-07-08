@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_test.R
 \name{pkg_test}
 \alias{pkg_test}
-\title{Create a Boilerplate Package Test File.}
+\title{Create a Boilerplate Package Test File}
 \usage{
 pkg_test(pkg_root, msg = "test_z.R file path:")
 }

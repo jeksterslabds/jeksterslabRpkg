@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_namespace.R
 \name{pkg_namespace}
 \alias{pkg_namespace}
-\title{Create a Boilerplate Package \code{NAMESPACE}.}
+\title{Create a Boilerplate Package \code{NAMESPACE}}
 \usage{
 pkg_namespace(pkg_root, add = NULL, msg = "NAMESPACE file path:")
 }

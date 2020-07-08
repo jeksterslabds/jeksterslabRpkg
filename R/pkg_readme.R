@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package README File.
+#' Create a Boilerplate Package README File
 #'
 #' Creates a boilerplate package `README.Rmd` file
 #' by extracting information

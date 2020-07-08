@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_data.R
 \name{pkg_data}
 \alias{pkg_data}
-\title{Create a Boilerplate Package Data File.}
+\title{Create a Boilerplate Package Data File}
 \usage{
 pkg_data(pkg_root, msg = "Data script file path:")
 }

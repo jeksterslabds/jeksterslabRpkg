@@ -1,4 +1,4 @@
-#' Render `R` and `R` Markdown Files in the Package Directory.
+#' Render `R` and `R` Markdown Files in the Package Directory
 #'
 #' Renders `R` and `R` Markdown files in the package directory.
 #'

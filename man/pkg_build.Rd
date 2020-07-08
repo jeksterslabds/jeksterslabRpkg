@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_build.R
 \name{pkg_build}
 \alias{pkg_build}
-\title{Build Package.}
+\title{Build Package}
 \usage{
 pkg_build(
   pkg_root = getwd(),

@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package `_pkgdown.yml`.
+#' Create a Boilerplate Package `_pkgdown.yml`
 #'
 #' Creates a `_pkgdown.yml` build file.
 #'

@@ -1,4 +1,4 @@
-#' Style `R` and `R` Markdown Files in the Package Directory.
+#' Style `R` and `R` Markdown Files in the Package Directory
 #'
 #' Styles `R` and `R` Markdown files in the package directory.
 #'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_getstarted.R
 \name{pkg_getstarted}
 \alias{pkg_getstarted}
-\title{Create a Boilerplate Package Get Started Vignette.}
+\title{Create a Boilerplate Package Get Started Vignette}
 \usage{
 pkg_getstarted(pkg_root, msg = "Get started file path:")
 }

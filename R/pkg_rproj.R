@@ -1,4 +1,4 @@
-#' Create a Package `.Rproj` File.
+#' Create a Package `.Rproj` File
 #'
 #' Creates a package `.Rproj` file.
 #'

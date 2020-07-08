@@ -1,4 +1,4 @@
-#' Create a Boilerplate Package `Rd` Function Documentation.
+#' Create a Boilerplate Package `Rd` Function Documentation
 #'
 #' Creates a boilerplate package `Rd` function documentation.
 #'

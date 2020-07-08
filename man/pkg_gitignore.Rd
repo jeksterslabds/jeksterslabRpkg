@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_gitignore.R
 \name{pkg_gitignore}
 \alias{pkg_gitignore}
-\title{Create a Boilerplate Package \code{.gitignore} File.}
+\title{Create a Boilerplate Package \code{.gitignore} File}
 \usage{
 pkg_gitignore(pkg_root, add = NULL, docs = TRUE, msg = ".gitignore file path:")
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg_news.R
 \name{pkg_news}
 \alias{pkg_news}
-\title{Create a Boilerplate Package NEWS.md File.}
+\title{Create a Boilerplate Package NEWS.md File}
 \usage{
 pkg_news(pkg_root, input_file = NULL, msg = "NEWS.md file path:")
 }
