@@ -27,7 +27,7 @@ pkg_render <- function(pkg_root = getwd(),
                        readme = TRUE,
                        vignettes = TRUE,
                        tests = TRUE,
-                       par = TRUE,
+                       par = FALSE,
                        ncores = NULL) {
   foo <- function(pkg_root,
                   readme,

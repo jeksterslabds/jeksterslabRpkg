@@ -11,7 +11,7 @@
 #' @importFrom jeksterslabRutils util_spin
 #' @export
 pkg_tests2vignettes <- function(pkg_root = getwd(),
-                                par = TRUE,
+                                par = FALSE,
                                 ncores = NULL) {
   tests <- file.path(
     pkg_root,

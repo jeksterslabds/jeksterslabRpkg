@@ -35,7 +35,7 @@
 #' @export
 pkg_find_root <- function(dir = getwd(),
                           pkg_name,
-                          par = TRUE,
+                          par = FALSE,
                           ncores = NULL) {
   dir <- normalizePath(dir)
   wd <- normalizePath(

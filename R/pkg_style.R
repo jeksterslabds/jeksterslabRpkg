@@ -14,7 +14,7 @@
 #' @importFrom jeksterslabRutils util_style
 #' @export
 pkg_style <- function(pkg_root = getwd(),
-                      par = TRUE,
+                      par = FALSE,
                       ncores = NULL) {
   message(
     "Styling..."

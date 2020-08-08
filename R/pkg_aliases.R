@@ -5,7 +5,7 @@
 #' - `dir = getwd()`
 #' - `recursive = TRUE`
 #' - `files = NULL`
-#' - `par = TRUE`
+#' - `par = FALSE`
 #' - `ncores = NULL`
 #'
 #' @inheritParams jeksterslabRutils::util_render
@@ -14,7 +14,7 @@
 rrender <- function(dir = getwd(),
                     recursive = TRUE,
                     files = NULL,
-                    par = TRUE,
+                    par = FALSE,
                     ncores = NULL) {
   jeksterslabRutils::util_render(
     dir = dir,
@@ -83,7 +83,7 @@ rspkg <- function(pkg = ".",
 #' with the following arguments:
 #' - `dir = getwd()`
 #' - `recursive = TRUE`
-#' - `par = TRUE`
+#' - `par = FALSE`
 #' - `ncores = NULL`
 #'
 #' @inheritParams jeksterslabRutils::util_style
@@ -91,7 +91,7 @@ rspkg <- function(pkg = ".",
 #' @export
 rstyle <- function(dir = getwd(),
                    recursive = TRUE,
-                   par = TRUE,
+                   par = FALSE,
                    ncores = NULL) {
   jeksterslabRutils::util_style(
     dir = dir,
@@ -177,7 +177,7 @@ rchk <- function(pkg = ".",
 #' - `tests = TRUE`
 #' - `tests2vignettes = TRUE`
 #' - `pkgdown = TRUE`
-#' - `par = TRUE`
+#' - `par = FALSE`
 #' - `ncores = NULL`
 #' - `git = FALSE`
 #' - `github = FALSE`
@@ -197,7 +197,7 @@ rbuild <- function(pkg_root = getwd(),
                    tests = TRUE,
                    tests2vignettes = TRUE,
                    pkgdown = TRUE,
-                   par = TRUE,
+                   par = FALSE,
                    ncores = NULL,
                    git = FALSE,
                    github = FALSE,
