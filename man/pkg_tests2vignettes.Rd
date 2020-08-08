@@ -4,7 +4,7 @@
 \alias{pkg_tests2vignettes}
 \title{Tests to Vignettes}
 \usage{
-pkg_tests2vignettes(pkg_root = getwd(), par = TRUE, ncores = NULL)
+pkg_tests2vignettes(pkg_root = getwd(), par = FALSE, ncores = NULL)
 }
 \arguments{
 \item{pkg_root}{Character string.

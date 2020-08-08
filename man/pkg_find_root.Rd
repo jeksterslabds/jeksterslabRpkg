@@ -4,7 +4,7 @@
 \alias{pkg_find_root}
 \title{Find Package Root Directory}
 \usage{
-pkg_find_root(dir = getwd(), pkg_name, par = TRUE, ncores = NULL)
+pkg_find_root(dir = getwd(), pkg_name, par = FALSE, ncores = NULL)
 }
 \arguments{
 \item{dir}{Character string.

@@ -4,7 +4,7 @@
 \alias{pkg_style}
 \title{Style \code{R} and \code{R} Markdown Files in the Package Directory}
 \usage{
-pkg_style(pkg_root = getwd(), par = TRUE, ncores = NULL)
+pkg_style(pkg_root = getwd(), par = FALSE, ncores = NULL)
 }
 \arguments{
 \item{pkg_root}{Character string.

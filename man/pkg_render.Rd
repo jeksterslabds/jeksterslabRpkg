@@ -9,7 +9,7 @@ pkg_render(
   readme = TRUE,
   vignettes = TRUE,
   tests = TRUE,
-  par = TRUE,
+  par = FALSE,
   ncores = NULL
 )
 }

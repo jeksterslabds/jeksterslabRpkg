@@ -16,7 +16,7 @@ rbuild(
   tests = TRUE,
   tests2vignettes = TRUE,
   pkgdown = TRUE,
-  par = TRUE,
+  par = FALSE,
   ncores = NULL,
   git = FALSE,
   github = FALSE,
@@ -106,7 +106,7 @@ with the following arguments:
 \item \code{tests = TRUE}
 \item \code{tests2vignettes = TRUE}
 \item \code{pkgdown = TRUE}
-\item \code{par = TRUE}
+\item \code{par = FALSE}
 \item \code{ncores = NULL}
 \item \code{git = FALSE}
 \item \code{github = FALSE}

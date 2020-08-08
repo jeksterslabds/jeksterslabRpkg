@@ -4,7 +4,7 @@
 \alias{rstyle}
 \title{Alias for jeksterslabRutils::util_style()}
 \usage{
-rstyle(dir = getwd(), recursive = TRUE, par = TRUE, ncores = NULL)
+rstyle(dir = getwd(), recursive = TRUE, par = FALSE, ncores = NULL)
 }
 \arguments{
 \item{dir}{Character string.
@@ -28,7 +28,7 @@ with the following arguments:
 \itemize{
 \item \code{dir = getwd()}
 \item \code{recursive = TRUE}
-\item \code{par = TRUE}
+\item \code{par = FALSE}
 \item \code{ncores = NULL}
 }
 }

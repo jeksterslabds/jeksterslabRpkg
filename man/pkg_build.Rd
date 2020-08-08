@@ -16,7 +16,7 @@ pkg_build(
   tests = TRUE,
   tests2vignettes = TRUE,
   pkgdown = TRUE,
-  par = TRUE,
+  par = FALSE,
   ncores = NULL,
   git = FALSE,
   github = FALSE,

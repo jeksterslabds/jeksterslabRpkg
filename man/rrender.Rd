@@ -8,7 +8,7 @@ rrender(
   dir = getwd(),
   recursive = TRUE,
   files = NULL,
-  par = TRUE,
+  par = FALSE,
   ncores = NULL
 )
 }
@@ -40,7 +40,7 @@ with the following arguments:
 \item \code{dir = getwd()}
 \item \code{recursive = TRUE}
 \item \code{files = NULL}
-\item \code{par = TRUE}
+\item \code{par = FALSE}
 \item \code{ncores = NULL}
 }
 }
