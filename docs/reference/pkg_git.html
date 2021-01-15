@@ -83,7 +83,7 @@ and configured in the system." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -112,7 +112,7 @@ and configured in the system." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/jeksterslabds/jeksterslabRpkg/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -141,7 +141,7 @@ This requires that <code>git</code> and <code>hub</code> are installed
 and configured in the system.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pkg_git</span>(<span class='no'>pkg_root</span>, <span class='kw'>github</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>commit_msg</span> <span class='kw'>=</span> <span class='st'>"AUTOMATED BUILD"</span>)</pre>
+    <pre class="usage"><span class='fu'>pkg_git</span><span class='op'>(</span><span class='va'>pkg_root</span>, github <span class='op'>=</span> <span class='cn'>TRUE</span>, commit_msg <span class='op'>=</span> <span class='st'>"AUTOMATED BUILD"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,15 +163,19 @@ Git commit message.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Ivan Jacob Agaloos Pesigan</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>pkg_git</span>(
-  <span class='kw'>pkg_root</span> <span class='kw'>=</span> <span class='st'>"boilerplatePackage"</span>,
-  <span class='kw'>github</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>commit_msg</span> <span class='kw'>=</span> <span class='st'>"Meaningful commit message"</span>
-)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>pkg_git</span><span class='op'>(</span>
+  pkg_root <span class='op'>=</span> <span class='st'>"boilerplatePackage"</span>,
+  github <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  commit_msg <span class='op'>=</span> <span class='st'>"Meaningful commit message"</span>
+<span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -187,7 +191,7 @@ Git commit message.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

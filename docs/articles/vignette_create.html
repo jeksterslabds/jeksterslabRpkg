@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -68,7 +68,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/jeksterslabds/jeksterslabRpkg/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -82,13 +82,13 @@
 
       
 
-      </header><script src="vignette_create_files/header-attrs-2.3/header-attrs.js"></script><script src="vignette_create_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="vignette_create_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Vignette: Build boilerplatePackage</h1>
                         <h4 class="author">Ivan Jacob Agaloos Pesigan</h4>
             
-            <h4 class="date">2020-08-08</h4>
+            <h4 class="date">2021-01-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jeksterslabds/jeksterslabRpkg/blob/master/vignettes/vignette_create.Rmd"><code>vignettes/vignette_create.Rmd</code></a></small>
       <div class="hidden name"><code>vignette_create.Rmd</code></div>
@@ -97,13 +97,14 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">jeksterslabRpkg</span>)
-<span class="no">tmp</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span>()
-<span class="no">pkg_name</span> <span class="kw">&lt;-</span> <span class="st">"boilerplatePackage"</span>
-<span class="no">pkg_root</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(
-  <span class="no">tmp</span>,
-  <span class="no">pkg_name</span>
-)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslabds/jeksterslabRpkg">jeksterslabRpkg</a></span><span class="op">)</span>
+<span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">pkg_name</span> <span class="op">&lt;-</span> <span class="st">"boilerplatePackage"</span>
+<span class="va">pkg_root</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span>
+  <span class="va">tmp</span>,
+  <span class="va">pkg_name</span>
+<span class="op">)</span></code></pre></div>
 <div id="build-package-" class="section level2">
 <h2 class="hasAnchor">
 <a href="#build-package-" class="anchor"></a>Build Package.</h2>
@@ -118,30 +119,32 @@
 <div id="minimal-true" class="section level3">
 <h3 class="hasAnchor">
 <a href="#minimal-true" class="anchor"></a>minimal = TRUE</h3>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="../reference/pkg_build.html">pkg_build</a></span>(
-  <span class="kw">pkg_root</span> <span class="kw">=</span> <span class="no">pkg_root</span>,
-  <span class="kw">minimal</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">par</span> <span class="kw">=</span> <span class="fl">TRUE</span>
-)</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/pkg_build.html">pkg_build</a></span><span class="op">(</span>
+  pkg_root <span class="op">=</span> <span class="va">pkg_root</span>,
+  minimal <span class="op">=</span> <span class="cn">TRUE</span>,
+  par <span class="op">=</span> <span class="cn">TRUE</span>
+<span class="op">)</span></code></pre></div>
 </div>
 <div id="minimal-false" class="section level3">
 <h3 class="hasAnchor">
 <a href="#minimal-false" class="anchor"></a>minimal = FALSE</h3>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="../reference/pkg_build.html">pkg_build</a></span>(
-  <span class="kw">pkg_root</span> <span class="kw">=</span> <span class="no">pkg_root</span>,
-  <span class="kw">minimal</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-  <span class="kw">style</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">data</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">render</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">readme</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">vignettes</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">tests</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">tests2vignettes</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">pkgdown</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">par</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">git</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">github</span> <span class="kw">=</span> <span class="fl">TRUE</span>
-)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/pkg_build.html">pkg_build</a></span><span class="op">(</span>
+  pkg_root <span class="op">=</span> <span class="va">pkg_root</span>,
+  minimal <span class="op">=</span> <span class="cn">FALSE</span>,
+  style <span class="op">=</span> <span class="cn">TRUE</span>,
+  data <span class="op">=</span> <span class="cn">TRUE</span>,
+  render <span class="op">=</span> <span class="cn">TRUE</span>,
+  readme <span class="op">=</span> <span class="cn">TRUE</span>,
+  vignettes <span class="op">=</span> <span class="cn">TRUE</span>,
+  tests <span class="op">=</span> <span class="cn">TRUE</span>,
+  tests2vignettes <span class="op">=</span> <span class="cn">TRUE</span>,
+  pkgdown <span class="op">=</span> <span class="cn">TRUE</span>,
+  par <span class="op">=</span> <span class="cn">TRUE</span>,
+  git <span class="op">=</span> <span class="cn">TRUE</span>,
+  github <span class="op">=</span> <span class="cn">TRUE</span>
+<span class="op">)</span></code></pre></div>
 </div>
 </div>
   </div>
@@ -161,7 +164,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
